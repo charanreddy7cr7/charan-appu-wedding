@@ -89,7 +89,7 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--charcoal); }
+::-webkit-scrollbar-track { background: #f5f5f5; }
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
 
 /* Nav blur */
@@ -297,7 +297,7 @@ body {
 }
 
 .tap-hint {
-  color: var(--gold);
+  color: var(--gold-dark);
   font-family: "Cinzel", Georgia, serif;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -440,10 +440,10 @@ body {
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  background: rgba(10, 10, 10, 0.72);
+  background: rgba(255, 252, 245, 0.92);
   border: 1px solid var(--gold);
   border-radius: 999px;
-  color: var(--gold);
+  color: var(--gold-dark);
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-size: 0.72rem;

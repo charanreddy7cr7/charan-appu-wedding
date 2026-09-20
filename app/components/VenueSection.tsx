@@ -31,7 +31,7 @@ export default function VenueSection() {
     <section
       id="venue"
       className="py-16 px-6 relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0A0A0A 0%, #0F0800 100%)" }}
+      style={{ background: "linear-gradient(180deg, #FAF6EE 0%, #F0E8D8 100%)" }}
     >
       {/* Dot pattern */}
       <div
@@ -108,7 +108,7 @@ export default function VenueSection() {
                 style={{
                   fontFamily: "'Cinzel', serif",
                   fontSize: "1.1rem",
-                  color: "#E8D5A3",
+                  color: "#3D2B00",
                   fontWeight: 400,
                 }}
               >
@@ -122,7 +122,7 @@ export default function VenueSection() {
               </p>
               <p
                 className="text-sm italic leading-relaxed"
-                style={{ color: "#B0A080", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+                style={{ color: "#5C4A1A", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
               >
                 {v.note}
               </p>
@@ -141,7 +141,7 @@ export default function VenueSection() {
                 }}
                 onMouseEnter={(e) => {
                   (e.target as HTMLElement).style.background = "#C9A84C";
-                  (e.target as HTMLElement).style.color = "#0A0A0A";
+                  (e.target as HTMLElement).style.color = "#FFFFFF";
                 }}
                 onMouseLeave={(e) => {
                   (e.target as HTMLElement).style.background = "transparent";
@@ -163,7 +163,7 @@ export default function VenueSection() {
           className="w-full overflow-hidden"
           style={{
             height: "380px",
-            background: "#0A0A0A",
+            background: "#FAF6EE",
             border: "1px solid rgba(201,168,76,0.25)",
           }}
         >
@@ -172,7 +172,7 @@ export default function VenueSection() {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13888049.985885322!2d-105.20545285!3d31.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864070360b823249%3A0x16eb1c8f1808de3c!2sTexas%2C%20USA!5e0!3m2!1sen!2sus!4v1700000000000"
             width="100%"
             height="100%"
-            style={{ border: 0, filter: "grayscale(0.8) sepia(0.4) brightness(0.7)" }}
+            style={{ border: 0, filter: "grayscale(0.3) sepia(0.2) brightness(1.0)" }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

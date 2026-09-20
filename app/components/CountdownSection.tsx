@@ -91,7 +91,7 @@ export default function CountdownSection() {
     <section
       id="countdown"
       className="py-16 px-6 relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0A0A0A 0%, #0F0800 100%)" }}
+      style={{ background: "linear-gradient(180deg, #FAF6EE 0%, #F0E8D8 100%)" }}
     >
       {/* Subtle background pattern */}
       <div
@@ -160,7 +160,7 @@ export default function CountdownSection() {
           transition={{ delay: 0.6 }}
           className="mt-6 italic"
           style={{
-            color: "#E8D5A3",
+            color: "#3D2B00",
             fontFamily: "'Cormorant Garamond', serif",
             fontWeight: 300,
             fontSize: "clamp(1.25rem, 3.5vw, 1.75rem)",

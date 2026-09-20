@@ -128,9 +128,9 @@ export default function RSVPSection() {
   };
 
   const inputStyle = {
-    background: "rgba(201,168,76,0.05)",
+    background: "#FFFFFF",
     border: "1px solid rgba(201,168,76,0.25)",
-    color: "#FAF6EE",
+    color: "#1A1A1A",
     fontFamily: "'Cormorant Garamond', serif",
     fontSize: "1rem",
     padding: "0.75rem 1rem",
@@ -153,7 +153,7 @@ export default function RSVPSection() {
     <section
       id="rsvp"
       className="py-16 px-6 relative"
-      style={{ background: "linear-gradient(180deg, #0A0A0A 0%, #0F0800 100%)" }}
+      style={{ background: "linear-gradient(180deg, #FAF6EE 0%, #F0E8D8 100%)" }}
     >
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -192,7 +192,7 @@ export default function RSVPSection() {
           <div className="section-divider mt-6 mb-6" />
           <p
             className="italic text-lg"
-            style={{ color: "#E8D5A3", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+            style={{ color: "#3D2B00", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
           >
             Please RSVP by October 1, 2026
           </p>
@@ -205,7 +205,7 @@ export default function RSVPSection() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-20 px-8 gold-border"
-              style={{ background: "rgba(201,168,76,0.05)" }}
+              style={{ background: "rgba(201,168,76,0.08)" }}
             >
               <div className="text-5xl mb-6">🎊</div>
               <h3
@@ -216,7 +216,7 @@ export default function RSVPSection() {
               </h3>
               <p
                 className="italic text-lg"
-                style={{ color: "#E8D5A3", fontFamily: "'Cormorant Garamond', serif" }}
+                style={{ color: "#3D2B00", fontFamily: "'Cormorant Garamond', serif" }}
               >
                 Your RSVP has been received. We&apos;ll send a confirmation to your email soon.
               </p>
@@ -232,7 +232,7 @@ export default function RSVPSection() {
               {/* Primary contact */}
               <div
                 className="p-6"
-                style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.03)" }}
+                style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.04)" }}
               >
                 <p
                   className="text-xs tracking-[0.25em] mb-6"
@@ -279,7 +279,7 @@ export default function RSVPSection() {
               {/* Guest entries */}
               <div
                 className="p-6"
-                style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.03)" }}
+                style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.04)" }}
               >
                 <p
                   className="text-xs tracking-[0.25em] mb-2"
@@ -289,7 +289,7 @@ export default function RSVPSection() {
                 </p>
                 <p
                   className="italic mb-6"
-                  style={{ color: "#E8D5A3", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "0.98rem", opacity: 0.85 }}
+                  style={{ color: "#3D2B00", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "0.98rem", opacity: 0.85 }}
                 >
                   So… who&rsquo;s tagging along? Tell us your crew — adults, little ones, and all! 🎉
                 </p>
@@ -299,7 +299,7 @@ export default function RSVPSection() {
                     <div
                       key={i}
                       className="p-4 relative"
-                      style={{ border: "1px solid rgba(201,168,76,0.15)", background: "rgba(201,168,76,0.02)" }}
+                      style={{ border: "1px solid rgba(201,168,76,0.15)", background: "rgba(201,168,76,0.03)" }}
                     >
                       <div className="flex items-center justify-between mb-4">
                         <span
@@ -313,7 +313,7 @@ export default function RSVPSection() {
                             type="button"
                             onClick={() => removeGuest(i)}
                             className="text-xs"
-                            style={{ color: "rgba(201,168,76,0.5)", fontFamily: "'Lato', sans-serif" }}
+                            style={{ color: "rgba(139,105,20,0.7)", fontFamily: "'Lato', sans-serif" }}
                           >
                             REMOVE
                           </button>
@@ -326,7 +326,7 @@ export default function RSVPSection() {
                           <div
                             key={field}
                             className="flex items-center justify-between gap-2 p-3"
-                            style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.03)" }}
+                            style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.04)" }}
                           >
                             <span
                               style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}
@@ -347,7 +347,7 @@ export default function RSVPSection() {
                                 −
                               </button>
                               <span
-                                style={{ color: "#FAF6EE", fontFamily: "'Cormorant Garamond', serif", fontSize: "1.2rem", minWidth: "1.4rem", textAlign: "center" }}
+                                style={{ color: "#1A1A1A", fontFamily: "'Cormorant Garamond', serif", fontSize: "1.2rem", minWidth: "1.4rem", textAlign: "center" }}
                               >
                                 {guest[field]}
                               </span>
@@ -429,7 +429,7 @@ export default function RSVPSection() {
               {/* Additional info */}
               <div
                 className="p-6"
-                style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.03)" }}
+                style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.04)" }}
               >
                 <p
                   className="text-xs tracking-[0.25em] mb-6"

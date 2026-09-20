@@ -176,7 +176,7 @@ export default function OurStorySection() {
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center"
                     style={{
-                      background: "#0A0A0A",
+                      background: "#FAF6EE",
                       border: "2px solid #C9A84C",
                       boxShadow: "0 0 20px rgba(201,168,76,0.3)",
                     }}

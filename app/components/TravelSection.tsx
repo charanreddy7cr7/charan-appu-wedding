@@ -55,7 +55,7 @@ export default function TravelSection() {
     <section
       id="travel"
       className="py-16 px-6 relative"
-      style={{ background: "linear-gradient(180deg, #0A0A0A 0%, #0F0800 100%)" }}
+      style={{ background: "linear-gradient(180deg, #FAF6EE 0%, #F0E8D8 100%)" }}
     >
       {/* Dot pattern */}
       <div
@@ -95,7 +95,7 @@ export default function TravelSection() {
           <div className="section-divider mt-6 mb-6" />
           <p
             className="italic text-lg"
-            style={{ color: "#E8D5A3", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+            style={{ color: "#3D2B00", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
           >
             We want you here — let us make it easy.
           </p>
@@ -135,7 +135,7 @@ export default function TravelSection() {
                           style={{
                             fontFamily: "'Cinzel', serif",
                             fontSize: "0.95rem",
-                            color: "#E8D5A3",
+                            color: "#3D2B00",
                             fontWeight: 400,
                           }}
                         >
@@ -161,7 +161,7 @@ export default function TravelSection() {
                       </p>
                       <p
                         className="text-sm italic"
-                        style={{ color: "#B0A080", fontFamily: "'Cormorant Garamond', serif" }}
+                        style={{ color: "#5C4A1A", fontFamily: "'Cormorant Garamond', serif" }}
                       >
                         {hotel.note}
                       </p>
@@ -209,13 +209,13 @@ export default function TravelSection() {
                   </span>
                   <div>
                     <p
-                      style={{ color: "#E8D5A3", fontFamily: "'Cormorant Garamond', serif", fontSize: "1rem" }}
+                      style={{ color: "#3D2B00", fontFamily: "'Cormorant Garamond', serif", fontSize: "1rem" }}
                     >
                       {ap.name}
                     </p>
                     <p
                       className="text-sm italic mt-1"
-                      style={{ color: "#B0A080", fontFamily: "'Cormorant Garamond', serif" }}
+                      style={{ color: "#5C4A1A", fontFamily: "'Cormorant Garamond', serif" }}
                     >
                       {ap.note}
                     </p>
@@ -251,7 +251,7 @@ export default function TravelSection() {
                   <li
                     key={tip}
                     className="flex items-start gap-2 text-sm"
-                    style={{ color: "#B0A080", fontFamily: "'Cormorant Garamond', serif", fontSize: "0.95rem" }}
+                    style={{ color: "#5C4A1A", fontFamily: "'Cormorant Garamond', serif", fontSize: "0.95rem" }}
                   >
                     <span style={{ color: "#C9A84C", marginTop: "2px" }}>◆</span>
                     {tip}

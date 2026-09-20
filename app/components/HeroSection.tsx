@@ -39,7 +39,7 @@ export default function HeroSection() {
     <section
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0A0A0A 0%, #0F0A00 50%, #120800 100%)" }}
+      style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAF6EE 100%)" }}
     >
       {/* Gold particles */}
       <AnimatePresence>
@@ -65,7 +65,7 @@ export default function HeroSection() {
       {/* Radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(139,105,20,0.06) 0%, transparent 70%)" }}
       />
 
       {/* Telugu mandala corners + diyas */}
@@ -211,7 +211,7 @@ export default function HeroSection() {
               }}
               onMouseEnter={(e) => {
                 (e.target as HTMLElement).style.background = "#C9A84C";
-                (e.target as HTMLElement).style.color = "#0A0A0A";
+                (e.target as HTMLElement).style.color = "#FFFFFF";
               }}
               onMouseLeave={(e) => {
                 (e.target as HTMLElement).style.background = "transparent";

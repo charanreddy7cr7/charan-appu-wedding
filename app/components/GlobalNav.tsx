@@ -63,9 +63,9 @@ export default function GlobalNav() {
         }`}
         style={{
           background: scrolled
-            ? "rgba(10, 10, 10, 0.92)"
-            : "rgba(10, 10, 10, 0.3)",
-          borderBottom: scrolled ? "1px solid rgba(201,168,76,0.2)" : "none",
+            ? "rgba(255, 252, 245, 0.96)"
+            : "rgba(255, 252, 245, 0.4)",
+          borderBottom: scrolled ? "1px solid rgba(139,105,20,0.2)" : "none",
         }}
       >
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
@@ -85,7 +85,7 @@ export default function GlobalNav() {
                 letterSpacing: "0.1em",
               }}
             >
-              R ♾ H
+              A ♾ C
             </span>
           </a>
 
@@ -166,7 +166,7 @@ export default function GlobalNav() {
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
             className="fixed inset-0 z-40 flex flex-col"
-            style={{ background: "rgba(5, 5, 5, 0.98)" }}
+            style={{ background: "rgba(255, 252, 245, 0.98)" }}
           >
             {/* Close area */}
             <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6">
@@ -178,7 +178,7 @@ export default function GlobalNav() {
                   letterSpacing: "0.15em",
                 }}
               >
-                <span className="gold-text">R ♾ H</span>
+                <span className="gold-text">A ♾ C</span>
               </div>
 
               {navLinks.map((link, i) => (
@@ -191,7 +191,7 @@ export default function GlobalNav() {
                   onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
                   className="text-lg tracking-[0.2em] no-underline"
                   style={{
-                    color: "rgba(201,168,76,0.7)",
+                    color: "#8B6914",
                     fontFamily: "'Lato', sans-serif",
                     fontWeight: 300,
                     textDecoration: "none",
@@ -205,9 +205,9 @@ export default function GlobalNav() {
 
               <p
                 className="italic"
-                style={{ color: "rgba(201,168,76,0.3)", fontFamily: "'Cormorant Garamond', serif" }}
+                style={{ color: "rgba(139,105,20,0.5)", fontFamily: 'Cormorant Garamond', serif" }}
               >
-                Two hearts, one forever — and Noah. 🐶
+                Two hearts, one forever. 💛
               </p>
             </div>
           </motion.div>

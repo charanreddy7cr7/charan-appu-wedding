@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer
       className="relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0A0A0A 0%, #000000 100%)" }}
+      style={{ background: "linear-gradient(180deg, #F0E8D8 0%, #FAF6EE 100%)" }}
     >
       {/* Top border */}
       <div
@@ -30,7 +30,7 @@ export default function Footer() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 80% 60% at 50% 80%, rgba(201,168,76,0.05) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 80% 60% at 50% 80%, rgba(139,105,20,0.04) 0%, transparent 70%)",
         }}
       />
 
@@ -99,13 +99,13 @@ export default function Footer() {
 
           <p
             className="italic text-xl"
-            style={{ color: "#E8D5A3", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+            style={{ color: "#3D2B00", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
           >
             Approva &amp; Charan
           </p>
           <p
             className="mt-2 italic"
-            style={{ color: "rgba(201,168,76,0.5)", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+            style={{ color: "rgba(139,105,20,0.7)", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
           >
             Two hearts, one forever. 💛
           </p>
@@ -160,7 +160,7 @@ export default function Footer() {
           transition={{ delay: 1 }}
           className="mt-14 text-xs"
           style={{
-            color: "rgba(201,168,76,0.2)",
+            color: "rgba(139,105,20,0.4)",
             fontFamily: "'Lato', sans-serif",
             fontWeight: 300,
             letterSpacing: "0.1em",
