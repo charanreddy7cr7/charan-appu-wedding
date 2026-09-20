@@ -205,7 +205,7 @@ export default function GlobalNav() {
 
               <p
                 className="italic"
-                style={{ color: "rgba(139,105,20,0.5)", fontFamily: 'Cormorant Garamond', serif" }}
+                style={{ color: "rgba(139,105,20,0.5)", fontFamily: "'Cormorant Garamond', serif" }}
               >
                 Two hearts, one forever. 💛
               </p>
