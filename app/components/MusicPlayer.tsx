@@ -15,7 +15,7 @@ export default function MusicPlayer() {
   const startedRef = useRef(false);
 
   useEffect(() => {
-    const audio = new Audio("/music/mangalyam.mp3");
+    const audio = new Audio("/music/aakhri-ishq.mp3");
     audio.loop = true;
     audio.volume = 0.5;
     audio.preload = "auto";
