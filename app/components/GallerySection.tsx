@@ -3,15 +3,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Real photos live in /public/gallery.
+// Add your photos to /public/gallery/ and update placeholder: false + src here.
 const galleryItems = [
-  { id: 1, alt: "Approva & Charan with Noah", src: "/gallery/couple-noah-1-new.jpg", placeholder: false, aspect: "portrait" },
-  { id: 2, alt: "Approva & Charan relaxing with Noah", src: "/gallery/couple-noah-2.jpg", placeholder: false, aspect: "landscape" },
-  { id: 3, alt: "Approva & Charan at the Grand Canyon", src: "/gallery/couple-grandcanyon.jpg", placeholder: false, aspect: "portrait" },
-  { id: 4, alt: "Approva & Charan — Halloween pumpkins", src: "/gallery/couple-halloween.jpg", placeholder: false, aspect: "portrait" },
-  { id: 5, alt: "Approva & Charan lounging with Noah", src: "/gallery/couple-noah-5.jpg", placeholder: false, aspect: "landscape" },
-  { id: 6, alt: "Approva & Charan holding Noah outdoors", src: "/gallery/couple-noah-4.jpg", placeholder: false, aspect: "portrait" },
-  { id: 7, alt: "Approva & Charan laughing with Noah", src: "/gallery/couple-noah-6.jpg", placeholder: false, aspect: "landscape" },
+  { id: 1, alt: "Approva & Charan", src: "", placeholder: true, aspect: "portrait" },
+  { id: 2, alt: "Approva & Charan", src: "", placeholder: true, aspect: "landscape" },
+  { id: 3, alt: "Approva & Charan", src: "", placeholder: true, aspect: "portrait" },
+  { id: 4, alt: "Approva & Charan", src: "", placeholder: true, aspect: "portrait" },
+  { id: 5, alt: "Approva & Charan", src: "", placeholder: true, aspect: "landscape" },
+  { id: 6, alt: "Approva & Charan", src: "", placeholder: true, aspect: "portrait" },
+  { id: 7, alt: "Approva & Charan", src: "", placeholder: true, aspect: "landscape" },
 ];
 
 const gradients = [
