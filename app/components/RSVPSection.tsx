@@ -36,386 +36,340 @@ const defaultGuest = (): GuestEntry => ({
 });
 
 const events = [
-  { key: "sangeeth" as const, label: "Sangeeth", emoji: "✨", color: "#D4AF37" },
-  { key: "engagement" as const, label: "Engagement", emoji: "💍", color: "#E879F9" },
-  { key: "mehendi" as const, label: "Mehendi", emoji: "🤚", color: "#2D9148" },
-  { key: "haldi" as const, label: "Haldi", emoji: "☀️", color: "#FDD835" },
-  { key: "prewedding" as const, label: "Pre-Wedding", emoji: "🪔", color: "#F0A6E8" },
-  { key: "wedding" as const, label: "Wedding", emoji: "🪷", color: "#C9A84C" },
+  { key: "sangeeth"    as const, label: "Sangeeth",    emoji: "✨", color: "#92700A" },
+  { key: "engagement"  as const, label: "Engagement",  emoji: "💍", color: "#7C3AED" },
+  { key: "mehendi"     as const, label: "Mehendi",     emoji: "🤚", color: "#166534" },
+  { key: "haldi"       as const, label: "Haldi",       emoji: "☀️", color: "#B45309" },
+  { key: "prewedding"  as const, label: "Pre-Wedding", emoji: "🪔", color: "#9D174D" },
+  { key: "wedding"     as const, label: "Wedding",     emoji: "🪷", color: "#7A5800" },
 ];
+
+// Colours used for hover fill on event checkboxes (lighter tints)
+const eventBg: Record<string, string> = {
+  sangeeth: "#FEF3C7", engagement: "#EDE9FE", mehendi: "#DCFCE7",
+  haldi: "#FEF3C7", prewedding: "#FCE7F3", wedding: "#FEF9E7",
+};
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
+/* ── Shared style objects ─────────────────────────────────────────────────── */
+const inputStyle: React.CSSProperties = {
+  background:   "#FFFFFF",
+  border:       "1.5px solid #D4B87A",
+  borderRadius: "3px",
+  color:        "#1A1200",
+  fontFamily:   "'Cormorant Garamond', Georgia, serif",
+  fontSize:     "1.05rem",
+  padding:      "0.8rem 1rem",
+  width:        "100%",
+  outline:      "none",
+  transition:   "border-color 0.2s, box-shadow 0.2s",
+};
+
+const labelStyle: React.CSSProperties = {
+  display:       "block",
+  color:         "#7A5800",
+  fontFamily:    "'Lato', sans-serif",
+  fontWeight:    600,
+  fontSize:      "0.65rem",
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  marginBottom:  "0.45rem",
+};
+
+const panelStyle: React.CSSProperties = {
+  background:   "#FFFDF7",
+  border:       "1.5px solid rgba(184,134,11,0.2)",
+  borderRadius: "6px",
+  padding:      "1.5rem",
+};
+
+/* ── Component ────────────────────────────────────────────────────────────── */
 export default function RSVPSection() {
   const [form, setForm] = useState<FormData>({
-    primaryName: "",
-    email: "",
-    phone: "",
+    primaryName: "", email: "", phone: "",
     guests: [defaultGuest()],
-    dietary: "",
-    songRequest: "",
-    message: "",
+    dietary: "", songRequest: "", message: "",
   });
-  const [submitState, setSubmitState] = useState<SubmitState>("idle");
-  const [validationError, setValidationError] = useState("");
+  const [submitState, setSubmitState]   = useState<SubmitState>("idle");
+  const [validationError, setValidation] = useState("");
 
-  const updateGuest = (index: number, field: keyof GuestEntry, value: number | boolean) => {
-    if (validationError) setValidationError("");
-    setForm((prev) => {
-      const guests = [...prev.guests];
-      guests[index] = { ...guests[index], [field]: value };
-      return { ...prev, guests };
+  const updateGuest = (i: number, field: keyof GuestEntry, val: number | boolean) => {
+    if (validationError) setValidation("");
+    setForm((p) => {
+      const g = [...p.guests];
+      g[i] = { ...g[i], [field]: val };
+      return { ...p, guests: g };
     });
   };
 
-  const adjustCount = (index: number, field: "adults" | "kids", delta: number) => {
-    setForm((prev) => {
-      const guests = [...prev.guests];
-      const current = guests[index][field];
+  const adjustCount = (i: number, field: "adults" | "kids", delta: number) => {
+    setForm((p) => {
+      const g = [...p.guests];
       const min = field === "adults" ? 1 : 0;
-      const next = Math.max(min, Math.min(20, current + delta));
-      guests[index] = { ...guests[index], [field]: next };
-      return { ...prev, guests };
+      g[i] = { ...g[i], [field]: Math.max(min, Math.min(20, g[i][field] + delta)) };
+      return { ...p, guests: g };
     });
   };
 
-  const removeGuest = (index: number) => {
-    if (form.guests.length > 1) {
-      setForm((prev) => ({
-        ...prev,
-        guests: prev.guests.filter((_, i) => i !== index),
-      }));
-    }
+  const removeGuest = (i: number) => {
+    if (form.guests.length > 1)
+      setForm((p) => ({ ...p, guests: p.guests.filter((_, idx) => idx !== i) }));
   };
+
+  const addGuest = () =>
+    setForm((p) => ({ ...p, guests: [...p.guests, defaultGuest()] }));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Every guest must be attending at least one event
-    const eventKeys = ["sangeeth", "engagement", "mehendi", "haldi", "prewedding", "wedding"] as const;
-    const guestWithNoEvent = form.guests.findIndex(
-      (g) => !eventKeys.some((k) => g[k])
-    );
-    if (guestWithNoEvent !== -1) {
-      setValidationError(
-        `Please select at least one event for Guest ${guestWithNoEvent + 1}.`
-      );
-      return;
-    }
-    setValidationError("");
+    const keys = ["sangeeth","engagement","mehendi","haldi","prewedding","wedding"] as const;
+    const bad  = form.guests.findIndex((g) => !keys.some((k) => g[k]));
+    if (bad !== -1) { setValidation(`Please select at least one event for Guest ${bad + 1}.`); return; }
+    setValidation("");
     setSubmitState("submitting");
-
     try {
-      const res = await fetch("https://wa3r5hutq1.execute-api.us-east-1.amazonaws.com/api/rsvp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res  = await fetch("https://wa3r5hutq1.execute-api.us-east-1.amazonaws.com/api/rsvp", {
+        method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
       const data = await res.json();
       if (res.ok && data.success) {
         setSubmitState("success");
-        requestAnimationFrame(() => {
-          document.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-      } else {
-        console.error("RSVP error:", data);
-        setSubmitState("error");
-      }
-    } catch (err) {
-      console.error("RSVP fetch error:", err);
-      setSubmitState("error");
-    }
+        requestAnimationFrame(() =>
+          document.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth", block: "start" })
+        );
+      } else { setSubmitState("error"); }
+    } catch { setSubmitState("error"); }
   };
-
-  const inputStyle = {
-    background: "#FFFFFF",
-    border: "1px solid rgba(201,168,76,0.25)",
-    color: "#1A1A1A",
-    fontFamily: "'Cormorant Garamond', serif",
-    fontSize: "1rem",
-    padding: "0.75rem 1rem",
-    width: "100%",
-    outline: "none",
-    transition: "border-color 0.2s",
-  };
-
-  const labelStyle = {
-    color: "#C9A84C",
-    fontFamily: "'Lato', sans-serif",
-    fontWeight: 300,
-    fontSize: "0.7rem",
-    letterSpacing: "0.2em",
-    display: "block",
-    marginBottom: "0.5rem",
-  } as React.CSSProperties;
 
   return (
     <section
       id="rsvp"
-      className="py-16 px-6 relative"
-      style={{ background: "linear-gradient(180deg, #FAF6EE 0%, #F0E8D8 100%)" }}
+      className="py-20 px-4 sm:px-6 relative"
+      style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAF6EE 100%)" }}
     >
+      {/* Subtle dot watermark */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(circle, #C9A84C 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
+          backgroundImage: "radial-gradient(circle, rgba(184,134,11,0.07) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
         }}
       />
 
-      <div className="relative z-10 max-w-3xl mx-auto">
-        {/* Header */}
+      <div className="relative z-10 max-w-2xl mx-auto">
+
+        {/* ── Header ── */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <p
-            className="tracking-[0.3em] text-xs mb-4"
-            style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
-          >
+          <p style={{ color: "#B8860B", fontFamily: "'Lato', sans-serif", fontWeight: 600,
+            fontSize: "0.65rem", letterSpacing: "0.32em", textTransform: "uppercase",
+            marginBottom: "1rem" }}>
             WE HOPE TO SEE YOU THERE
           </p>
           <h2
             className="gold-text"
-            style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(2rem, 5vw, 3.5rem)",
-              fontWeight: 400,
-              letterSpacing: "0.08em",
-            }}
+            style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(2.2rem, 6vw, 3.8rem)",
+              fontWeight: 400, letterSpacing: "0.1em" }}
           >
             RSVP
           </h2>
-          <div className="section-divider mt-6 mb-6" />
-          <p
-            className="italic text-lg"
-            style={{ color: "#3D2B00", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
-          >
-            Please RSVP by October 1, 2026
+          <div className="section-divider mt-5 mb-5" />
+          <p style={{ color: "#2C2000", fontFamily: "'Cormorant Garamond', serif",
+            fontStyle: "italic", fontSize: "1.15rem", fontWeight: 400 }}>
+            Please RSVP by <strong style={{ color: "#7A5800" }}>October 1, 2026</strong>
           </p>
         </motion.div>
 
         <AnimatePresence mode="wait">
+
+          {/* ── Success ── */}
           {submitState === "success" ? (
             <motion.div
               key="success"
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center py-20 px-8 gold-border"
-              style={{ background: "rgba(201,168,76,0.08)" }}
+              className="text-center py-20 px-8"
+              style={{ background: "#FFFDF7", border: "1.5px solid rgba(184,134,11,0.25)",
+                borderRadius: "8px" }}
             >
-              <div className="text-5xl mb-6">🎊</div>
+              <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>🎊</div>
               <h3
                 className="gold-text mb-4"
                 style={{ fontFamily: "'Cinzel', serif", fontSize: "1.8rem", fontWeight: 400 }}
               >
                 We Can&apos;t Wait to See You!
               </h3>
-              <p
-                className="italic text-lg"
-                style={{ color: "#3D2B00", fontFamily: "'Cormorant Garamond', serif" }}
-              >
-                Your RSVP has been received. We&apos;ll send a confirmation to your email soon.
+              <p style={{ color: "#2C2000", fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "1.1rem", fontStyle: "italic" }}>
+                Your RSVP is confirmed. A confirmation email is on its way!
               </p>
             </motion.div>
+
           ) : (
+
+            /* ── Form ── */
             <motion.form
               key="form"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               onSubmit={handleSubmit}
-              className="space-y-8"
+              className="space-y-6"
+              noValidate
             >
-              {/* Primary contact */}
-              <div
-                className="p-6"
-                style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.04)" }}
-              >
-                <p
-                  className="text-xs tracking-[0.25em] mb-6"
-                  style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
-                >
+
+              {/* Contact details */}
+              <div style={panelStyle}>
+                <p style={{ color: "#B8860B", fontFamily: "'Lato', sans-serif", fontWeight: 600,
+                  fontSize: "0.65rem", letterSpacing: "0.26em", textTransform: "uppercase",
+                  marginBottom: "1.25rem" }}>
                   YOUR CONTACT DETAILS
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="sm:col-span-2">
                     <label style={labelStyle}>PRIMARY GUEST NAME *</label>
-                    <input
-                      required
-                      type="text"
-                      placeholder="e.g. Ravi & Family"
+                    <input required type="text" placeholder="e.g. Ravi & Family"
                       value={form.primaryName}
                       onChange={(e) => setForm((p) => ({ ...p, primaryName: e.target.value }))}
                       style={inputStyle}
+                      onFocus={(e) => { e.target.style.borderColor="#B8860B"; e.target.style.boxShadow="0 0 0 3px rgba(184,134,11,0.12)"; }}
+                      onBlur={(e)  => { e.target.style.borderColor="#D4B87A"; e.target.style.boxShadow="none"; }}
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>EMAIL *</label>
-                    <input
-                      required
-                      type="email"
-                      placeholder="your@email.com"
+                    <label style={labelStyle}>EMAIL ADDRESS *</label>
+                    <input required type="email" placeholder="your@email.com"
                       value={form.email}
                       onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
                       style={inputStyle}
+                      onFocus={(e) => { e.target.style.borderColor="#B8860B"; e.target.style.boxShadow="0 0 0 3px rgba(184,134,11,0.12)"; }}
+                      onBlur={(e)  => { e.target.style.borderColor="#D4B87A"; e.target.style.boxShadow="none"; }}
                     />
                   </div>
                   <div>
                     <label style={labelStyle}>PHONE (OPTIONAL)</label>
-                    <input
-                      type="tel"
-                      placeholder="+1 (555) 000-0000"
+                    <input type="tel" placeholder="+1 (555) 000-0000"
                       value={form.phone}
                       onChange={(e) => setForm((p) => ({ ...p, phone: e.target.value }))}
                       style={inputStyle}
+                      onFocus={(e) => { e.target.style.borderColor="#B8860B"; e.target.style.boxShadow="0 0 0 3px rgba(184,134,11,0.12)"; }}
+                      onBlur={(e)  => { e.target.style.borderColor="#D4B87A"; e.target.style.boxShadow="none"; }}
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Guest entries */}
-              <div
-                className="p-6"
-                style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.04)" }}
-              >
-                <p
-                  className="text-xs tracking-[0.25em] mb-2"
-                  style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
-                >
+              {/* Guests */}
+              <div style={panelStyle}>
+                <p style={{ color: "#B8860B", fontFamily: "'Lato', sans-serif", fontWeight: 600,
+                  fontSize: "0.65rem", letterSpacing: "0.26em", textTransform: "uppercase",
+                  marginBottom: "0.4rem" }}>
                   ATTENDING GUESTS
                 </p>
-                <p
-                  className="italic mb-6"
-                  style={{ color: "#3D2B00", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "0.98rem", opacity: 0.85 }}
-                >
-                  So… who&rsquo;s tagging along? Tell us your crew — adults, little ones, and all! 🎉
+                <p style={{ color: "#5C4A1A", fontFamily: "'Cormorant Garamond', serif",
+                  fontStyle: "italic", fontSize: "1rem", marginBottom: "1.5rem" }}>
+                  Tell us your crew — adults, little ones, and all! 🎉
                 </p>
 
-                <div className="space-y-6">
+                <div className="space-y-5">
                   {form.guests.map((guest, i) => (
-                    <div
-                      key={i}
-                      className="p-4 relative"
-                      style={{ border: "1px solid rgba(201,168,76,0.15)", background: "rgba(201,168,76,0.03)" }}
-                    >
+                    <div key={i} style={{ border: "1px solid rgba(184,134,11,0.15)",
+                      borderRadius: "4px", padding: "1rem", background: "#FFFFFF" }}>
+
+                      {/* Guest header */}
                       <div className="flex items-center justify-between mb-4">
-                        <span
-                          className="text-xs tracking-[0.15em]"
-                          style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
-                        >
+                        <span style={{ color: "#7A5800", fontFamily: "'Lato', sans-serif",
+                          fontWeight: 600, fontSize: "0.65rem", letterSpacing: "0.18em",
+                          textTransform: "uppercase" }}>
                           GUEST {i + 1}
                         </span>
                         {i > 0 && (
-                          <button
-                            type="button"
-                            onClick={() => removeGuest(i)}
-                            className="text-xs"
-                            style={{ color: "rgba(139,105,20,0.7)", fontFamily: "'Lato', sans-serif" }}
-                          >
+                          <button type="button" onClick={() => removeGuest(i)}
+                            style={{ color: "#B91C1C", fontFamily: "'Lato', sans-serif",
+                              fontSize: "0.65rem", background: "none", border: "none",
+                              cursor: "pointer", letterSpacing: "0.1em" }}>
                             REMOVE
                           </button>
                         )}
                       </div>
 
-                      {/* Adults & Kids counters */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ marginBottom: "0.5rem" }}>
+                      {/* Adults / Kids */}
+                      <div className="grid grid-cols-2 gap-3 mb-3">
                         {(["adults", "kids"] as const).map((field) => (
-                          <div
-                            key={field}
-                            className="flex items-center justify-between gap-2 p-3"
-                            style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.04)" }}
-                          >
-                            <span
-                              style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}
-                            >
-                              {field === "adults" ? "Adults (incl. you)" : "Kids"}
+                          <div key={field} className="flex items-center justify-between p-3"
+                            style={{ border: "1px solid rgba(184,134,11,0.18)",
+                              borderRadius: "3px", background: "#FFFDF7" }}>
+                            <span style={{ color: "#5C4A1A", fontFamily: "'Lato', sans-serif",
+                              fontWeight: 500, fontSize: "0.7rem", letterSpacing: "0.06em",
+                              textTransform: "uppercase" }}>
+                              {field === "adults" ? "Adults" : "Kids"}
                             </span>
-                            <div className="flex items-center gap-2 shrink-0">
-                              <button
-                                type="button"
-                                onClick={() => adjustCount(i, field, -1)}
-                                aria-label={`Decrease ${field}`}
-                                style={{
-                                  width: "2rem", height: "2rem", lineHeight: 1, flexShrink: 0,
-                                  border: "1px solid rgba(201,168,76,0.4)", color: "#C9A84C",
-                                  background: "transparent", cursor: "pointer", fontSize: "1.1rem",
-                                }}
-                              >
-                                −
-                              </button>
-                              <span
-                                style={{ color: "#1A1A1A", fontFamily: "'Cormorant Garamond', serif", fontSize: "1.2rem", minWidth: "1.4rem", textAlign: "center" }}
-                              >
-                                {guest[field]}
-                              </span>
-                              <button
-                                type="button"
-                                onClick={() => adjustCount(i, field, 1)}
-                                aria-label={`Increase ${field}`}
-                                style={{
-                                  width: "2rem", height: "2rem", lineHeight: 1, flexShrink: 0,
-                                  border: "1px solid rgba(201,168,76,0.4)", color: "#C9A84C",
-                                  background: "transparent", cursor: "pointer", fontSize: "1.1rem",
-                                }}
-                              >
-                                +
-                              </button>
+                            <div className="flex items-center gap-2">
+                              {([-1, null, 1] as const).map((delta, idx) =>
+                                delta === null ? (
+                                  <span key="val" style={{ color: "#1A1200",
+                                    fontFamily: "'Cinzel', serif", fontSize: "1.1rem",
+                                    minWidth: "1.6rem", textAlign: "center", fontWeight: 500 }}>
+                                    {guest[field]}
+                                  </span>
+                                ) : (
+                                  <button key={idx} type="button"
+                                    onClick={() => adjustCount(i, field, delta)}
+                                    aria-label={`${delta < 0 ? "Decrease" : "Increase"} ${field}`}
+                                    style={{ width: "2rem", height: "2rem", flexShrink: 0,
+                                      border: "1.5px solid #D4B87A", color: "#7A5800",
+                                      background: "#FFFFFF", cursor: "pointer",
+                                      fontSize: "1.2rem", borderRadius: "2px",
+                                      fontWeight: 600, lineHeight: 1,
+                                      display: "flex", alignItems: "center", justifyContent: "center" }}>
+                                    {delta < 0 ? "−" : "+"}
+                                  </button>
+                                )
+                              )}
                             </div>
                           </div>
                         ))}
                       </div>
-                      <p
-                        style={{ color: "rgba(201,168,76,0.55)", fontFamily: "'Lato', sans-serif", fontWeight: 300, fontSize: "0.62rem", letterSpacing: "0.05em", marginBottom: "1rem" }}
-                      >
-                        Count yourself in the adults total.
+                      <p style={{ color: "#8B7340", fontFamily: "'Lato', sans-serif",
+                        fontSize: "0.62rem", letterSpacing: "0.05em", marginBottom: "1rem" }}>
+                        Include yourself in the adults count.
                       </p>
 
-                      {/* Event checkboxes */}
-                      <p
-                        className="text-xs tracking-[0.15em] mb-3"
-                        style={{ color: "#C9A84C66", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
-                      >
-                        ATTENDING EVENTS
+                      {/* Events */}
+                      <p style={{ color: "#7A5800", fontFamily: "'Lato', sans-serif",
+                        fontWeight: 600, fontSize: "0.62rem", letterSpacing: "0.18em",
+                        textTransform: "uppercase", marginBottom: "0.6rem" }}>
+                        ATTENDING EVENTS *
                       </p>
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                         {events.map((ev) => (
-                          <label
-                            key={ev.key}
+                          <label key={ev.key}
                             className="flex items-center gap-2 cursor-pointer p-2"
                             style={{
-                              border: `1px solid ${guest[ev.key] ? ev.color + "66" : "rgba(201,168,76,0.1)"}`,
-                              background: guest[ev.key] ? ev.color + "15" : "transparent",
-                              transition: "all 0.2s",
-                            }}
-                          >
-                            <input
-                              type="checkbox"
-                              checked={guest[ev.key]}
+                              border: `1.5px solid ${guest[ev.key] ? ev.color : "rgba(184,134,11,0.18)"}`,
+                              borderRadius: "3px",
+                              background: guest[ev.key] ? eventBg[ev.key] : "#FFFFFF",
+                              transition: "all 0.15s",
+                            }}>
+                            <input type="checkbox" checked={guest[ev.key]}
                               onChange={(e) => updateGuest(i, ev.key, e.target.checked)}
-                              className="sr-only"
-                            />
-                            <span
-                              className="w-4 h-4 flex items-center justify-center text-xs"
-                              style={{
-                                border: `1px solid ${ev.color}`,
+                              className="sr-only" />
+                            <span className="flex items-center justify-center"
+                              style={{ width: "1rem", height: "1rem", flexShrink: 0,
+                                border: `1.5px solid ${ev.color}`,
+                                borderRadius: "2px",
                                 background: guest[ev.key] ? ev.color : "transparent",
-                                color: "#fff",
-                                flexShrink: 0,
-                              }}
-                            >
+                                color: "#FFFFFF", fontSize: "0.65rem", fontWeight: 700 }}>
                               {guest[ev.key] ? "✓" : ""}
                             </span>
-                            <span
-                              className="text-xs"
-                              style={{
-                                color: guest[ev.key] ? ev.color : "rgba(201,168,76,0.4)",
-                                fontFamily: "'Lato', sans-serif",
-                                fontWeight: 300,
-                              }}
-                            >
+                            <span style={{ color: guest[ev.key] ? ev.color : "#5C4A1A",
+                              fontFamily: "'Lato', sans-serif", fontWeight: guest[ev.key] ? 600 : 400,
+                              fontSize: "0.72rem" }}>
                               {ev.emoji} {ev.label}
                             </span>
                           </label>
@@ -424,86 +378,117 @@ export default function RSVPSection() {
                     </div>
                   ))}
                 </div>
+
+                {/* Add guest */}
+                <button type="button" onClick={addGuest}
+                  className="mt-4 w-full py-2.5 text-xs tracking-[0.2em]"
+                  style={{ border: "1.5px dashed rgba(184,134,11,0.35)",
+                    borderRadius: "3px", color: "#B8860B",
+                    background: "transparent", cursor: "pointer",
+                    fontFamily: "'Lato', sans-serif", fontWeight: 500,
+                    transition: "background 0.2s" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(184,134,11,0.05)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                >
+                  + ADD ANOTHER GUEST
+                </button>
               </div>
 
-              {/* Additional info */}
-              <div
-                className="p-6"
-                style={{ border: "1px solid rgba(201,168,76,0.2)", background: "rgba(201,168,76,0.04)" }}
-              >
-                <p
-                  className="text-xs tracking-[0.25em] mb-6"
-                  style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
-                >
+              {/* Extras */}
+              <div style={panelStyle}>
+                <p style={{ color: "#B8860B", fontFamily: "'Lato', sans-serif", fontWeight: 600,
+                  fontSize: "0.65rem", letterSpacing: "0.26em", textTransform: "uppercase",
+                  marginBottom: "1.25rem" }}>
                   A FEW MORE THINGS
                 </p>
                 <div className="space-y-4">
                   <div>
                     <label style={labelStyle}>DIETARY REQUIREMENTS</label>
-                    <input
-                      type="text"
-                      placeholder="e.g. Vegetarian, Vegan, Nut allergy, Jain food..."
+                    <input type="text"
+                      placeholder="e.g. Vegetarian, Vegan, Nut allergy, Jain food…"
                       value={form.dietary}
                       onChange={(e) => setForm((p) => ({ ...p, dietary: e.target.value }))}
                       style={inputStyle}
+                      onFocus={(e) => { e.target.style.borderColor="#B8860B"; e.target.style.boxShadow="0 0 0 3px rgba(184,134,11,0.12)"; }}
+                      onBlur={(e)  => { e.target.style.borderColor="#D4B87A"; e.target.style.boxShadow="none"; }}
                     />
                   </div>
                   <div>
                     <label style={labelStyle}>🎵 SONG REQUEST FOR SANGEETH</label>
-                    <input
-                      type="text"
-                      placeholder="What should we play for you?"
+                    <input type="text" placeholder="What should we play for you?"
                       value={form.songRequest}
                       onChange={(e) => setForm((p) => ({ ...p, songRequest: e.target.value }))}
                       style={inputStyle}
+                      onFocus={(e) => { e.target.style.borderColor="#B8860B"; e.target.style.boxShadow="0 0 0 3px rgba(184,134,11,0.12)"; }}
+                      onBlur={(e)  => { e.target.style.borderColor="#D4B87A"; e.target.style.boxShadow="none"; }}
                     />
                   </div>
                   <div>
                     <label style={labelStyle}>💌 MESSAGE FOR THE COUPLE (OPTIONAL)</label>
-                    <textarea
-                      rows={4}
-                      placeholder="Share a wish, memory, or message..."
+                    <textarea rows={4} placeholder="Share a wish, memory, or message…"
                       value={form.message}
                       onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
                       style={{ ...inputStyle, resize: "vertical" }}
+                      onFocus={(e) => { e.target.style.borderColor="#B8860B"; e.target.style.boxShadow="0 0 0 3px rgba(184,134,11,0.12)"; }}
+                      onBlur={(e)  => { e.target.style.borderColor="#D4B87A"; e.target.style.boxShadow="none"; }}
                     />
                   </div>
                 </div>
               </div>
 
               {/* Submit */}
-              <div className="text-center">
+              <div className="text-center pt-2">
                 {validationError && (
-                  <p
-                    className="mb-4 text-sm"
-                    style={{ color: "#E88", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
-                  >
-                    {validationError}
+                  <p className="mb-4 text-sm"
+                    style={{ color: "#B91C1C", fontFamily: "'Lato', sans-serif",
+                      fontWeight: 500, background: "#FEF2F2", border: "1px solid #FECACA",
+                      borderRadius: "4px", padding: "0.6rem 1rem", display: "inline-block" }}>
+                    ⚠ {validationError}
                   </p>
                 )}
+
                 <motion.button
                   type="submit"
                   disabled={submitState === "submitting"}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="px-12 py-4 text-sm tracking-[0.25em] transition-all duration-300"
+                  whileHover={submitState !== "submitting" ? { scale: 1.02, y: -2 } : {}}
+                  whileTap={submitState !== "submitting" ? { scale: 0.98 } : {}}
                   style={{
-                    background: submitState === "submitting" ? "rgba(201,168,76,0.3)" : "#C9A84C",
-                    color: "#0A0A0A",
-                    fontFamily: "'Lato', sans-serif",
-                    fontWeight: 400,
-                    border: "none",
-                    cursor: submitState === "submitting" ? "wait" : "pointer",
+                    background:     submitState === "submitting" ? "#D4B87A" : "#B8860B",
+                    color:          "#FFFFFF",
+                    border:         "none",
+                    borderRadius:   "3px",
+                    padding:        "1rem 3rem",
+                    fontFamily:     "'Lato', sans-serif",
+                    fontWeight:     700,
+                    fontSize:       "0.78rem",
+                    letterSpacing:  "0.3em",
+                    textTransform:  "uppercase",
+                    cursor:         submitState === "submitting" ? "wait" : "pointer",
+                    boxShadow:      submitState === "submitting"
+                      ? "none"
+                      : "0 4px 16px rgba(184,134,11,0.35)",
+                    transition:     "background 0.2s, box-shadow 0.2s",
+                    minWidth:       "240px",
                   }}
                 >
-                  {submitState === "submitting" ? "SENDING..." : "SEND RSVP ♾"}
+                  {submitState === "submitting" ? "SENDING…" : "SEND RSVP  ♾"}
                 </motion.button>
+
                 {submitState === "error" && (
-                  <p className="mt-4 text-sm" style={{ color: "#E57373", fontFamily: "'Cormorant Garamond', serif" }}>
+                  <p className="mt-4 text-sm"
+                    style={{ color: "#B91C1C", fontFamily: "'Cormorant Garamond', serif",
+                      fontStyle: "italic" }}>
                     Something went wrong. Please try again or email us directly.
                   </p>
                 )}
+
+                <p className="mt-4" style={{ color: "#8B7340",
+                  fontFamily: "'Lato', sans-serif", fontSize: "0.68rem",
+                  letterSpacing: "0.1em" }}>
+                  We&apos;ll send a confirmation email once received.
+                </p>
               </div>
+
             </motion.form>
           )}
         </AnimatePresence>
