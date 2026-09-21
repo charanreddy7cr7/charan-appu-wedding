@@ -160,11 +160,11 @@ export default function RSVPSection() {
     <section
       id="rsvp"
       className="py-20 px-4 sm:px-6 relative"
-      style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #F0F7F0 50%, #E3F0E3 100%)" }}
+      style={{ background: "linear-gradient(180deg, #04372A 0%, #06543E 50%, #043326 100%)" }}
     >
       {/* Watermark dot pattern */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: "radial-gradient(circle, rgba(46,125,50,0.06) 1px, transparent 1px)",
+        backgroundImage: "radial-gradient(circle, rgba(201,168,76,0.08) 1px, transparent 1px)",
         backgroundSize: "48px 48px",
       }} />
 
@@ -178,7 +178,7 @@ export default function RSVPSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <p style={{ color: "#B8860B", fontFamily: "'Lato', sans-serif", fontWeight: 600,
+          <p style={{ color: "#E8C86A", fontFamily: "'Lato', sans-serif", fontWeight: 600,
             fontSize: "0.65rem", letterSpacing: "0.32em", textTransform: "uppercase",
             marginBottom: "1rem" }}>
             APOORVA GONEGARI &amp; CHARAN REDDY JAIDI
@@ -192,19 +192,19 @@ export default function RSVPSection() {
           <div className="section-divider mt-5 mb-6" />
 
           {/* New prompt text */}
-          <p style={{ color: "#2C2000", fontFamily: "'Cormorant Garamond', serif",
+          <p style={{ color: "#F5EFE0", fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(1.15rem, 2.8vw, 1.35rem)", fontWeight: 400,
             lineHeight: 1.7, maxWidth: "480px", margin: "0 auto" }}>
             Will you be joining us in celebration?
             <br />
-            <em style={{ color: "#7A5800" }}>
+            <em style={{ color: "#E8C86A" }}>
               Come and bless us — your presence makes us more happy.
             </em>
           </p>
 
-          <p style={{ color: "#8B7340", fontFamily: "'Lato', sans-serif", fontWeight: 400,
+          <p style={{ color: "#C9B98A", fontFamily: "'Lato', sans-serif", fontWeight: 400,
             fontSize: "0.75rem", letterSpacing: "0.1em", marginTop: "1rem" }}>
-            Please respond by <strong style={{ color: "#7A5800" }}>October 1, 2026</strong>
+            Please respond by <strong style={{ color: "#E8C86A" }}>October 1, 2026</strong>
           </p>
         </motion.div>
 
