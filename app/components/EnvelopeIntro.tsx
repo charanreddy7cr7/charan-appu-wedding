@@ -190,9 +190,9 @@ export default function EnvelopeIntro() {
                 }}
               />
 
-              {/* Lord Ganapathi — auspicious beginning */}
-              <div style={{ filter: "drop-shadow(0 0 22px rgba(255,179,0,0.45))" }}>
-                <GanapathiIcon size={150} color="#FFB300" accent="#E65100" />
+              {/* Lord Ganapathi — divine, auspicious beginning */}
+              <div style={{ filter: "drop-shadow(0 0 26px rgba(255,179,0,0.5))" }}>
+                <GanapathiIcon size={180} color="#FFB300" accent="#E65100" />
               </div>
             </motion.div>
 
@@ -248,7 +248,7 @@ export default function EnvelopeIntro() {
                 lineHeight: 1.2,
               }}
             >
-              Apoorva Reddy Gonegari Apoorva &amp; Charanamp; Charan Reddy Jaidi
+              Apoorva &amp; Charan
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
