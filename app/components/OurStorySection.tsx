@@ -22,7 +22,7 @@ const chapters = [
     number: "03",
     title: "The Proposal",
     year: "2025",
-    body: "Under the open sky, surrounded by the warmth of everything we love, Charan asked the question that made time stand still. Approva said yes — and our forever officially began.",
+    body: "Under the open sky, surrounded by the warmth of everything we love, Charan asked the question that made time stand still. Apoorva said yes — and our forever officially began.",
     icon: "💍",
   },
   {

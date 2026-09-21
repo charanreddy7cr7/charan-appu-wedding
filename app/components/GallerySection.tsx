@@ -5,13 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // Add your photos to /public/gallery/ and update placeholder: false + src here.
 const galleryItems = [
-  { id: 1, alt: "Approva & Charan", src: "", placeholder: true, aspect: "portrait" },
-  { id: 2, alt: "Approva & Charan", src: "", placeholder: true, aspect: "landscape" },
-  { id: 3, alt: "Approva & Charan", src: "", placeholder: true, aspect: "portrait" },
-  { id: 4, alt: "Approva & Charan", src: "", placeholder: true, aspect: "portrait" },
-  { id: 5, alt: "Approva & Charan", src: "", placeholder: true, aspect: "landscape" },
-  { id: 6, alt: "Approva & Charan", src: "", placeholder: true, aspect: "portrait" },
-  { id: 7, alt: "Approva & Charan", src: "", placeholder: true, aspect: "landscape" },
+  { id: 1, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "portrait" },
+  { id: 2, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "landscape" },
+  { id: 3, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "portrait" },
+  { id: 4, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "portrait" },
+  { id: 5, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "landscape" },
+  { id: 6, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "portrait" },
+  { id: 7, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "landscape" },
 ];
 
 const gradients = [

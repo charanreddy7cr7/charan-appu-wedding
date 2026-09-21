@@ -312,7 +312,7 @@ export default function EnvelopeIntro() {
                 lineHeight: 1.2,
               }}
             >
-              Approva &amp; Charan
+              Apoorva &amp; Charan
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}

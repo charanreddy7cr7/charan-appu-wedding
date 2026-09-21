@@ -61,7 +61,7 @@ const events: Event[] = [
     venueAddress: "TBD",
     mapQuery: "Texas",
     description:
-      "The official exchange of rings as both families come together to bless Charan and Approva. A beautiful afternoon ceremony followed by lunch and celebration.",
+      "The official exchange of rings as both families come together to bless Charan Reddy Jaidi and Apoorva Gonegari. A beautiful afternoon ceremony followed by lunch and celebration.",
     dress: "Semi-formal Indian wear · Bright, festive colours welcome",
     details: [
       "Ring exchange ceremony",
@@ -154,7 +154,7 @@ const events: Event[] = [
     venueAddress: "TBD",
     mapQuery: "Texas",
     description:
-      "The main event. In the presence of our families and God, Charan and Approva exchange vows and begin their forever. A traditional Telugu ceremony followed by a reception.",
+      "The main event. In the presence of our families and God, Charan Reddy Jaidi and Apoorva Gonegari exchange vows and begin their forever. A traditional Telugu ceremony followed by a reception.",
     dress: "Formal Indian or Western attire · Ivory, gold, pastels welcome",
     details: [
       "Traditional Telugu wedding ceremony",

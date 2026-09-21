@@ -244,7 +244,7 @@ export default function InvitationHero() {
           joyfully invite you to celebrate
         </motion.p>
 
-        {/* Approva name */}
+        {/* Apoorva name */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: revealed ? 1 : 0, y: revealed ? 0 : 20 }}
@@ -259,7 +259,7 @@ export default function InvitationHero() {
             textShadow: "0 2px 8px rgba(184,134,11,0.2)",
           }}
         >
-          Approva
+          Apoorva Gonegari
         </motion.h1>
 
         {/* Weds */}

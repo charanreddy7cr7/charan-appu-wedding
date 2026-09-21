@@ -101,7 +101,7 @@ export default function Footer() {
             className="italic text-xl"
             style={{ color: "#3D2B00", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
           >
-            Approva &amp; Charan
+            Apoorva &amp; Charan
           </p>
           <p
             className="mt-2 italic"
@@ -166,7 +166,7 @@ export default function Footer() {
             letterSpacing: "0.1em",
           }}
         >
-          Made with ❤️ for Approva &amp; Charan · 2026
+          Made with ❤️ for Apoorva &amp; Charan · 2026
         </motion.p>
       </div>
     </footer>

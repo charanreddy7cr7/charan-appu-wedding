@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Approva ♾ Charan — November 2026",
+  title: "Apoorva ♾ Charan — November 2026",
   description: "Join us as we celebrate the beginning of forever. Sangeeth · Engagement · Mehendi · Haldi · Wedding — November 18–21, 2026.",
   openGraph: {
-    title: "Approva ♾ Charan — November 2026",
+    title: "Apoorva ♾ Charan — November 2026",
     description: "You are invited to our wedding celebration.",
     type: "website",
   },
