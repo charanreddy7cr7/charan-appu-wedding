@@ -100,7 +100,7 @@ export default function DressCodeSection() {
             style={{
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(2rem, 5vw, 3.5rem)",
-              color: "#FBF7EC",
+              color: "#2B1D0E",
               fontWeight: 400,
               letterSpacing: "0.08em",
             }}
@@ -113,7 +113,7 @@ export default function DressCodeSection() {
           </div>
           <p
             className="italic text-lg max-w-xl mx-auto"
-            style={{ color: "#C9B98A", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+            style={{ color: "#7A5A2E", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
           >
             Each event has its own vibe — dress to match the moment.
           </p>
@@ -129,7 +129,7 @@ export default function DressCodeSection() {
               viewport={{ once: true, margin: "0px 0px 200px 0px" }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
               className="p-8 relative gold-border"
-              style={{ background: "rgba(71, 41, 27, 0.55)" }}
+              style={{ background: "rgba(255, 253, 247, 0.85)" }}
             >
               <span className="absolute top-2 left-2 w-3 h-3 border-t border-l" style={{ borderColor: "#C9A84C" }} />
               <span className="absolute top-2 right-2 w-3 h-3 border-t border-r" style={{ borderColor: "#C9A84C" }} />
@@ -141,7 +141,7 @@ export default function DressCodeSection() {
                   style={{
                     fontFamily: "'Cinzel', serif",
                     fontSize: "1rem",
-                    color: "#FBF7EC",
+                    color: "#2B1D0E",
                     fontWeight: 500,
                     letterSpacing: "0.08em",
                   }}
@@ -164,7 +164,7 @@ export default function DressCodeSection() {
 
               <p
                 className="mb-5 leading-relaxed"
-                style={{ color: "#EAE3D2", fontFamily: "'Cormorant Garamond', serif", fontSize: "1rem" }}
+                style={{ color: "#4A3728", fontFamily: "'Cormorant Garamond', serif", fontSize: "1rem" }}
               >
                 {dc.instruction}
               </p>

@@ -8,35 +8,35 @@
   --gold-light:    #E8D5A3;   /* soft gold for dividers / decorative */
   --gold-dark:     #7A5800;   /* darkest gold for headings on white */
 
-  /* Background scale — deep chocolate brown theme */
-  --bg-base:       #2B1810;   /* deep chocolate base */
-  --bg-section:    #3A2117;   /* main section bg */
-  --bg-section-alt:#22130C;   /* alternating section bg (darker) */
-  --bg-card:       #47291B;   /* card / form panel bg */
-  --bg-input:      #FFFFFF;   /* input fields stay white for readability */
+  /* Background scale — warm ivory cream theme */
+  --bg-base:       #FBF6EC;   /* warm ivory base */
+  --bg-section:    #F7F0E1;   /* main section bg */
+  --bg-section-alt:#EFE6D2;   /* alternating section bg */
+  --bg-card:       #FFFDF7;   /* card / form panel bg */
+  --bg-input:      #FFFFFF;   /* input fields */
   --bg-hover:      #FFF8E8;   /* input focus / hover tint */
 
-  /* Text scale — light on chocolate */
-  --text-primary:  #FBF3E6;   /* warm cream — headings */
-  --text-body:     #EDE0D0;   /* soft beige — body copy */
-  --text-subtle:   #D2B48C;   /* tan/gold — labels, captions */
-  --text-muted:    #B39A80;   /* muted mocha — placeholders, footnotes */
+  /* Text scale — dark on ivory */
+  --text-primary:  #2B1D0E;   /* deep espresso — headings */
+  --text-body:     #4A3728;   /* warm brown — body copy */
+  --text-subtle:   #7A5A2E;   /* bronze — labels, captions */
+  --text-muted:    #9C8460;   /* muted tan — placeholders, footnotes */
 
   /* Borders */
-  --border:        rgba(201,168,76,0.28);   /* gold-tinted border */
-  --border-focus:  rgba(201,168,76,0.8);    /* focused input border */
-  --border-card:   rgba(201,168,76,0.22);   /* card border */
+  --border:        rgba(184,134,11,0.25);   /* gold-tinted border */
+  --border-focus:  rgba(184,134,11,0.75);   /* focused input border */
+  --border-card:   rgba(184,134,11,0.2);    /* card border */
 
   /* Semantic */
-  --error:         #FCA5A5;
-  --success:       #86EFAC;
+  --error:         #B91C1C;
+  --success:       #15803D;
 
-  /* Legacy aliases → now chocolate so old references follow the theme */
+  /* Legacy aliases → warm ivory cream */
   --gold-old:      #C9A84C;
-  --ivory:         #3A2117;
-  --ivory-dark:    #22130C;
-  --charcoal:      #FBF3E6;
-  --off-white:     #47291B;
+  --ivory:         #FBF6EC;
+  --ivory-dark:    #EFE6D2;
+  --charcoal:      #2B1D0E;
+  --off-white:     #FFFDF7;
 
   /* Event palettes (event cards stay colorful) */
   --mehendi-primary:   #2D6A4F;

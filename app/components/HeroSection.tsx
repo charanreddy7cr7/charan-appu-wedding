@@ -39,7 +39,7 @@ export default function HeroSection() {
     <section
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #2B1810 0%, #3A2117 100%)" }}
+      style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FBF6EC 100%)" }}
     >
       {/* Gold particles */}
       <AnimatePresence>

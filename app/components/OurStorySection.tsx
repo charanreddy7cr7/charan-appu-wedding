@@ -82,7 +82,7 @@ export default function OurStorySection() {
             style={{
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(2rem, 5vw, 3.5rem)",
-              color: "#FBF7EC",
+              color: "#2B1D0E",
               fontWeight: 400,
               letterSpacing: "0.08em",
             }}
@@ -95,7 +95,7 @@ export default function OurStorySection() {
           </div>
           <p
             className="mt-6 max-w-xl mx-auto italic text-lg leading-relaxed"
-            style={{ color: "#C9B98A", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+            style={{ color: "#7A5A2E", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
           >
             Every great love story deserves to be told.
           </p>
@@ -126,7 +126,7 @@ export default function OurStorySection() {
                   <div
                     className="p-8 relative gold-border"
                     style={{
-                      background: "rgba(71, 41, 27, 0.55)",
+                      background: "rgba(255, 253, 247, 0.85)",
                       backdropFilter: "blur(10px)",
                     }}
                   >
@@ -150,7 +150,7 @@ export default function OurStorySection() {
                       style={{
                         fontFamily: "'Cinzel', serif",
                         fontSize: "1.3rem",
-                        color: "#FBF7EC",
+                        color: "#2B1D0E",
                         fontWeight: 400,
                         letterSpacing: "0.05em",
                       }}
@@ -160,7 +160,7 @@ export default function OurStorySection() {
                     <p
                       className="leading-relaxed"
                       style={{
-                        color: "#EAE3D2",
+                        color: "#4A3728",
                         fontFamily: "'Cormorant Garamond', serif",
                         fontSize: "1.05rem",
                         fontWeight: 400,
@@ -176,7 +176,7 @@ export default function OurStorySection() {
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center"
                     style={{
-                      background: "#2B1810",
+                      background: "#FBF6EC",
                       border: "2px solid #C9A84C",
                       boxShadow: "0 0 20px rgba(201,168,76,0.3)",
                     }}

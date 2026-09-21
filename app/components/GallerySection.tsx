@@ -56,7 +56,7 @@ export default function GallerySection() {
             style={{
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(2rem, 5vw, 3.5rem)",
-              color: "#FBF7EC",
+              color: "#2B1D0E",
               fontWeight: 400,
               letterSpacing: "0.08em",
             }}
@@ -66,7 +66,7 @@ export default function GallerySection() {
           <div className="section-divider mt-6 mb-6" />
           <p
             className="italic text-lg"
-            style={{ color: "#C9B98A", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+            style={{ color: "#7A5A2E", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
           >
             A few of our favourite moments — with more to come.
           </p>
