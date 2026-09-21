@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer
       className="relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #F0E8D8 0%, #FAF6EE 100%)" }}
+      style={{ background: "linear-gradient(180deg, #043326 0%, #04372A 100%)" }}
     >
       {/* Top border */}
       <div

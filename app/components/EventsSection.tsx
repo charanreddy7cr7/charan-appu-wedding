@@ -149,7 +149,7 @@ export default function EventsSection() {
     <section
       id="events"
       className="py-16 px-4 sm:px-6 relative"
-      style={{ background: "#FAF6EE" }}
+      style={{ background: "#05452F" }}
     >
       {/* Header */}
       <motion.div
@@ -161,7 +161,7 @@ export default function EventsSection() {
       >
         <p
           className="tracking-[0.3em] text-xs mb-4"
-          style={{ color: "#B8860B", fontFamily: "'Lato', sans-serif", fontWeight: 600 }}
+          style={{ color: "#D4AF37", fontFamily: "'Lato', sans-serif", fontWeight: 600 }}
         >
           6 CELEBRATIONS · NOVEMBER 19–22, 2026
         </p>
@@ -177,7 +177,7 @@ export default function EventsSection() {
           The Wedding Festival
         </h2>
         <div className="section-divider mt-5 mb-5" />
-        <p style={{ color: "#5C4A1A", fontFamily: "'Cormorant Garamond', serif",
+        <p style={{ color: "#C9B98A", fontFamily: "'Cormorant Garamond', serif",
           fontStyle: "italic", fontSize: "1.1rem", fontWeight: 400 }}>
           Apoorva Reddy Gonegari &amp; Charan Reddy Jaidi
         </p>
@@ -324,10 +324,10 @@ export default function EventsSection() {
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.7, delay: 0.3 }}
         className="max-w-2xl mx-auto mt-14"
-        style={{ background: "#FFFDF7", border: "1.5px solid rgba(184,134,11,0.2)",
+        style={{ background: "rgba(10, 81, 56, 0.55)", border: "1.5px solid rgba(201,168,76,0.25)",
           borderRadius: "6px", padding: "1.5rem 2rem" }}
       >
-        <p style={{ color: "#B8860B", fontFamily: "'Lato', sans-serif", fontWeight: 700,
+        <p style={{ color: "#D4AF37", fontFamily: "'Lato', sans-serif", fontWeight: 700,
           fontSize: "0.65rem", letterSpacing: "0.26em", textTransform: "uppercase",
           marginBottom: "1rem", textAlign: "center" }}>
           AT A GLANCE
@@ -340,15 +340,15 @@ export default function EventsSection() {
             { day: "Sat, Nov 22", event: "Reception 🎉", time: "6 PM – 12 AM" },
           ].map((row) => (
             <div key={row.day} className="flex items-center justify-between gap-4 flex-wrap">
-              <span style={{ color: "#B8860B", fontFamily: "'Lato', sans-serif",
+              <span style={{ color: "#D4AF37", fontFamily: "'Lato', sans-serif",
                 fontWeight: 600, fontSize: "0.75rem", minWidth: "110px" }}>
                 {row.day}
               </span>
-              <span style={{ color: "#2C2000", fontFamily: "'Cormorant Garamond', serif",
+              <span style={{ color: "#EAE3D2", fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "1rem", flex: 1 }}>
                 {row.event}
               </span>
-              <span style={{ color: "#5C4A1A", fontFamily: "'Lato', sans-serif",
+              <span style={{ color: "#C9B98A", fontFamily: "'Lato', sans-serif",
                 fontSize: "0.75rem" }}>
                 {row.time}
               </span>

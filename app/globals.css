@@ -8,35 +8,35 @@
   --gold-light:    #E8D5A3;   /* soft gold for dividers / decorative */
   --gold-dark:     #7A5800;   /* darkest gold for headings on white */
 
-  /* Background scale — all warm ivory/white */
-  --bg-base:       #FFFFFF;
-  --bg-section:    #FAF6EE;   /* main section bg */
-  --bg-section-alt:#F4EDE0;   /* alternating section bg */
-  --bg-card:       #FDF9F2;   /* card / form panel bg */
-  --bg-input:      #FFFFFF;   /* input fields */
+  /* Background scale — deep emerald green theme */
+  --bg-base:       #04372A;   /* deep emerald base */
+  --bg-section:    #05452F;   /* main section bg */
+  --bg-section-alt:#043326;   /* alternating section bg (darker) */
+  --bg-card:       #0A5138;   /* card / form panel bg */
+  --bg-input:      #FFFFFF;   /* input fields stay white for readability */
   --bg-hover:      #FFF8E8;   /* input focus / hover tint */
 
-  /* Text scale — dark on light */
-  --text-primary:  #1A1200;   /* near-black warm — headings */
-  --text-body:     #2C2000;   /* dark brown — body copy */
-  --text-subtle:   #5C4A1A;   /* muted — labels, captions */
-  --text-muted:    #8B7340;   /* very muted — placeholders, footnotes */
+  /* Text scale — light on emerald */
+  --text-primary:  #FBF7EC;   /* warm cream — headings */
+  --text-body:     #EAE3D2;   /* soft cream — body copy */
+  --text-subtle:   #C9B98A;   /* muted gold — labels, captions */
+  --text-muted:    #9FB3A2;   /* muted green-grey — placeholders, footnotes */
 
   /* Borders */
-  --border:        rgba(184,134,11,0.22);   /* standard gold-tinted border */
-  --border-focus:  rgba(184,134,11,0.7);    /* focused input border */
-  --border-card:   rgba(184,134,11,0.18);   /* card border */
+  --border:        rgba(201,168,76,0.28);   /* gold-tinted border */
+  --border-focus:  rgba(201,168,76,0.8);    /* focused input border */
+  --border-card:   rgba(201,168,76,0.22);   /* card border */
 
   /* Semantic */
-  --error:         #B91C1C;
-  --success:       #15803D;
+  --error:         #FCA5A5;
+  --success:       #86EFAC;
 
-  /* Legacy aliases kept for backward compat */
+  /* Legacy aliases → now emerald so old references follow the theme */
   --gold-old:      #C9A84C;
-  --ivory:         #FAF6EE;
-  --ivory-dark:    #F0E8D8;
-  --charcoal:      #1A1A1A;
-  --off-white:     #FDFAF5;
+  --ivory:         #05452F;
+  --ivory-dark:    #043326;
+  --charcoal:      #FBF7EC;
+  --off-white:     #0A5138;
 
   /* Event palettes (event cards stay colorful) */
   --mehendi-primary:   #2D6A4F;
