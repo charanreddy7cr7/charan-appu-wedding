@@ -149,7 +149,7 @@ export default function EventsSection() {
     <section
       id="events"
       className="py-16 px-4 sm:px-6 relative"
-      style={{ background: "#35133F" }}
+      style={{ background: "#3A2117" }}
     >
       {/* Header */}
       <motion.div
@@ -324,7 +324,7 @@ export default function EventsSection() {
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.7, delay: 0.3 }}
         className="max-w-2xl mx-auto mt-14"
-        style={{ background: "rgba(65, 24, 77, 0.55)", border: "1.5px solid rgba(201,168,76,0.25)",
+        style={{ background: "rgba(71, 41, 27, 0.55)", border: "1.5px solid rgba(201,168,76,0.25)",
           borderRadius: "6px", padding: "1.5rem 2rem" }}
       >
         <p style={{ color: "#D4AF37", fontFamily: "'Lato', sans-serif", fontWeight: 700,

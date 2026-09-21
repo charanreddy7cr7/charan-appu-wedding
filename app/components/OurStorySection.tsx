@@ -126,7 +126,7 @@ export default function OurStorySection() {
                   <div
                     className="p-8 relative gold-border"
                     style={{
-                      background: "rgba(65, 24, 77, 0.55)",
+                      background: "rgba(71, 41, 27, 0.55)",
                       backdropFilter: "blur(10px)",
                     }}
                   >
@@ -176,7 +176,7 @@ export default function OurStorySection() {
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center"
                     style={{
-                      background: "#2A0E33",
+                      background: "#2B1810",
                       border: "2px solid #C9A84C",
                       boxShadow: "0 0 20px rgba(201,168,76,0.3)",
                     }}

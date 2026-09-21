@@ -55,7 +55,7 @@ export default function TravelSection() {
     <section
       id="travel"
       className="py-16 px-6 relative"
-      style={{ background: "linear-gradient(180deg, #35133F 0%, #230B2B 100%)" }}
+      style={{ background: "linear-gradient(180deg, #3A2117 0%, #22130C 100%)" }}
     >
       {/* Dot pattern */}
       <div

@@ -8,19 +8,19 @@
   --gold-light:    #E8D5A3;   /* soft gold for dividers / decorative */
   --gold-dark:     #7A5800;   /* darkest gold for headings on white */
 
-  /* Background scale — deep plum theme */
-  --bg-base:       #2A0E33;   /* deep plum base */
-  --bg-section:    #35133F;   /* main section bg */
-  --bg-section-alt:#230B2B;   /* alternating section bg (darker) */
-  --bg-card:       #41184D;   /* card / form panel bg */
+  /* Background scale — deep chocolate brown theme */
+  --bg-base:       #2B1810;   /* deep chocolate base */
+  --bg-section:    #3A2117;   /* main section bg */
+  --bg-section-alt:#22130C;   /* alternating section bg (darker) */
+  --bg-card:       #47291B;   /* card / form panel bg */
   --bg-input:      #FFFFFF;   /* input fields stay white for readability */
   --bg-hover:      #FFF8E8;   /* input focus / hover tint */
 
-  /* Text scale — light on plum */
-  --text-primary:  #FBF7EC;   /* warm cream — headings */
-  --text-body:     #EAE0EC;   /* soft lilac-cream — body copy */
-  --text-subtle:   #C9B98A;   /* muted gold — labels, captions */
-  --text-muted:    #B39FC0;   /* muted lilac — placeholders, footnotes */
+  /* Text scale — light on chocolate */
+  --text-primary:  #FBF3E6;   /* warm cream — headings */
+  --text-body:     #EDE0D0;   /* soft beige — body copy */
+  --text-subtle:   #D2B48C;   /* tan/gold — labels, captions */
+  --text-muted:    #B39A80;   /* muted mocha — placeholders, footnotes */
 
   /* Borders */
   --border:        rgba(201,168,76,0.28);   /* gold-tinted border */
@@ -31,12 +31,12 @@
   --error:         #FCA5A5;
   --success:       #86EFAC;
 
-  /* Legacy aliases → now plum so old references follow the theme */
+  /* Legacy aliases → now chocolate so old references follow the theme */
   --gold-old:      #C9A84C;
-  --ivory:         #35133F;
-  --ivory-dark:    #230B2B;
-  --charcoal:      #FBF7EC;
-  --off-white:     #41184D;
+  --ivory:         #3A2117;
+  --ivory-dark:    #22130C;
+  --charcoal:      #FBF3E6;
+  --off-white:     #47291B;
 
   /* Event palettes (event cards stay colorful) */
   --mehendi-primary:   #2D6A4F;

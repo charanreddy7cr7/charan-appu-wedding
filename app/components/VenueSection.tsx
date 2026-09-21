@@ -31,7 +31,7 @@ export default function VenueSection() {
     <section
       id="venue"
       className="py-16 px-6 relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #35133F 0%, #230B2B 100%)" }}
+      style={{ background: "linear-gradient(180deg, #3A2117 0%, #22130C 100%)" }}
     >
       {/* Dot pattern */}
       <div
@@ -163,7 +163,7 @@ export default function VenueSection() {
           className="w-full overflow-hidden"
           style={{
             height: "380px",
-            background: "#230B2B",
+            background: "#22130C",
             border: "1px solid rgba(201,168,76,0.25)",
           }}
         >

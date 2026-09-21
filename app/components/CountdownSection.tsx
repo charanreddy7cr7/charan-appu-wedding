@@ -91,7 +91,7 @@ export default function CountdownSection() {
     <section
       id="countdown"
       className="py-16 px-6 relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #35133F 0%, #230B2B 100%)" }}
+      style={{ background: "linear-gradient(180deg, #3A2117 0%, #22130C 100%)" }}
     >
       {/* Subtle background pattern */}
       <div
