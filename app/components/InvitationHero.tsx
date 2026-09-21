@@ -297,7 +297,7 @@ export default function InvitationHero() {
             textShadow: "0 2px 8px rgba(184,134,11,0.2)",
           }}
         >
-          Charan
+          Charan Reddy Jaidi
         </motion.h1>
 
         {/* Lotus ornament */}

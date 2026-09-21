@@ -139,6 +139,9 @@ def submit_rsvp(event: dict) -> dict:
     if not guests:
         return respond(400, {"error": "At least one guest is required"})
 
+    # Only count attending guests for event totals
+    attending_guests = [g for g in guests if g.get("attending") != "declines"]
+
     # Build RSVP record
     rsvp_id = str(uuid.uuid4())
     submitted_at = datetime.now(timezone.utc).isoformat()
@@ -153,16 +156,19 @@ def submit_rsvp(event: dict) -> dict:
         "dietary": body.get("dietary", ""),
         "songRequest": body.get("songRequest", ""),
         "message": body.get("message", ""),
-        "guestCount": sum(int(g.get("adults", 0)) + int(g.get("kids", 0)) for g in guests),
-        "adultsCount": sum(int(g.get("adults", 0)) for g in guests),
-        "kidsCount": sum(int(g.get("kids", 0)) for g in guests),
+        "guestCount": sum(int(g.get("adults", 0)) + int(g.get("kids", 0)) for g in attending_guests),
+        "adultsCount": sum(int(g.get("adults", 0)) for g in attending_guests),
+        "kidsCount": sum(int(g.get("kids", 0)) for g in attending_guests),
+        "totalInvited": len(guests),
+        "totalAttending": len(attending_guests),
+        "totalDeclining": len(guests) - len(attending_guests),
         "events": {
-            "sangeeth": sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in guests if g.get("sangeeth")),
-            "engagement": sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in guests if g.get("engagement")),
-            "mehendi": sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in guests if g.get("mehendi")),
-            "haldi": sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in guests if g.get("haldi")),
-            "prewedding": sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in guests if g.get("prewedding")),
-            "wedding": sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in guests if g.get("wedding")),
+            "sangeeth":    sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("sangeeth")),
+            "engagement":  sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("engagement")),
+            "mehendi":     sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("mehendi")),
+            "haldi":       sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("haldi")),
+            "prewedding":  sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("prewedding")),
+            "wedding":     sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("wedding")),
         }
     }
 
