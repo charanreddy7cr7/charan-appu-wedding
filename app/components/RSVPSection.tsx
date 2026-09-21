@@ -160,7 +160,7 @@ export default function RSVPSection() {
     <section
       id="rsvp"
       className="py-20 px-4 sm:px-6 relative"
-      style={{ background: "linear-gradient(180deg, #04372A 0%, #06543E 50%, #043326 100%)" }}
+      style={{ background: "linear-gradient(180deg, #2A0E33 0%, #41184D 50%, #230B2B 100%)" }}
     >
       {/* Watermark dot pattern */}
       <div className="absolute inset-0 pointer-events-none" style={{
