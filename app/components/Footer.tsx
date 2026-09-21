@@ -60,7 +60,7 @@ export default function Footer() {
           className="tracking-[0.3em] text-xs mb-8"
           style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
         >
-          NOVEMBER 2026
+          NOVEMBER 19–22, 2026
         </motion.p>
 
         <motion.h2

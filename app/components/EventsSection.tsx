@@ -9,163 +9,138 @@ interface Event {
   subtitle: string;
   date: string;
   time: string;
-  venue: string;
   venueName: string;
   venueAddress: string;
   mapQuery: string;
   description: string;
   dress: string;
-  details: string[];
   bg: string;
   accent: string;
   accentLight: string;
   textColor: string;
+  textMuted: string;
 }
 
 const events: Event[] = [
   {
-    id: "sangeeth",
-    emoji: "✨",
-    name: "SANGEETH",
-    subtitle: "Dance · Music · Cocktails",
-    date: "Wednesday, November 18, 2026",
-    time: "Evening",
-    venue: "TBD",
-    venueName: "TBD",
-    venueAddress: "TBD",
+    id: "mehendi",
+    emoji: "🤚",
+    name: "MEHENDI",
+    subtitle: "Henna · Music · Evening Celebration",
+    date: "Wednesday, November 19, 2026",
+    time: "6:00 PM – 8:00 PM",
+    venueName: "[Venue Name TBD]",
+    venueAddress: "[Hall Name & Address]",
     mapQuery: "Texas",
     description:
-      "Kick off the wedding week with the biggest party night. Family dance-offs, musical performances, and an evening that will be talked about for years. Come ready to dance.",
-    dress: "Festive Indian wear · Black, navy preferred",
-    details: [
-      "Family & friends dance performances",
-      "Live music",
-      "Dinner & late night snacks",
-      "Open bar",
-      "DJ till late",
-    ],
-    bg: "linear-gradient(135deg, #020014 0%, #0D0D2B 40%, #1A1040 100%)",
-    accent: "#D4AF37",
-    accentLight: "rgba(212,175,55,0.12)",
-    textColor: "#E8E0F8",
+      "An evening of intricate henna art, joyful music, and togetherness as the wedding festivities begin. Watch skilled artists weave beautiful patterns on hands that are about to hold each other forever.",
+    dress: "Maroon & deep jewel tones encouraged",
+    // Maroon theme
+    bg: "linear-gradient(135deg, #2D0A0A 0%, #5C1A1A 50%, #7A1F1F 100%)",
+    accent: "#C0392B",
+    accentLight: "rgba(192,57,43,0.15)",
+    textColor: "#FFE8E8",
+    textMuted: "rgba(255,232,232,0.7)",
   },
   {
     id: "engagement",
     emoji: "💍",
     name: "ENGAGEMENT",
-    subtitle: "Rings · Blessings · Celebration",
-    date: "Thursday, November 19, 2026",
-    time: "Noon",
-    venue: "TBD",
-    venueName: "TBD",
-    venueAddress: "TBD",
+    subtitle: "Rings · Blessings · Family Celebration",
+    date: "Thursday, November 20, 2026",
+    time: "10:00 AM – 12:00 PM",
+    venueName: "[Venue Name TBD]",
+    venueAddress: "[Hall Name & Address]",
     mapQuery: "Texas",
     description:
-      "The official exchange of rings as both families come together to bless Charan Reddy Jaidi and Apoorva Gonegari. A beautiful afternoon ceremony followed by lunch and celebration.",
-    dress: "Semi-formal Indian wear · Bright, festive colours welcome",
-    details: [
-      "Ring exchange ceremony",
-      "Family blessings",
-      "Lunch served",
-      "Photos with family",
-    ],
-    bg: "linear-gradient(135deg, #1A0A2E 0%, #2D1B69 40%, #4C1D95 100%)",
-    accent: "#E879F9",
-    accentLight: "rgba(232,121,249,0.12)",
-    textColor: "#F5E6FF",
-  },
-  {
-    id: "mehendi",
-    emoji: "🤚",
-    name: "MEHENDI",
-    subtitle: "Music · Henna",
-    date: "Thursday, November 19, 2026",
-    time: "Evening",
-    venue: "TBD",
-    venueName: "TBD",
-    venueAddress: "TBD",
-    mapQuery: "Texas",
-    description:
-      "An evening of intricate henna, joyful music, and cocktails as the celebrations continue. Watch the artists weave beautiful stories on hands that are about to hold each other forever.",
-    dress: "Semi-formal · Parrot Green, Pink, or Yellow encouraged",
-    details: [
-      "Henna artists available all evening",
-      "Live dhol & DJ music",
-      "Cocktails & mocktails",
-      "Snacks & dinner served",
-    ],
-    bg: "linear-gradient(135deg, #1B4332 0%, #2D6A4F 40%, #40916C 100%)",
-    accent: "#E91E8C",
-    accentLight: "rgba(233,30,140,0.15)",
-    textColor: "#D8F3DC",
+      "The official exchange of rings as both families come together to bless Apoorva and Charan. A beautiful morning ceremony filled with joy, followed by a celebratory lunch.",
+    dress: "Red & festive Indian formals",
+    // Red theme
+    bg: "linear-gradient(135deg, #3B0000 0%, #7F0000 50%, #A50000 100%)",
+    accent: "#E53935",
+    accentLight: "rgba(229,57,53,0.15)",
+    textColor: "#FFE9E9",
+    textMuted: "rgba(255,233,233,0.7)",
   },
   {
     id: "haldi",
     emoji: "☀️",
     name: "HALDI",
-    subtitle: "Turmeric · Traditions · Cocktails",
-    date: "Friday, November 20, 2026",
-    time: "Noon",
-    venue: "TBD",
-    venueName: "TBD",
-    venueAddress: "TBD",
+    subtitle: "Turmeric · Traditions · Blessings",
+    date: "Thursday, November 20, 2026",
+    time: "1:00 PM – 4:00 PM",
+    venueName: "[Venue Name TBD]",
+    venueAddress: "[Hall Name & Address]",
     mapQuery: "Texas",
-    description: "",
-    dress: "Casual · Bright yellows & oranges preferred (wear clothes you don't mind getting yellow!)",
-    details: [
-      "Traditional Haldi ceremony",
-      "Family blessings ritual",
-      "Lunch served",
-      "Outdoor celebration (weather permitting)",
-    ],
-    bg: "linear-gradient(135deg, #5C4A00 0%, #8A6D00 40%, #B8930A 100%)",
-    accent: "#FDD835",
-    accentLight: "rgba(253,216,53,0.15)",
-    textColor: "#FFF9E0",
+    description:
+      "A vibrant and joyful ceremony where family and friends anoint the couple with turmeric paste as a blessing for a radiant life ahead. Wear something you don't mind getting colourful!",
+    dress: "Beach Pink & light pastels — wear something fun!",
+    // Beach Pink theme
+    bg: "linear-gradient(135deg, #4A1530 0%, #8B3A5A 50%, #C05B80 100%)",
+    accent: "#F48FB1",
+    accentLight: "rgba(244,143,177,0.15)",
+    textColor: "#FFE8F2",
+    textMuted: "rgba(255,232,242,0.7)",
   },
   {
-    id: "prewedding",
+    id: "ceremony",
     emoji: "🪔",
-    name: "PRE-WEDDING CEREMONY",
-    subtitle: "Pellikuthuru & Pellikoduku",
-    date: "Friday, November 20, 2026",
-    time: "Evening",
-    venue: "TBD",
-    venueName: "TBD",
-    venueAddress: "TBD",
+    name: "BRIDE & GROOM CEREMONY",
+    subtitle: "Pelli Kuthuru · Pelli Koduku",
+    date: "Thursday, November 20, 2026",
+    time: "5:00 PM – 7:00 PM",
+    venueName: "[Venue Name TBD]",
+    venueAddress: "[Hall Name & Address]",
     mapQuery: "Texas",
-    description: "",
-    dress: "Traditional Indian wear",
-    details: [],
-    bg: "linear-gradient(135deg, #2A0A2E 0%, #5B1E5F 40%, #8E3A96 100%)",
-    accent: "#F0A6E8",
-    accentLight: "rgba(240,166,232,0.15)",
-    textColor: "#FCE8FB",
+    description:
+      "A sacred pre-wedding Telugu ritual in which the bride (Pelli Kuthuru) and groom (Pelli Koduku) are anointed and blessed separately by their respective families, preparing them for the sacred bond ahead.",
+    dress: "Traditional Indian formals · White encouraged",
+    // White / ivory theme
+    bg: "linear-gradient(135deg, #3A3A2A 0%, #5A5A3A 50%, #7A7A50 100%)",
+    accent: "#F5F5DC",
+    accentLight: "rgba(245,245,220,0.12)",
+    textColor: "#FFFFF0",
+    textMuted: "rgba(255,255,240,0.7)",
   },
   {
     id: "wedding",
     emoji: "🪷",
     name: "WEDDING",
-    subtitle: "The Moment We Say 'I Do'",
-    date: "Saturday, November 21, 2026",
-    time: "Noon",
-    venue: "TBD",
-    venueName: "TBD",
-    venueAddress: "TBD",
+    subtitle: "The Sacred Union · Marriage Ceremony",
+    date: "Friday, November 21, 2026",
+    time: "10:00 AM onwards",
+    venueName: "[Venue Name TBD]",
+    venueAddress: "[Hall Name & Address]",
     mapQuery: "Texas",
     description:
-      "The main event. In the presence of our families and God, Charan Reddy Jaidi and Apoorva Gonegari exchange vows and begin their forever. A traditional Telugu ceremony followed by a reception.",
-    dress: "Formal Indian or Western attire · Ivory, gold, pastels welcome",
-    details: [
-      "Traditional Telugu wedding ceremony",
-      "Baraat procession",
-      "Reception lunch & desserts",
-      "Family celebrations",
-    ],
-    bg: "linear-gradient(135deg, #1A0A00 0%, #2C1810 40%, #3D2314 100%)",
-    accent: "#C9A84C",
-    accentLight: "rgba(201,168,76,0.12)",
-    textColor: "#FAF6EE",
+      "The moment two families become one. In the presence of family, God, and sacred fire, Apoorva Reddy Gonegari and Charan Reddy Jaidi exchange vows and begin their forever together.",
+    dress: "Traditional Telugu wedding attire · Half-white & green sarees / sherwanis",
+    // Half white & green theme
+    bg: "linear-gradient(135deg, #0D2A1A 0%, #1A4D2E 40%, #2D7A47 80%, #F5FFF5 100%)",
+    accent: "#52B788",
+    accentLight: "rgba(82,183,136,0.15)",
+    textColor: "#E8FFF0",
+    textMuted: "rgba(232,255,240,0.7)",
+  },
+  {
+    id: "reception",
+    emoji: "🎉",
+    name: "RECEPTION",
+    subtitle: "Post-Wedding Family Celebration",
+    date: "Saturday, November 22, 2026",
+    time: "6:00 PM – 12:00 AM",
+    venueName: "[Venue Name TBD]",
+    venueAddress: "[Hall Name & Address]",
+    mapQuery: "Texas",
+    description:
+      "An elegant evening celebration to welcome the newly wed couple. Dance, dine, and revel under the lights as we toast to Apoorva and Charan's forever. Black-tie glamour meets joyful celebration.",
+    dress: "Black & formal — dress to impress under the lights ✨",
+    // Black / dark mode aesthetic
+    bg: "linear-gradient(135deg, #000000 0%, #0D0D0D 40%, #1A1A1A 70%, #0A0A0A 100%)",
+    accent: "#BB86FC",
+    accentLight: "rgba(187,134,252,0.12)",
+    textColor: "#E8E0FF",
+    textMuted: "rgba(232,224,255,0.65)",
   },
 ];
 
@@ -173,7 +148,7 @@ export default function EventsSection() {
   return (
     <section
       id="events"
-      className="py-16 px-6 relative"
+      className="py-16 px-4 sm:px-6 relative"
       style={{ background: "#FAF6EE" }}
     >
       {/* Header */}
@@ -182,13 +157,13 @@ export default function EventsSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "0px 0px 200px 0px" }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-16"
+        className="text-center mb-14"
       >
         <p
           className="tracking-[0.3em] text-xs mb-4"
-          style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
+          style={{ color: "#B8860B", fontFamily: "'Lato', sans-serif", fontWeight: 600 }}
         >
-          6 CELEBRATIONS · 2 FAMILIES
+          6 CELEBRATIONS · NOVEMBER 19–22, 2026
         </p>
         <h2
           className="gold-text"
@@ -201,92 +176,121 @@ export default function EventsSection() {
         >
           The Wedding Festival
         </h2>
-        <div className="section-divider mt-6 mb-6" />
+        <div className="section-divider mt-5 mb-5" />
+        <p style={{ color: "#5C4A1A", fontFamily: "'Cormorant Garamond', serif",
+          fontStyle: "italic", fontSize: "1.1rem", fontWeight: 400 }}>
+          Apoorva Reddy Gonegari &amp; Charan Reddy Jaidi
+        </p>
       </motion.div>
 
-      {/* Event Cards Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {/* Event Cards */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {events.map((event, i) => (
           <motion.div
             key={event.id}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.7, delay: i * 0.1 }}
-            whileHover={{ y: -8, scale: 1.02 }}
-            className="relative overflow-hidden"
+            transition={{ duration: 0.7, delay: i * 0.08 }}
+            whileHover={{ y: -6, scale: 1.01 }}
+            className="relative overflow-hidden flex flex-col"
             style={{
               background: event.bg,
-              border: `1px solid ${event.accent}33`,
-              boxShadow: `0 4px 30px ${event.accent}22`,
-              minHeight: "300px",
+              border: `1px solid ${event.accent}44`,
+              boxShadow: `0 4px 24px ${event.accent}22`,
+              borderRadius: "6px",
+              minHeight: "340px",
             }}
           >
-            {/* Hover glow */}
+            {/* Subtle glow overlay on hover */}
             <div
               className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
               style={{ background: `radial-gradient(ellipse at center, ${event.accentLight}, transparent 70%)` }}
             />
 
             {/* Corner accents */}
-            <span className="absolute top-3 left-3 w-3 h-3 border-t border-l" style={{ borderColor: event.accent }} />
-            <span className="absolute top-3 right-3 w-3 h-3 border-t border-r" style={{ borderColor: event.accent }} />
-            <span className="absolute bottom-3 left-3 w-3 h-3 border-b border-l" style={{ borderColor: event.accent }} />
-            <span className="absolute bottom-3 right-3 w-3 h-3 border-b border-r" style={{ borderColor: event.accent }} />
+            <span className="absolute top-3 left-3 w-4 h-4 border-t border-l" style={{ borderColor: event.accent }} />
+            <span className="absolute top-3 right-3 w-4 h-4 border-t border-r" style={{ borderColor: event.accent }} />
+            <span className="absolute bottom-3 left-3 w-4 h-4 border-b border-l" style={{ borderColor: event.accent }} />
+            <span className="absolute bottom-3 right-3 w-4 h-4 border-b border-r" style={{ borderColor: event.accent }} />
 
-            <div className="p-8 flex flex-col h-full">
-              <span className="text-4xl mb-4">{event.emoji}</span>
+            <div className="relative z-10 p-6 flex flex-col flex-1">
+              {/* Emoji + name */}
+              <span className="text-3xl mb-3">{event.emoji}</span>
               <h3
-                className="mb-2"
+                className="mb-1"
                 style={{
                   fontFamily: "'Cinzel', serif",
-                  fontSize: "1.1rem",
-                  letterSpacing: "0.15em",
+                  fontSize: "0.9rem",
+                  letterSpacing: "0.12em",
                   color: event.accent,
-                  fontWeight: 500,
+                  fontWeight: 600,
+                  lineHeight: 1.3,
                 }}
               >
                 {event.name}
               </h3>
               <p
-                className="italic mb-6"
+                className="italic mb-4"
                 style={{
-                  color: event.textColor,
+                  color: event.textMuted,
                   fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "0.95rem",
-                  opacity: 0.8,
+                  fontSize: "0.9rem",
                 }}
               >
                 {event.subtitle}
               </p>
+
+              {/* Description */}
+              {event.description && (
+                <p style={{ color: event.textMuted, fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "0.88rem", lineHeight: 1.6, marginBottom: "1rem" }}>
+                  {event.description}
+                </p>
+              )}
+
+              {/* Date / time / dress — pushed to bottom */}
               <div className="mt-auto">
-                <p
-                  className="tracking-wider mb-1"
-                  style={{ color: event.accent, fontFamily: "'Lato', sans-serif", fontWeight: 500, fontSize: "clamp(0.95rem, 2.4vw, 1.15rem)" }}
+                {/* Date & time */}
+                <div className="mb-3">
+                  <p style={{ color: event.accent, fontFamily: "'Lato', sans-serif",
+                    fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.05em",
+                    marginBottom: "2px" }}>
+                    📅 {event.date}
+                  </p>
+                  <p style={{ color: event.textColor, fontFamily: "'Lato', sans-serif",
+                    fontWeight: 500, fontSize: "0.85rem" }}>
+                    🕙 {event.time}
+                  </p>
+                </div>
+
+                {/* Dress code */}
+                <div
+                  className="mb-4 px-3 py-2"
+                  style={{ background: `${event.accent}18`, borderLeft: `2px solid ${event.accent}` }}
                 >
-                  {event.date}
-                </p>
-                <p
-                  style={{ color: event.textColor, fontFamily: "'Lato', sans-serif", fontWeight: 400, fontSize: "clamp(0.85rem, 2vw, 1rem)", opacity: 0.85, letterSpacing: "0.08em" }}
-                >
-                  {event.time}
-                </p>
+                  <p style={{ color: event.textMuted, fontFamily: "'Lato', sans-serif",
+                    fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase",
+                    marginBottom: "2px", fontWeight: 600 }}>
+                    DRESS CODE
+                  </p>
+                  <p style={{ color: event.textColor, fontFamily: "'Cormorant Garamond', serif",
+                    fontStyle: "italic", fontSize: "0.9rem" }}>
+                    {event.dress}
+                  </p>
+                </div>
 
                 {/* Venue + directions */}
                 <div
-                  className="mt-4 pt-4"
+                  className="pt-3"
                   style={{ borderTop: `1px solid ${event.accent}33` }}
                 >
-                  <p
-                    className="text-sm mb-1"
-                    style={{ color: event.textColor, fontFamily: "'Cormorant Garamond', serif", fontWeight: 400 }}
-                  >
+                  <p style={{ color: event.textColor, fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: "0.88rem", marginBottom: "2px" }}>
                     📍 {event.venueName}
                   </p>
-                  <p
-                    className="text-xs mb-3"
-                    style={{ color: event.textColor, fontFamily: "'Lato', sans-serif", fontWeight: 300, opacity: 0.7 }}
-                  >
+                  <p style={{ color: event.textMuted, fontFamily: "'Lato', sans-serif",
+                    fontWeight: 300, fontSize: "0.72rem", marginBottom: "10px" }}>
                     {event.venueAddress}
                   </p>
                   <a
@@ -298,8 +302,10 @@ export default function EventsSection() {
                       border: `1px solid ${event.accent}66`,
                       color: event.accent,
                       fontFamily: "'Lato', sans-serif",
-                      fontWeight: 300,
+                      fontWeight: 500,
                       textDecoration: "none",
+                      borderRadius: "2px",
+                      fontSize: "0.68rem",
                     }}
                   >
                     GET DIRECTIONS →
@@ -310,6 +316,46 @@ export default function EventsSection() {
           </motion.div>
         ))}
       </div>
+
+      {/* Timeline summary */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+        className="max-w-2xl mx-auto mt-14"
+        style={{ background: "#FFFDF7", border: "1.5px solid rgba(184,134,11,0.2)",
+          borderRadius: "6px", padding: "1.5rem 2rem" }}
+      >
+        <p style={{ color: "#B8860B", fontFamily: "'Lato', sans-serif", fontWeight: 700,
+          fontSize: "0.65rem", letterSpacing: "0.26em", textTransform: "uppercase",
+          marginBottom: "1rem", textAlign: "center" }}>
+          AT A GLANCE
+        </p>
+        <div className="space-y-2">
+          {[
+            { day: "Wed, Nov 19", event: "Mehendi", time: "6–8 PM" },
+            { day: "Thu, Nov 20", event: "Engagement + Haldi + Ceremony", time: "10 AM – 7 PM" },
+            { day: "Fri, Nov 21", event: "Wedding 🪷", time: "10 AM onwards" },
+            { day: "Sat, Nov 22", event: "Reception 🎉", time: "6 PM – 12 AM" },
+          ].map((row) => (
+            <div key={row.day} className="flex items-center justify-between gap-4 flex-wrap">
+              <span style={{ color: "#B8860B", fontFamily: "'Lato', sans-serif",
+                fontWeight: 600, fontSize: "0.75rem", minWidth: "110px" }}>
+                {row.day}
+              </span>
+              <span style={{ color: "#2C2000", fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "1rem", flex: 1 }}>
+                {row.event}
+              </span>
+              <span style={{ color: "#5C4A1A", fontFamily: "'Lato', sans-serif",
+                fontSize: "0.75rem" }}>
+                {row.time}
+              </span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { GanapathiIcon } from "./TeluguGraphics";
 
 /**
  * GaneshIntro — Ganesha blessing screen
@@ -189,75 +190,10 @@ export default function EnvelopeIntro() {
                 }}
               />
 
-              {/* Ganesha SVG */}
-              <svg
-                width="140"
-                height="160"
-                viewBox="0 0 140 160"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ filter: "drop-shadow(0 0 20px rgba(255,179,0,0.4))" }}
-              >
-                {/* Body */}
-                <ellipse cx="70" cy="110" rx="38" ry="45" fill="#E65100" stroke="#FFB300" strokeWidth="1.5"/>
-                {/* Belly */}
-                <ellipse cx="70" cy="118" rx="22" ry="26" fill="#FF8F00" stroke="#FFB300" strokeWidth="1"/>
-                {/* Head */}
-                <ellipse cx="70" cy="62" rx="30" ry="28" fill="#E65100" stroke="#FFB300" strokeWidth="1.5"/>
-                {/* Face */}
-                <ellipse cx="70" cy="65" rx="22" ry="20" fill="#FF8F00"/>
-                {/* Ears */}
-                <ellipse cx="38" cy="60" rx="14" ry="18" fill="#E65100" stroke="#FFB300" strokeWidth="1.5"/>
-                <ellipse cx="102" cy="60" rx="14" ry="18" fill="#E65100" stroke="#FFB300" strokeWidth="1.5"/>
-                <ellipse cx="38" cy="60" rx="8" ry="11" fill="#FF8F00" opacity="0.6"/>
-                <ellipse cx="102" cy="60" rx="8" ry="11" fill="#FF8F00" opacity="0.6"/>
-                {/* Trunk — curved right */}
-                <path d="M64 74 Q55 90 62 100 Q68 108 78 104" stroke="#E65100" strokeWidth="10" strokeLinecap="round" fill="none"/>
-                <path d="M64 74 Q55 90 62 100 Q68 108 78 104" stroke="#FFB300" strokeWidth="2.5" strokeLinecap="round" fill="none" strokeDasharray="4 3"/>
-                {/* Modak in trunk curl */}
-                <circle cx="80" cy="106" r="7" fill="#FFB300" stroke="#FF6B00" strokeWidth="1"/>
-                <path d="M77 106 Q80 102 83 106" stroke="#E65100" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-                {/* Eyes */}
-                <ellipse cx="60" cy="60" rx="5" ry="5.5" fill="white"/>
-                <ellipse cx="80" cy="60" rx="5" ry="5.5" fill="white"/>
-                <circle cx="61" cy="61" r="3" fill="#1A0A00"/>
-                <circle cx="81" cy="61" r="3" fill="#1A0A00"/>
-                <circle cx="62" cy="60" r="1" fill="white"/>
-                <circle cx="82" cy="60" r="1" fill="white"/>
-                {/* Third eye / tilak */}
-                <ellipse cx="70" cy="52" rx="4" ry="2.5" fill="#FFB300"/>
-                <circle cx="70" cy="52" r="1.5" fill="#FF3D00"/>
-                {/* Crown / mukut */}
-                <path d="M48 40 Q55 20 70 16 Q85 20 92 40" fill="#FFB300" stroke="#FF6B00" strokeWidth="1"/>
-                <path d="M55 38 L58 22 L70 18 L82 22 L85 38" fill="#FF8F00" stroke="#FFB300" strokeWidth="1"/>
-                {/* Crown jewels */}
-                <circle cx="70" cy="20" r="4" fill="#FF3D00" stroke="#FFB300" strokeWidth="1"/>
-                <circle cx="60" cy="28" r="2.5" fill="#FFB300"/>
-                <circle cx="80" cy="28" r="2.5" fill="#FFB300"/>
-                {/* Arms */}
-                <path d="M34 90 Q20 80 22 68 Q25 58 35 62" stroke="#E65100" strokeWidth="9" strokeLinecap="round" fill="none"/>
-                <path d="M106 90 Q120 80 118 68 Q115 58 105 62" stroke="#E65100" strokeWidth="9" strokeLinecap="round" fill="none"/>
-                {/* Hands with attributes */}
-                {/* Blessing hand (abhaya mudra) */}
-                <circle cx="24" cy="66" r="9" fill="#FF8F00" stroke="#FFB300" strokeWidth="1"/>
-                <path d="M21 63 L21 70 M24 62 L24 71 M27 63 L27 70" stroke="#E65100" strokeWidth="1.5" strokeLinecap="round"/>
-                {/* Lotus */}
-                <circle cx="116" cy="66" r="9" fill="#FF8F00" stroke="#FFB300" strokeWidth="1"/>
-                <path d="M116 60 Q119 64 116 68 Q113 64 116 60" fill="#FFB300"/>
-                <path d="M111 63 Q115 66 111 70 Q109 66 111 63" fill="#FFB300" opacity="0.7"/>
-                <path d="M121 63 Q117 66 121 70 Q123 66 121 63" fill="#FFB300" opacity="0.7"/>
-                {/* Necklace */}
-                <path d="M48 80 Q70 90 92 80" stroke="#FFB300" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-                <circle cx="70" cy="90" r="3" fill="#FFB300"/>
-                <circle cx="59" cy="85" r="2" fill="#FFB300"/>
-                <circle cx="81" cy="85" r="2" fill="#FFB300"/>
-                {/* Feet */}
-                <ellipse cx="55" cy="152" rx="12" ry="7" fill="#E65100" stroke="#FFB300" strokeWidth="1"/>
-                <ellipse cx="85" cy="152" rx="12" ry="7" fill="#E65100" stroke="#FFB300" strokeWidth="1"/>
-                {/* Anklets */}
-                <path d="M44 150 Q55 156 66 150" stroke="#FFB300" strokeWidth="1.5" fill="none"/>
-                <path d="M74 150 Q85 156 96 150" stroke="#FFB300" strokeWidth="1.5" fill="none"/>
-              </svg>
+              {/* Lord Ganapathi — auspicious beginning */}
+              <div style={{ filter: "drop-shadow(0 0 22px rgba(255,179,0,0.45))" }}>
+                <GanapathiIcon size={150} color="#FFB300" accent="#E65100" />
+              </div>
             </motion.div>
 
             {/* Ganesha name */}
@@ -312,7 +248,7 @@ export default function EnvelopeIntro() {
                 lineHeight: 1.2,
               }}
             >
-              Apoorva &amp; Charan
+              Apoorva Reddy Gonegari Apoorva &amp; Charanamp; Charan Reddy Jaidi
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -326,7 +262,7 @@ export default function EnvelopeIntro() {
                 fontWeight: 300,
               }}
             >
-              November 18–21, 2026
+              November 19–22, 2026
             </motion.p>
 
             {/* Enter button */}

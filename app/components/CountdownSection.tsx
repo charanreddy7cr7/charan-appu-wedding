@@ -72,8 +72,8 @@ function CountUnit({ value, label }: { value: number; label: string }) {
 }
 
 export default function CountdownSection() {
-  // Wedding date: November 21, 2026 — Noon
-  const weddingDate = new Date("2026-11-21T12:00:00");
+  // Wedding date: November 21, 2026 — 10:00 AM
+  const weddingDate = new Date("2026-11-21T10:00:00");
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(getTimeLeft(weddingDate));
   const [mounted, setMounted] = useState(false);
 
@@ -142,7 +142,7 @@ export default function CountdownSection() {
             fontWeight: 400,
           }}
         >
-          November 18–21, 2026
+          November 19–22, 2026
         </motion.p>
 
         <motion.div

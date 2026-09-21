@@ -195,3 +195,83 @@ export function TeluguOrnamentalFrame({ children, color = "#C9A84C" }: { childre
     </div>
   );
 }
+
+// ─── Lord Ganapathi Icon ─────────────────────────────────────────────────────
+// A distinct, ornate Ganesha graphic for the auspicious beginning section.
+export function GanapathiIcon({
+  size = 160,
+  color = "#B8860B",
+  accent = "#E65100",
+}: { size?: number; color?: string; accent?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 200 200"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Lord Ganapathi"
+    >
+      {/* Radiant halo */}
+      <circle cx="100" cy="100" r="92" stroke={color} strokeWidth="1" opacity="0.3" strokeDasharray="3 5" />
+      <circle cx="100" cy="100" r="82" stroke={color} strokeWidth="1" opacity="0.5" />
+      {/* Lotus seat */}
+      <g opacity="0.9">
+        {[...Array(9)].map((_, i) => {
+          const angle = (i / 9) * Math.PI - Math.PI;
+          const x = 100 + Math.cos(angle) * 40;
+          const y = 168 + Math.sin(angle) * 10;
+          return (
+            <ellipse key={i} cx={x} cy={y} rx="9" ry="18"
+              fill={accent} opacity="0.55"
+              transform={`rotate(${(angle * 180) / Math.PI + 90} ${x} ${y})`} />
+          );
+        })}
+      </g>
+      {/* Body */}
+      <ellipse cx="100" cy="128" rx="42" ry="46" fill={accent} stroke={color} strokeWidth="1.5" />
+      <ellipse cx="100" cy="134" rx="26" ry="30" fill="#FF8F00" opacity="0.85" />
+      {/* Head */}
+      <ellipse cx="100" cy="74" rx="34" ry="32" fill={accent} stroke={color} strokeWidth="1.5" />
+      <ellipse cx="100" cy="77" rx="25" ry="23" fill="#FF8F00" opacity="0.9" />
+      {/* Big ears */}
+      <ellipse cx="62" cy="72" rx="16" ry="21" fill={accent} stroke={color} strokeWidth="1.5" />
+      <ellipse cx="138" cy="72" rx="16" ry="21" fill={accent} stroke={color} strokeWidth="1.5" />
+      <ellipse cx="62" cy="72" rx="9" ry="13" fill="#FF8F00" opacity="0.6" />
+      <ellipse cx="138" cy="72" rx="9" ry="13" fill="#FF8F00" opacity="0.6" />
+      {/* Trunk curled to modak */}
+      <path d="M92 88 Q80 108 90 122 Q98 132 112 126" stroke={accent} strokeWidth="11" strokeLinecap="round" fill="none" />
+      <path d="M92 88 Q80 108 90 122 Q98 132 112 126" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" strokeDasharray="4 3" />
+      {/* Modak (sweet) */}
+      <circle cx="114" cy="128" r="8" fill={color} stroke={accent} strokeWidth="1" />
+      {/* Eyes */}
+      <ellipse cx="87" cy="72" rx="6" ry="6.5" fill="white" />
+      <ellipse cx="113" cy="72" rx="6" ry="6.5" fill="white" />
+      <circle cx="88" cy="73" r="3.5" fill="#1A0A00" />
+      <circle cx="114" cy="73" r="3.5" fill="#1A0A00" />
+      {/* Tilak */}
+      <ellipse cx="100" cy="60" rx="5" ry="3" fill={color} />
+      <line x1="100" y1="56" x2="100" y2="66" stroke="#C0392B" strokeWidth="2.5" strokeLinecap="round" />
+      {/* Crown */}
+      <path d="M70 48 Q80 20 100 16 Q120 20 130 48" fill={color} stroke={accent} strokeWidth="1" />
+      <path d="M80 46 L84 24 L100 18 L116 24 L120 46" fill="#FF8F00" stroke={color} strokeWidth="1" />
+      <circle cx="100" cy="22" r="5" fill="#C0392B" stroke={color} strokeWidth="1" />
+      <circle cx="84" cy="32" r="3" fill={color} />
+      <circle cx="116" cy="32" r="3" fill={color} />
+      {/* Arms with mudras */}
+      <path d="M58 108 Q40 96 42 80 Q45 66 58 72" stroke={accent} strokeWidth="10" strokeLinecap="round" fill="none" />
+      <path d="M142 108 Q160 96 158 80 Q155 66 142 72" stroke={accent} strokeWidth="10" strokeLinecap="round" fill="none" />
+      {/* Blessing hand */}
+      <circle cx="44" cy="78" r="10" fill="#FF8F00" stroke={color} strokeWidth="1" />
+      {/* Lotus in hand */}
+      <circle cx="156" cy="78" r="10" fill="#FF8F00" stroke={color} strokeWidth="1" />
+      <path d="M156 71 Q160 76 156 82 Q152 76 156 71" fill={color} />
+      {/* Necklace */}
+      <path d="M74 96 Q100 110 126 96" stroke={color} strokeWidth="2" fill="none" />
+      <circle cx="100" cy="108" r="3.5" fill={color} />
+      {/* Om on belly */}
+      <text x="100" y="140" textAnchor="middle" fontSize="20" fill={color} fontFamily="serif" opacity="0.8">ॐ</text>
+    </svg>
+  );
+}

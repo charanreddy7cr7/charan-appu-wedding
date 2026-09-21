@@ -3,15 +3,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Add your photos to /public/gallery/ and update placeholder: false + src here.
+// Add your photos to /public/gallery/ then set placeholder:false and the src path.
 const galleryItems = [
-  { id: 1, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "portrait" },
-  { id: 2, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "landscape" },
-  { id: 3, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "portrait" },
-  { id: 4, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "portrait" },
-  { id: 5, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "landscape" },
-  { id: 6, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "portrait" },
-  { id: 7, alt: "Apoorva & Charan", src: "", placeholder: true, aspect: "landscape" },
+  { id: 1, alt: "Apoorva & Charan — Engagement",   caption: "The Beginning",   src: "", placeholder: true, aspect: "portrait" },
+  { id: 2, alt: "Apoorva & Charan — Together",       caption: "Our Journey",     src: "", placeholder: true, aspect: "landscape" },
+  { id: 3, alt: "Apoorva Reddy Gonegari",            caption: "The Bride",       src: "", placeholder: true, aspect: "portrait" },
+  { id: 4, alt: "Charan Reddy Jaidi",                caption: "The Groom",       src: "", placeholder: true, aspect: "portrait" },
+  { id: 5, alt: "Apoorva & Charan — Celebration",    caption: "Celebrations",    src: "", placeholder: true, aspect: "landscape" },
+  { id: 6, alt: "Apoorva & Charan — Families",       caption: "Two Families",    src: "", placeholder: true, aspect: "portrait" },
+  { id: 7, alt: "Apoorva & Charan — Forever",        caption: "Forever Begins",  src: "", placeholder: true, aspect: "landscape" },
 ];
 
 const gradients = [
@@ -100,13 +100,19 @@ export default function GallerySection() {
               ) : (
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                   <div
-                    className="text-4xl mb-3 opacity-30"
+                    className="text-4xl mb-3 opacity-40"
                     style={{ color: "#C9A84C" }}
                   >
                     ♾
                   </div>
                   <p
-                    className="text-xs tracking-[0.15em] opacity-30 text-center px-4"
+                    className="text-sm tracking-[0.1em] text-center px-4 mb-1"
+                    style={{ color: "#8B6914", fontFamily: "'Cinzel', serif", fontWeight: 500 }}
+                  >
+                    {item.caption}
+                  </p>
+                  <p
+                    className="text-xs tracking-[0.15em] opacity-40 text-center px-4"
                     style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
                   >
                     PHOTO COMING SOON

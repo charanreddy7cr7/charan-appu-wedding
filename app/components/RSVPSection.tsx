@@ -9,12 +9,12 @@ interface GuestEntry {
   meal: string;
   adults: number;
   kids: number;
-  sangeeth: boolean;
-  engagement: boolean;
   mehendi: boolean;
+  engagement: boolean;
   haldi: boolean;
-  prewedding: boolean;
+  ceremony: boolean;
   wedding: boolean;
+  reception: boolean;
 }
 
 interface FormData {
@@ -33,21 +33,21 @@ const defaultGuest = (): GuestEntry => ({
   meal: "",
   adults: 1,
   kids: 0,
-  sangeeth: false,
-  engagement: false,
   mehendi: false,
+  engagement: false,
   haldi: false,
-  prewedding: false,
+  ceremony: false,
   wedding: false,
+  reception: false,
 });
 
 const weddingEvents = [
-  { key: "sangeeth"   as const, label: "Sangeeth",    emoji: "✨", color: "#92700A", bg: "#FEF3C7" },
-  { key: "engagement" as const, label: "Engagement",  emoji: "💍", color: "#7C3AED", bg: "#EDE9FE" },
-  { key: "mehendi"    as const, label: "Mehendi",     emoji: "🤚", color: "#166534", bg: "#DCFCE7" },
-  { key: "haldi"      as const, label: "Haldi",       emoji: "☀️", color: "#B45309", bg: "#FEF3C7" },
-  { key: "prewedding" as const, label: "Pre-Wedding", emoji: "🪔", color: "#9D174D", bg: "#FCE7F3" },
-  { key: "wedding"    as const, label: "Wedding",     emoji: "🪷", color: "#7A5800", bg: "#FEF9E7" },
+  { key: "mehendi"    as const, label: "Mehendi",          emoji: "🤚", color: "#C0392B", bg: "#FDF2F2" },
+  { key: "engagement" as const, label: "Engagement",        emoji: "💍", color: "#E53935", bg: "#FEF2F2" },
+  { key: "haldi"      as const, label: "Haldi",             emoji: "☀️", color: "#C2185B", bg: "#FCE4EC" },
+  { key: "ceremony"   as const, label: "Bride & Groom Ceremony", emoji: "🪔", color: "#5D4037", bg: "#EFEBE9" },
+  { key: "wedding"    as const, label: "Wedding",           emoji: "🪷", color: "#2E7D32", bg: "#E8F5E9" },
+  { key: "reception"  as const, label: "Reception",         emoji: "🎉", color: "#6A1B9A", bg: "#F3E5F5" },
 ];
 
 const mealOptions = [
@@ -128,7 +128,7 @@ export default function RSVPSection() {
       if (!g.name.trim()) { setValidation(`Please enter a name for Guest ${i + 1}.`); return; }
       if (!g.attending)   { setValidation(`Please confirm attendance for ${g.name || `Guest ${i + 1}`}.`); return; }
       if (g.attending === "accepts") {
-        const keys = ["sangeeth","engagement","mehendi","haldi","prewedding","wedding"] as const;
+        const keys = ["mehendi","engagement","haldi","ceremony","wedding","reception"] as const;
         if (!keys.some((k) => g[k])) {
           setValidation(`Please select at least one event for ${g.name || `Guest ${i + 1}`}.`);
           return;

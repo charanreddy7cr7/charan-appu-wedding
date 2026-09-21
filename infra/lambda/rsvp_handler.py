@@ -39,6 +39,17 @@ CORS_HEADERS = {
     "Content-Type": "application/json",
 }
 
+# Wedding event schedule (chronological)
+_EVENT_ORDER = ["mehendi", "engagement", "haldi", "ceremony", "wedding", "reception"]
+_EVENT_LABELS = {
+    "mehendi": "Mehendi",
+    "engagement": "Engagement",
+    "haldi": "Haldi",
+    "ceremony": "Bride & Groom Ceremony",
+    "wedding": "Wedding",
+    "reception": "Reception",
+}
+
 
 def _sign(msg: str) -> str:
     """Return base64url HMAC-SHA256 signature of msg using AUTH_SECRET."""
@@ -163,12 +174,12 @@ def submit_rsvp(event: dict) -> dict:
         "totalAttending": len(attending_guests),
         "totalDeclining": len(guests) - len(attending_guests),
         "events": {
-            "sangeeth":    sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("sangeeth")),
-            "engagement":  sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("engagement")),
             "mehendi":     sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("mehendi")),
+            "engagement":  sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("engagement")),
             "haldi":       sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("haldi")),
-            "prewedding":  sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("prewedding")),
+            "ceremony":    sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("ceremony")),
             "wedding":     sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("wedding")),
+            "reception":   sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("reception")),
         }
     }
 
@@ -234,12 +245,12 @@ def list_rsvps(event: dict) -> dict:
         "total_rsvps": len(items),
         "total_guests": sum(int(r.get("guestCount", 0)) for r in items),
         "by_event": {
-            "sangeeth": sum(int(r.get("events", {}).get("sangeeth", 0)) for r in items),
-            "engagement": sum(int(r.get("events", {}).get("engagement", 0)) for r in items),
             "mehendi": sum(int(r.get("events", {}).get("mehendi", 0)) for r in items),
+            "engagement": sum(int(r.get("events", {}).get("engagement", 0)) for r in items),
             "haldi": sum(int(r.get("events", {}).get("haldi", 0)) for r in items),
-            "prewedding": sum(int(r.get("events", {}).get("prewedding", 0)) for r in items),
+            "ceremony": sum(int(r.get("events", {}).get("ceremony", 0)) for r in items),
             "wedding": sum(int(r.get("events", {}).get("wedding", 0)) for r in items),
+            "reception": sum(int(r.get("events", {}).get("reception", 0)) for r in items),
         },
         "rsvps": items,
     }
@@ -250,7 +261,7 @@ def send_confirmation_email(record: dict):
     guests_list = "\n".join(
         f"  • {int(g.get('adults', 0))} adult(s)" +
         (f", {int(g.get('kids', 0))} kid(s)" if int(g.get('kids', 0)) else "") + " — " +
-        ", ".join(("Pre-Wedding" if ev == "prewedding" else ev.title()) for ev in ["sangeeth", "engagement", "mehendi", "haldi", "prewedding", "wedding"] if g.get(ev))
+        ", ".join(_EVENT_LABELS.get(ev, ev.title()) for ev in _EVENT_ORDER if g.get(ev))
         for g in record["guests"]
     )
 
@@ -275,8 +286,8 @@ def send_confirmation_email(record: dict):
 <div class="container">
   <div class="header">
     <p class="detail">శుభమస్తు · Shubhamastu</p>
-    <h1>Approva ♾ Charan</h1>
-    <p style="color:#C9A84C; font-style:italic; margin:10px 0 0;">November 18–21, 2026</p>
+    <h1>Apoorva ♾ Charan</h1>
+    <p style="color:#C9A84C; font-style:italic; margin:10px 0 0;">November 19–22, 2026</p>
   </div>
 
   <p>Dear <strong style="color:#C9A84C;">{record['primaryName']}</strong>,</p>
@@ -284,7 +295,7 @@ def send_confirmation_email(record: dict):
 
   <div class="events">
     <p class="detail" style="margin-bottom:12px;">Your RSVP — {record['guestCount']} guest(s)</p>
-    {''.join(f'<p style="color:#E8D5A3; margin:4px 0;">◆ {int(g.get("adults",0))} adult(s)' + (f', {int(g.get("kids",0))} kid(s)' if int(g.get("kids",0)) else '') + ' — ' + ', '.join(("Pre-Wedding" if ev == "prewedding" else ev.title()) for ev in ["sangeeth","engagement","mehendi","haldi","prewedding","wedding"] if g.get(ev)) + '</p>' for g in record['guests'])}
+    {''.join(f'<p style="color:#E8D5A3; margin:4px 0;">◆ {int(g.get("adults",0))} adult(s)' + (f', {int(g.get("kids",0))} kid(s)' if int(g.get("kids",0)) else '') + ' — ' + ', '.join(_EVENT_LABELS.get(ev, ev.title()) for ev in _EVENT_ORDER if g.get(ev)) + '</p>' for g in record['guests'])}
   </div>
 
   {'<p><span class="detail">Dietary:</span> <span style="color:#E8D5A3;">' + record["dietary"] + '</span></p>' if record.get("dietary") else ""}
@@ -294,7 +305,7 @@ def send_confirmation_email(record: dict):
 
   <div class="footer">
     <p style="color:#C9A84C; font-style:italic;">Two hearts. One forever.</p>
-    <p style="color:rgba(201,168,76,0.4); font-size:0.8rem;">Approva & Charan · November 2026 · Texas</p>
+    <p style="color:rgba(201,168,76,0.4); font-size:0.8rem;">Apoorva & Charan · November 2026</p>
   </div>
 </div>
 </body>
@@ -302,13 +313,13 @@ def send_confirmation_email(record: dict):
 """
 
     ses.send_email(
-        Source=f"Approva & Charan Wedding <{COUPLE_EMAIL}>",
+        Source=f"Apoorva & Charan Wedding <{COUPLE_EMAIL}>",
         Destination={"ToAddresses": [record["email"]]},
         Message={
-            "Subject": {"Data": "Your RSVP is confirmed — Approva ♾ Charan, November 2026 🪷"},
+            "Subject": {"Data": "Your RSVP is confirmed — Apoorva ♾ Charan, November 2026 🪷"},
             "Body": {
                 "Html": {"Data": html_body},
-                "Text": {"Data": f"Dear {record['primaryName']}, your RSVP is confirmed! See you in Texas in November 2026. — Approva & Charan"},
+                "Text": {"Data": f"Dear {record['primaryName']}, your RSVP is confirmed! See you in November 2026. — Apoorva & Charan"},
             },
         },
     )

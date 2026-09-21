@@ -259,7 +259,7 @@ export default function InvitationHero() {
             textShadow: "0 2px 8px rgba(184,134,11,0.2)",
           }}
         >
-          Apoorva Gonegari
+          Apoorva Reddy Gonegari
         </motion.h1>
 
         {/* Weds */}

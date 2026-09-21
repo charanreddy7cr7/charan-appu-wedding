@@ -69,7 +69,7 @@
 <header class="site">
   <div class="detail">శుభమస్తు · Host Portal</div>
   <h1>Apoorva ♾ Charan</h1>
-  <p>November 18–21, 2026</p>
+  <p>November 19–22, 2026</p>
 </header>
 
 <!-- LOGIN VIEW -->
@@ -118,8 +118,8 @@
 <script>
   const API = "/api";
   const TOKEN_KEY = "ca_admin_token";
-  const EVENTS = ["sangeeth", "engagement", "mehendi", "haldi", "prewedding", "wedding"];
-  const EVENT_LABEL = { sangeeth: "Sangeeth", engagement: "Engagement", mehendi: "Mehendi", haldi: "Haldi", prewedding: "Pre-Wedding", wedding: "Wedding" };
+  const EVENTS = ["mehendi", "engagement", "haldi", "ceremony", "wedding", "reception"];
+  const EVENT_LABEL = { mehendi: "Mehendi", engagement: "Engagement", haldi: "Haldi", ceremony: "Bride & Groom Ceremony", wedding: "Wedding", reception: "Reception" };
   const evLabel = (e) => EVENT_LABEL[e] || e;
 
   const $ = (id) => document.getElementById(id);
@@ -177,12 +177,12 @@
     const cards = [
       ["Parties", d.total_rsvps || 0],
       ["Total Guests", d.total_guests || 0],
-      ["Sangeeth", be.sangeeth || 0],
-      ["Engagement", be.engagement || 0],
       ["Mehendi", be.mehendi || 0],
+      ["Engagement", be.engagement || 0],
       ["Haldi", be.haldi || 0],
-      ["Pre-Wedding", be.prewedding || 0],
+      ["Ceremony", be.ceremony || 0],
       ["Wedding", be.wedding || 0],
+      ["Reception", be.reception || 0],
     ];
     $("stats").innerHTML = cards.map(([lbl, num]) =>
       `<div class="stat"><div class="num">${num}</div><div class="lbl">${lbl}</div></div>`
@@ -228,7 +228,7 @@
 
   function exportCsv() {
     if (!currentData || !currentData.rsvps) return;
-    const rows = [["Primary Name", "Email", "Phone", "Total Guests", "Adults", "Kids", "Party Breakdown", "Sangeeth", "Engagement", "Mehendi", "Haldi", "Pre-Wedding", "Wedding", "Dietary", "Song Request", "Message", "Submitted At"]];
+    const rows = [["Primary Name", "Email", "Phone", "Total Guests", "Adults", "Kids", "Party Breakdown", "Mehendi", "Engagement", "Haldi", "Ceremony", "Wedding", "Reception", "Dietary", "Song Request", "Message", "Submitted At"]];
     currentData.rsvps.forEach((r) => {
       const ev = r.events || {};
       const gs = r.guests || [];
@@ -238,7 +238,7 @@
       rows.push([
         r.primaryName || "", r.email || "", r.phone || "", r.guestCount || (adults + kids),
         adults, kids, breakdown,
-        ev.sangeeth || 0, ev.engagement || 0, ev.mehendi || 0, ev.haldi || 0, ev.prewedding || 0, ev.wedding || 0,
+        ev.mehendi || 0, ev.engagement || 0, ev.haldi || 0, ev.ceremony || 0, ev.wedding || 0, ev.reception || 0,
         r.dietary || "", r.songRequest || "", (r.message || "").replace(/\n/g, " "), r.submittedAt || "",
       ]);
     });
