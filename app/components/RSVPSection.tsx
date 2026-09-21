@@ -74,8 +74,9 @@ const labelStyle: React.CSSProperties = {
   textTransform: "uppercase", marginBottom: "0.45rem",
 };
 const panelStyle: React.CSSProperties = {
-  background: "#FFFDF7", border: "1.5px solid rgba(184,134,11,0.2)",
+  background: "#FFFFFF", border: "1.5px solid rgba(46,125,50,0.18)",
   borderRadius: "6px", padding: "1.5rem",
+  boxShadow: "0 2px 12px rgba(46,125,50,0.06)",
 };
 const focusIn  = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
   e.target.style.borderColor = "#B8860B";
@@ -159,11 +160,11 @@ export default function RSVPSection() {
     <section
       id="rsvp"
       className="py-20 px-4 sm:px-6 relative"
-      style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAF6EE 100%)" }}
+      style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #F0F7F0 50%, #E3F0E3 100%)" }}
     >
       {/* Watermark dot pattern */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: "radial-gradient(circle, rgba(184,134,11,0.07) 1px, transparent 1px)",
+        backgroundImage: "radial-gradient(circle, rgba(46,125,50,0.06) 1px, transparent 1px)",
         backgroundSize: "48px 48px",
       }} />
 
