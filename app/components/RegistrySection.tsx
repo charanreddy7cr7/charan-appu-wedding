@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 
 const gifts = [
-  { icon: "🎁", name: "Amazon Gift Card", note: "Help us build our new home together.", href: "https://www.amazon.com/gift-cards", color: "#E7CE8E" },
-  { icon: "💳", name: "Visa Gift Card", note: "Your choice — for anything we may need.", href: "https://www.giftcards.com/visa-gift-cards", color: "#C9A24B" },
   { icon: "💛", name: "Your Blessings", note: "Honestly, your presence is the greatest gift of all.", href: "#rsvp", color: "#C9A24B" },
 ];
 
@@ -25,12 +23,12 @@ export default function RegistrySection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="flex justify-center max-w-md mx-auto">
           {gifts.map((g, i) => (
             <motion.a key={g.name} href={g.href} target={g.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ delay: i * 0.08 }} whileHover={{ y: -6 }}
-              className="fest-card p-8 text-center" style={{ textDecoration: "none" }}>
+              className="fest-card p-8 text-center w-full" style={{ textDecoration: "none" }}>
               <div style={{ fontSize: "2.6rem" }}>{g.icon}</div>
               <h3 style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.15rem", color: "#F4EFE4", marginTop: "0.6rem" }}>{g.name}</h3>
               <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.85rem", color: "#D9D2C4", marginTop: "0.5rem" }}>{g.note}</p>
