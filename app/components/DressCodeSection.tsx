@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 
 const codes = [
-  { event: "Mehendi",    emoji: "🤚", theme: "Maroon", swatches: ["#8E1537", "#B03052", "#5C0A24"], color: "#8E1537" },
-  { event: "Engagement", emoji: "💍", theme: "Red", swatches: ["#E63946", "#C1121F", "#C9A24B"], color: "#E63946" },
-  { event: "Haldi",      emoji: "☀️", theme: "Beach Pink", swatches: ["#FF6FB5", "#FFA5C3", "#E7CE8E"], color: "#FF6FB5" },
-  { event: "Bride & Groom Ceremony", emoji: "🪔", theme: "White", swatches: ["#FFFFFF", "#F5F0E6", "#FFF8F0"], color: "#C9A24B" },
-  { event: "Wedding",    emoji: "🪷", theme: "Half-White & Green", swatches: ["#FFFFFF", "#2A9D8F", "#C9A24B"], color: "#2A9D8F" },
-  { event: "Reception",  emoji: "🎉", theme: "Black", swatches: ["#2B1B3D", "#000000", "#3A2C4D"], color: "#F4EFE4" },
+  { event: "Mehendi",    emoji: "🤚", theme: "Maroon", swatches: ["#6E1533", "#8E1537", "#4A0D22"], color: "#C97A97" },
+  { event: "Engagement", emoji: "💍", theme: "Red", swatches: ["#C1121F", "#E63946", "#8E1116"], color: "#F08A80" },
+  { event: "Haldi",      emoji: "☀️", theme: "Beach Pink", swatches: ["#FF6FB5", "#FF9CC7", "#F25FA6"], color: "#FF9CC7" },
+  { event: "Bride & Groom Ceremony", emoji: "🪔", theme: "White", swatches: ["#FFFFFF", "#F4F0E6", "#EDE7D6"], color: "#E7CE8E" },
+  { event: "Wedding",    emoji: "🪷", theme: "Antique Gold", swatches: ["#E7CE8E", "#C9A24B", "#A07E2E"], color: "#E7CE8E" },
+  { event: "Reception",  emoji: "🎉", theme: "Black · Neon Lights", swatches: ["#0E0A1A", "#000000", "#B57BFF"], color: "#B57BFF" },
 ];
 
 export default function DressCodeSection() {
