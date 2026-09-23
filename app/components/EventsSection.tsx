@@ -8,12 +8,12 @@ interface EventItem {
 }
 
 const events: EventItem[] = [
-  { id: "mehendi",    emoji: "🤚", name: "Mehendi",   date: "Wed, Nov 19", time: "6:00 – 8:00 PM",  venue: "[Venue TBD]", dress: "Maroon", color: "#8E1537", tilt: -2 },
-  { id: "engagement", emoji: "💍", name: "Engagement", date: "Thu, Nov 20", time: "10:00 AM – 12 PM", venue: "[Venue TBD]", dress: "Red", color: "#E63946", tilt: 1.5 },
-  { id: "haldi",      emoji: "☀️", name: "Haldi",      date: "Thu, Nov 20", time: "1:00 – 4:00 PM",  venue: "[Venue TBD]", dress: "Beach Pink", color: "#FF6FB5", tilt: -1.5 },
-  { id: "ceremony",   emoji: "🪔", name: "Bride & Groom Ceremony", date: "Thu, Nov 20", time: "5:00 – 7:00 PM", venue: "[Venue TBD]", dress: "White", color: "#7B2CBF", tilt: 2 },
-  { id: "wedding",    emoji: "🪷", name: "Wedding",    date: "Fri, Nov 21", time: "10:00 AM onwards", venue: "[Venue TBD]", dress: "Half-White & Green", color: "#2A9D8F", tilt: -2 },
-  { id: "reception",  emoji: "🎉", name: "Reception",  date: "Sat, Nov 22", time: "6:00 PM – 12 AM", venue: "[Venue TBD]", dress: "Black", color: "#2B1B3D", tilt: 1.5 },
+  { id: "mehendi",    emoji: "🤚", name: "Mehendi",   date: "Thu, Nov 19", time: "6:00 – 8:00 PM",  venue: "[Venue TBD]", dress: "Maroon", color: "#8E1537", tilt: -2 },
+  { id: "engagement", emoji: "💍", name: "Engagement", date: "Fri, Nov 20", time: "10:00 AM – 12 PM", venue: "[Venue TBD]", dress: "Red", color: "#E63946", tilt: 1.5 },
+  { id: "haldi",      emoji: "☀️", name: "Haldi",      date: "Fri, Nov 20", time: "1:00 – 4:00 PM",  venue: "[Venue TBD]", dress: "Beach Pink", color: "#FF6FB5", tilt: -1.5 },
+  { id: "ceremony",   emoji: "🪔", name: "Bride & Groom Ceremony", date: "Fri, Nov 20", time: "5:00 – 7:00 PM", venue: "[Venue TBD]", dress: "White", color: "#7B2CBF", tilt: 2 },
+  { id: "wedding",    emoji: "🪷", name: "Wedding",    date: "Sat, Nov 21", time: "10:00 AM onwards", venue: "[Venue TBD]", dress: "Half-White & Green", color: "#2A9D8F", tilt: -2 },
+  { id: "reception",  emoji: "🎉", name: "Reception",  date: "Sun, Nov 22", time: "6:00 PM – 12 AM", venue: "[Venue TBD]", dress: "Black", color: "#2B1B3D", tilt: 1.5 },
 ];
 
 export default function EventsSection() {

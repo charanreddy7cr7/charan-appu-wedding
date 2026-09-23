@@ -40,16 +40,22 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="festive-text"
-          style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2.8rem, 10vw, 6rem)", fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.02 }}
+          style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2.2rem, 8vw, 4.6rem)", fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.02 }}
         >
-          Apoorva
+          Apoorva Gonegari
         </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.28 }}
+          className="mt-1" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "0.82rem", color: "#5A4A6A" }}
+        >
+          Daughter of Vajra &amp; Sanjeev Gonegari
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 200, delay: 0.5 }}
-          className="my-2 flex items-center justify-center gap-3"
+          className="my-3 flex items-center justify-center gap-3"
         >
           <span style={{ height: 2, width: 40, background: "#E63980", borderRadius: 2 }} />
           <span style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "clamp(1.5rem, 4vw, 2.4rem)", color: "#FF9F1C" }}>&amp;</span>
@@ -61,17 +67,15 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
           className="festive-text"
-          style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2.8rem, 10vw, 6rem)", fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.02 }}
+          style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2.2rem, 8vw, 4.6rem)", fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.02 }}
         >
-          Charan
+          Charan Reddy Jaidi
         </motion.h1>
-
-        {/* Full names small */}
         <motion.p
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}
-          className="mt-4" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "0.9rem", color: "#5A4A6A", letterSpacing: "0.04em" }}
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.42 }}
+          className="mt-1" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "0.82rem", color: "#5A4A6A" }}
         >
-          Apoorva Reddy Gonegari &nbsp;•&nbsp; Charan Reddy Jaidi
+          Son of Late Sri Jaidi Bhaskar &amp; Sukanya
         </motion.p>
 
         {/* Date pill */}
