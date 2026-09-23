@@ -57,7 +57,7 @@ const labelStyle: React.CSSProperties = {
   textTransform: "uppercase", marginBottom: "0.5rem",
 };
 const panelStyle: React.CSSProperties = {
-  background: "#16294B", borderRadius: "22px", padding: "1.6rem",
+  background: "#1C1712", borderRadius: "22px", padding: "1.6rem",
   boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
 };
 
@@ -113,7 +113,7 @@ export default function RSVPSection() {
   const allDeclined = form.guests.length > 0 && form.guests.every((g) => g.attending === "declines");
 
   return (
-    <section id="rsvp" className="py-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: "#0B1834" }}>
+    <section id="rsvp" className="py-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: "#0B0B0B" }}>
       <div className="absolute top-0 -right-20 w-72 h-72 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,162,75,0.14), transparent 70%)" }} />
 
@@ -185,7 +185,7 @@ export default function RSVPSection() {
 
                 <div className="space-y-5">
                   {form.guests.map((guest, i) => (
-                    <div key={i} style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 18, padding: "1.1rem", background: "#0E1D38" }}>
+                    <div key={i} style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 18, padding: "1.1rem", background: "#141414" }}>
                       <div className="flex items-center justify-between mb-3">
                         <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.1em", color: "#E7CE8E", textTransform: "uppercase" }}>Guest {i + 1}</span>
                         {i > 0 && (
@@ -214,7 +214,7 @@ export default function RSVPSection() {
                                 style={{
                                   padding: "0.75rem", borderRadius: 999,
                                   border: `2px solid ${active ? c : "rgba(246,236,251,0.2)"}`,
-                                  background: active ? c : "#0E1D38", color: active ? "#fff" : "#D9D2C4",
+                                  background: active ? c : "#141414", color: active ? "#fff" : "#D9D2C4",
                                   fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.8rem",
                                   cursor: "pointer", transition: "all 0.15s",
                                 }}>
@@ -233,10 +233,10 @@ export default function RSVPSection() {
                                 <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", color: "#D9D2C4", textTransform: "uppercase" }}>{field}</span>
                                 <div className="flex items-center gap-2">
                                   <button type="button" onClick={() => adjustCount(i, field, -1)} aria-label={`less ${field}`}
-                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#16294B", color: "#E7CE8E", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>−</button>
+                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#1C1712", color: "#E7CE8E", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>−</button>
                                   <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", minWidth: "1.4rem", textAlign: "center", color: "#F4EFE4" }}>{guest[field]}</span>
                                   <button type="button" onClick={() => adjustCount(i, field, 1)} aria-label={`more ${field}`}
-                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#16294B", color: "#E7CE8E", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>+</button>
+                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#1C1712", color: "#E7CE8E", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>+</button>
                                 </div>
                               </div>
                             ))}
@@ -255,7 +255,7 @@ export default function RSVPSection() {
                               const on = guest[ev.key];
                               return (
                                 <label key={ev.key} className="flex items-center gap-2 cursor-pointer p-2"
-                                  style={{ borderRadius: 999, border: `2px solid ${on ? ev.color : "rgba(246,236,251,0.18)"}`, background: on ? `${ev.color}26` : "#0E1D38", transition: "all 0.15s" }}>
+                                  style={{ borderRadius: 999, border: `2px solid ${on ? ev.color : "rgba(246,236,251,0.18)"}`, background: on ? `${ev.color}26` : "#141414", transition: "all 0.15s" }}>
                                   <input type="checkbox" checked={on} onChange={(e) => updateGuest(i, ev.key, e.target.checked)} className="sr-only" />
                                   <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: on ? 700 : 500, fontSize: "0.74rem", color: on ? ev.color : "#D9D2C4" }}>
                                     {ev.emoji} {ev.label}

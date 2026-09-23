@@ -8,10 +8,10 @@
 
 :root {
   /* Core palette */
-  --navy:       #0B1834;   /* deep navy base */
-  --navy-2:     #12213F;   /* lighter navy section */
-  --navy-3:     #0A1428;   /* darkest navy */
-  --navy-card:  #16294B;   /* card / panel navy */
+  --navy:       #0B0B0B;   /* black base */
+  --navy-2:     #151210;   /* slightly warm black section */
+  --navy-3:     #050505;   /* darkest black */
+  --navy-card:  #1C1712;   /* card / panel — warm charcoal */
 
   --gold:       #C9A24B;   /* warm antique gold */
   --gold-light: #E7CE8E;   /* light champagne gold */
@@ -42,8 +42,8 @@
   --bg-section: var(--navy);
   --bg-section-alt: var(--navy-2);
   --bg-card:    var(--navy-card);
-  --bg-input:   #0E1D38;
-  --bg-hover:   #16294B;
+  --bg-input:   #141414;
+  --bg-hover:   #1C1712;
   --text-primary: var(--ivory);
   --text-body:    var(--ivory-soft);
   --text-subtle:  var(--gold);
@@ -180,7 +180,7 @@ p { line-height: 1.7; }
 /* ─── Form elements ──────────────────────────────────────────────────────── */
 input[type="text"], input[type="email"], input[type="tel"],
 input[type="password"], textarea, select {
-  background: #0E1D38;
+  background: #141414;
   color: var(--ivory);
   border: 1px solid rgba(201,162,75,0.3);
   border-radius: 3px;
@@ -211,7 +211,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); }
   position: fixed; bottom: 22px; right: 22px; z-index: 40;
   display: flex; align-items: center; gap: 8px;
   padding: 11px 18px; border-radius: 999px;
-  background: rgba(11,24,52,0.9);
+  background: rgba(11,11,11,0.9);
   border: 1px solid var(--gold); color: var(--gold);
   font-family: 'Cinzel', serif; font-weight: 500;
   font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;

@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6"
-      style={{ background: "radial-gradient(circle at 20% 20%, #12213F 0%, #0B1834 55%, #0A1428 100%)" }}
+      style={{ background: "radial-gradient(circle at 20% 20%, #151210 0%, #0B0B0B 55%, #050505 100%)" }}
     >
       <Confetti count={44} />
 
@@ -88,7 +88,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}
           className="mt-8 inline-flex items-center gap-3 px-6 py-3 rounded-full"
-          style={{ background: "#16294B", boxShadow: "0 8px 24px rgba(0,0,0,0.35)" }}
+          style={{ background: "#1C1712", boxShadow: "0 8px 24px rgba(0,0,0,0.35)" }}
         >
           <span style={{ fontSize: "1.2rem" }}>📅</span>
           <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, color: "#F4EFE4", fontSize: "1rem" }}>

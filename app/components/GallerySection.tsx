@@ -17,7 +17,7 @@ export default function GallerySection() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
-    <section id="gallery" className="py-20 px-6 relative" style={{ background: "#12213F" }}>
+    <section id="gallery" className="py-20 px-6 relative" style={{ background: "#151210" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
@@ -66,7 +66,7 @@ export default function GallerySection() {
               <span style={{ fontSize: "3rem" }}>📷</span>
               <p className="mt-2" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, color: items[lightbox].color, fontSize: "1.3rem" }}>{items[lightbox].caption}</p>
               <button onClick={() => setLightbox(null)} className="absolute top-3 right-3"
-                style={{ width: 34, height: 34, borderRadius: 999, background: "#16294B", border: "none", cursor: "pointer", fontSize: "1rem", color: "#F4EFE4" }}>✕</button>
+                style={{ width: 34, height: 34, borderRadius: 999, background: "#1C1712", border: "none", cursor: "pointer", fontSize: "1rem", color: "#F4EFE4" }}>✕</button>
             </motion.div>
           </motion.div>
         )}

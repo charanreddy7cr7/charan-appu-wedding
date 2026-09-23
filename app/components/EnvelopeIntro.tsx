@@ -3,7 +3,6 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Confetti from "./Confetti";
-import { FloralCorner } from "./FloralCorner";
 
 // Client-only mounted flag without setState-in-effect.
 function useMounted() {
@@ -60,73 +59,49 @@ export default function EnvelopeIntro() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.7 } }}
           className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
-          style={{ background: "radial-gradient(circle at 50% 25%, #FFFFFF 0%, #EAF3FA 45%, #CFE3F0 100%)" }}
+          style={{
+            backgroundColor: "#000000",
+            backgroundImage: "url('/ganapathi-gold.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
         >
-          <Confetti count={60} />
+          {/* Dark vignette so text is readable over the image */}
+          <div className="absolute inset-0 pointer-events-none"
+            style={{ background: "radial-gradient(circle at 50% 40%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%)" }} />
 
-          {/* Floral corners */}
-          <FloralCorner size={220} className="absolute top-0 left-0 pointer-events-none select-none" style={{ opacity: 0.9 }} />
-          <FloralCorner size={220} className="absolute bottom-0 right-0 pointer-events-none select-none" style={{ opacity: 0.9, transform: "rotate(180deg)" }} />
+          <Confetti count={40} />
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.85, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 160, damping: 16 }}
-            className="relative z-10 text-center px-8 py-12 mx-4"
-            style={{
-              maxWidth: 460, width: "100%",
-              background: "rgba(255,255,255,0.72)",
-              border: "1px solid rgba(90,130,184,0.35)",
-              borderRadius: 8,
-              backdropFilter: "blur(14px)",
-              WebkitBackdropFilter: "blur(14px)",
-              boxShadow: "0 16px 44px rgba(90,130,184,0.28)",
-            }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="relative z-10 text-center px-8 mx-4"
+            style={{ maxWidth: 560, width: "100%", marginTop: "auto", marginBottom: "8vh" }}
           >
-            {/* Lord Ganapathi — blended into the invite (transparent PNG, no frame) */}
-            <motion.img
-              src="/ganapathi.png"
-              alt="Lord Ganapathi"
-              animate={{ y: [0, -6, 0] }}
-              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-              style={{
-                width: "clamp(160px, 48vw, 230px)",
-                height: "auto",
-                margin: "0 auto 0.5rem",
-                objectFit: "contain",
-                filter: "drop-shadow(0 6px 16px rgba(90,130,184,0.3))",
-              }}
-            />
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.24em", color: "#2E6CA6", textTransform: "uppercase" }}>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.3em", color: "#E7CE8E", textTransform: "uppercase" }}>
               Shubh Vivah
             </p>
 
-            <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 6vw, 2.6rem)", fontWeight: 600, margin: "0.6rem 0", color: "#1E3E6B" }}>
+            <h2 className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 6vw, 2.8rem)", fontWeight: 600, margin: "0.6rem 0", textShadow: "0 2px 20px rgba(0,0,0,0.7)" }}>
               You&apos;re Invited!
             </h2>
 
-            <div className="squiggle my-4" style={{ filter: "hue-rotate(190deg) saturate(0.6)" }} />
+            <div className="squiggle my-4" />
 
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, color: "#1E3E6B", fontSize: "1.1rem" }}>
-              Apoorva <span style={{ color: "#2E6CA6" }}>&amp;</span> Charan
+            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, color: "#F4EFE4", fontSize: "1.25rem", letterSpacing: "0.05em", textShadow: "0 2px 14px rgba(0,0,0,0.8)" }}>
+              Apoorva <span style={{ color: "#E7CE8E" }}>&amp;</span> Charan
             </p>
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: "#4A6788", fontSize: "0.9rem", marginTop: "0.3rem" }}>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: "#D9D2C4", fontSize: "0.95rem", marginTop: "0.3rem", textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}>
               November 19–22, 2026
             </p>
 
-            <button onClick={enter} disabled={opening} className="mt-8"
-              style={{
-                display: "inline-block", padding: "0.85rem 2.4rem", borderRadius: 2,
-                fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "0.82rem",
-                letterSpacing: "0.18em", textTransform: "uppercase", cursor: opening ? "wait" : "pointer",
-                border: "1px solid #2E6CA6", color: "#fff",
-                background: "linear-gradient(120deg, #2E6CA6, #5A97C9)",
-                opacity: opening ? 0.7 : 1, transition: "all 0.25s ease",
-              }}>
+            <button onClick={enter} disabled={opening} className="btn-fest mt-8">
               {opening ? "With blessings…" : "Open Invitation"}
             </button>
 
-            <p className="audio-note" style={{ color: "#6E8AA8" }}>🔊 Best experienced with sound on</p>
+            <p className="audio-note" style={{ color: "#B79A5E" }}>🔊 Best experienced with sound on</p>
           </motion.div>
         </motion.div>
       )}

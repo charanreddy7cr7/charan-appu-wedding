@@ -8,7 +8,7 @@ const gifts = [
 
 export default function RegistrySection() {
   return (
-    <section id="registry" className="py-20 px-6 relative" style={{ background: "#0B1834" }}>
+    <section id="registry" className="py-20 px-6 relative" style={{ background: "#0B0B0B" }}>
       <div className="max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>

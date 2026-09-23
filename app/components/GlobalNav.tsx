@@ -72,7 +72,7 @@ export default function GlobalNav() {
             initial={{ opacity: 0, x: "100%" }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
             className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8"
-            style={{ background: "linear-gradient(160deg, #12213F, #0B1834)" }}>
+            style={{ background: "linear-gradient(160deg, #151210, #0B0B0B)" }}>
             <span className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontWeight: 700, fontSize: "2rem" }}>A &amp; C</span>
             {navLinks.map((l, i) => (
               <motion.a key={l.href} href={l.href}
