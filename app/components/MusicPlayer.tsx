@@ -39,19 +39,26 @@ export default function MusicPlayer() {
     };
 
     const removeListeners = () => {
-      window.removeEventListener("hr:play-music", tryStart);
+      window.removeEventListener("hr:play-music", onEnter);
       document.removeEventListener("pointerdown", tryStart);
       document.removeEventListener("touchend", tryStart);
       document.removeEventListener("click", tryStart);
       document.removeEventListener("keydown", tryStart);
     };
 
-    // Envelope open dispatches this; also catch the very first interaction.
-    window.addEventListener("hr:play-music", tryStart);
-    document.addEventListener("pointerdown", tryStart);
-    document.addEventListener("touchend", tryStart);
-    document.addEventListener("click", tryStart);
-    document.addEventListener("keydown", tryStart);
+    // Start ONLY after the intro is dismissed (envelope "Open Invitation").
+    // The entrance Ganapathi song owns the intro screen; this site song takes
+    // over afterwards. We attach generic interaction listeners only once the
+    // enter event has fired, so nothing overlaps the entrance song.
+    const onEnter = () => {
+      tryStart();
+      document.addEventListener("pointerdown", tryStart);
+      document.addEventListener("touchend", tryStart);
+      document.addEventListener("click", tryStart);
+      document.addEventListener("keydown", tryStart);
+    };
+
+    window.addEventListener("hr:play-music", onEnter);
 
     return () => {
       removeListeners();
