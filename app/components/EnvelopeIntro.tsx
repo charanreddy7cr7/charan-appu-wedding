@@ -70,19 +70,18 @@ export default function EnvelopeIntro() {
             className="relative z-10 text-center px-8 py-12 mx-4 fest-card"
             style={{ maxWidth: 460, width: "100%" }}
           >
-            {/* Lord Ganapathi — auspicious blessing */}
+            {/* Lord Ganapathi — blended into the invite (transparent PNG, no frame) */}
             <motion.img
-              src="/ganapathi.jpg"
+              src="/ganapathi.png"
               alt="Lord Ganapathi"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ repeat: Infinity, duration: 2.8, ease: "easeInOut" }}
+              animate={{ y: [0, -6, 0] }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               style={{
-                width: "clamp(150px, 45vw, 210px)",
+                width: "clamp(160px, 48vw, 230px)",
                 height: "auto",
-                margin: "0 auto 0.75rem",
-                borderRadius: "18px",
-                boxShadow: "0 12px 30px rgba(230,57,128,0.22)",
+                margin: "0 auto 0.5rem",
                 objectFit: "contain",
+                filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.35))",
               }}
             />
             <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.24em", color: "#E63980", textTransform: "uppercase" }}>
