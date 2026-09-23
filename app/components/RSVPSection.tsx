@@ -45,8 +45,6 @@ const weddingEvents = [
 const mealOptions = [
   { value: "",           label: "Select meal preference…" },
   { value: "vegetarian", label: "🥗 Vegetarian" },
-  { value: "vegan",      label: "🌱 Vegan" },
-  { value: "jain",       label: "🙏 Jain" },
   { value: "non-veg",    label: "🍗 Non-Vegetarian" },
   { value: "no-pref",    label: "No preference" },
 ];
@@ -281,11 +279,6 @@ export default function RSVPSection() {
               <div style={panelStyle}>
                 <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", color: "#F4EFE4", marginBottom: "1rem" }}>✨ A few more things</p>
                 <div className="space-y-4">
-                  <div>
-                    <label style={labelStyle}>Dietary notes</label>
-                    <input type="text" placeholder="Allergies, Jain, no onion-garlic…" value={form.dietary}
-                      onChange={(e) => setForm((p) => ({ ...p, dietary: e.target.value }))} />
-                  </div>
                   <div>
                     <label style={labelStyle}>🎵 Song request for the party</label>
                     <input type="text" placeholder="What should we play?" value={form.songRequest}
