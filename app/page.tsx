@@ -19,12 +19,12 @@ export default function Home() {
       <AutoScroll />
       <GlobalNav />
       <HeroSection />
-      <CountdownSection />
       <EventsSection />
       <DressCodeSection />
       <RSVPSection />
       <GallerySection />
       <RegistrySection />
+      <CountdownSection />
       <Footer />
     </main>
   );
