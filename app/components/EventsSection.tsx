@@ -34,7 +34,7 @@ export default function EventsSection() {
             6 Celebrations · Nov 19–22
           </p>
           <h2 className="festive-text mt-3" style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "clamp(2.2rem, 6vw, 3.6rem)" }}>
-            The Party Line-Up
+            Wedding Celebration
           </h2>
           <div className="squiggle mt-5" />
         </motion.div>

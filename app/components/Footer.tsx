@@ -21,8 +21,8 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, color: "#fff", fontSize: "clamp(2.2rem, 7vw, 4rem)", lineHeight: 1.1 }}
         >
-          See you on
-          <br />the dance floor!
+          See you
+          <br />in Dallas!
         </motion.h2>
 
         <p className="mt-6" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "#fff", fontSize: "1.4rem" }}>
