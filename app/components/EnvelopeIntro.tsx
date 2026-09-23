@@ -70,14 +70,21 @@ export default function EnvelopeIntro() {
             className="relative z-10 text-center px-8 py-12 mx-4 fest-card"
             style={{ maxWidth: 460, width: "100%" }}
           >
-            {/* Ganesha emoji blessing — kept simple & bright */}
-            <motion.div
+            {/* Lord Ganapathi — auspicious blessing */}
+            <motion.img
+              src="/ganapathi.jpg"
+              alt="Lord Ganapathi"
               animate={{ y: [0, -8, 0] }}
-              transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut" }}
-              style={{ fontSize: "3.4rem", marginBottom: "0.5rem" }}
-            >
-              🕉️
-            </motion.div>
+              transition={{ repeat: Infinity, duration: 2.8, ease: "easeInOut" }}
+              style={{
+                width: "clamp(150px, 45vw, 210px)",
+                height: "auto",
+                margin: "0 auto 0.75rem",
+                borderRadius: "18px",
+                boxShadow: "0 12px 30px rgba(230,57,128,0.22)",
+                objectFit: "contain",
+              }}
+            />
             <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.24em", color: "#E63980", textTransform: "uppercase" }}>
               Shubh Vivah
             </p>
