@@ -36,7 +36,7 @@ export default function GallerySection() {
           {items.map((it, i) => (
             <motion.div key={it.id}
               initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }} whileHover={{ scale: 1.03, rotate: i % 2 ? 1.5 : -1.5 }}
+              transition={{ delay: i * 0.06 }} whileHover={{ scale: 1.03 }}
               onClick={() => setLightbox(i)}
               className="relative cursor-pointer overflow-hidden fest-card"
               style={{ aspectRatio: "1", borderRadius: 20 }}>

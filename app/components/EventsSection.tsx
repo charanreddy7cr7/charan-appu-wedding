@@ -96,11 +96,11 @@ export default function EventsSection() {
             return (
               <motion.div
                 key={e.id}
-                initial={{ opacity: 0, y: 40, rotate: 0 }}
-                whileInView={{ opacity: 1, y: 0, rotate: e.tilt }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ rotate: 0, y: -10, scale: 1.03 }}
+                whileHover={{ y: -10, scale: 1.03 }}
                 className="relative overflow-hidden"
                 style={{
                   background: e.bg,
