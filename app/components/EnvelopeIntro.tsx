@@ -98,11 +98,17 @@ export default function EnvelopeIntro() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.7 } }}
           className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
-          style={{ backgroundColor: "#000000" }}
+          style={{
+            backgroundColor: "#000000",
+            backgroundImage: "url('/ganapathi-gold.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
         >
-          {/* Soft gold glow behind the deity */}
+          {/* Dark vignette so text stays readable over the image */}
           <div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(circle at 50% 38%, rgba(201,162,75,0.14) 0%, rgba(0,0,0,0) 55%)" }} />
+            style={{ background: "radial-gradient(circle at 50% 40%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 100%)" }} />
 
           <Confetti count={40} />
 
@@ -111,22 +117,8 @@ export default function EnvelopeIntro() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
             className="relative z-10 flex flex-col items-center text-center px-8 mx-4"
-            style={{ maxWidth: 640, width: "100%" }}
+            style={{ maxWidth: 640, width: "100%", marginTop: "auto", marginBottom: "7vh" }}
           >
-            {/* Lord Ganapathi — transparent cutout, perfectly centered, no box/frame */}
-            <img
-              src="/ganapathi.png"
-              alt="Lord Ganapathi"
-              style={{
-                display: "block",
-                width: "min(72vw, 460px)",
-                height: "auto",
-                objectFit: "contain",
-                margin: "0 auto 1.5rem",
-                background: "transparent",
-              }}
-            />
-
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.3em", color: "#E7CE8E", textTransform: "uppercase" }}>
               Shubh Vivah
             </p>
