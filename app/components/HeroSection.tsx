@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Confetti from "./Confetti";
+import { FloralCorner } from "./FloralCorner";
 
 export default function HeroSection() {
   return (
@@ -11,6 +12,12 @@ export default function HeroSection() {
       style={{ background: "radial-gradient(circle at 20% 20%, #12213F 0%, #0B1834 55%, #0A1428 100%)" }}
     >
       <Confetti count={44} />
+
+      {/* Floral corners — navy roses + gold ferns (top-left & bottom-right mirrored) */}
+      <FloralCorner size={300} className="absolute top-0 left-0 pointer-events-none select-none"
+        style={{ opacity: 0.95 }} />
+      <FloralCorner size={300} className="absolute bottom-0 right-0 pointer-events-none select-none"
+        style={{ opacity: 0.95, transform: "rotate(180deg)" }} />
 
       {/* Big soft colour blobs */}
       <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full pointer-events-none"

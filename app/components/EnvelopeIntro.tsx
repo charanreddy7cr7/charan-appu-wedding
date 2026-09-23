@@ -3,6 +3,7 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Confetti from "./Confetti";
+import { FloralCorner } from "./FloralCorner";
 
 // Client-only mounted flag without setState-in-effect.
 function useMounted() {
@@ -62,6 +63,10 @@ export default function EnvelopeIntro() {
           style={{ background: "radial-gradient(circle at 50% 30%, #0A1428 0%, #0B1834 50%, #12213F 100%)" }}
         >
           <Confetti count={60} />
+
+          {/* Floral corners */}
+          <FloralCorner size={220} className="absolute top-0 left-0 pointer-events-none select-none" style={{ opacity: 0.9 }} />
+          <FloralCorner size={220} className="absolute bottom-0 right-0 pointer-events-none select-none" style={{ opacity: 0.9, transform: "rotate(180deg)" }} />
 
           <motion.div
             initial={{ opacity: 0, scale: 0.85, y: 20 }}
