@@ -151,16 +151,6 @@ export default function EventsSection() {
                       📍 {e.venue}
                     </p>
                   </div>
-
-                  {/* Dress code chip */}
-                  <div className="mt-auto pt-5 flex justify-center">
-                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full"
-                      style={{ background: e.chipBg, border: `1px solid ${e.accent}55` }}>
-                      <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.78rem", color: e.text, letterSpacing: "0.02em" }}>
-                        Dress code · {e.dress}
-                      </span>
-                    </span>
-                  </div>
                 </div>
               </motion.div>
             );
