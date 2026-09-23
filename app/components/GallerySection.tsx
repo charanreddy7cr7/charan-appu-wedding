@@ -17,7 +17,7 @@ export default function GallerySection() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
-    <section id="gallery" className="py-20 px-6 relative" style={{ background: "#FFEFE0" }}>
+    <section id="gallery" className="py-20 px-6 relative" style={{ background: "#241531" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#E63980", textTransform: "uppercase" }}>
@@ -27,7 +27,7 @@ export default function GallerySection() {
             Gallery
           </h2>
           <div className="squiggle mt-5" />
-          <p className="mt-4" style={{ fontFamily: "'Poppins', sans-serif", color: "#5A4A6A" }}>
+          <p className="mt-4" style={{ fontFamily: "'Poppins', sans-serif", color: "#C4B2D4" }}>
             A few of our favourite moments — more to come! 📸
           </p>
         </motion.div>
@@ -66,7 +66,7 @@ export default function GallerySection() {
               <span style={{ fontSize: "3rem" }}>📷</span>
               <p className="mt-2" style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, color: items[lightbox].color, fontSize: "1.3rem" }}>{items[lightbox].caption}</p>
               <button onClick={() => setLightbox(null)} className="absolute top-3 right-3"
-                style={{ width: 34, height: 34, borderRadius: 999, background: "#fff", border: "none", cursor: "pointer", fontSize: "1rem", color: "#2B1B3D" }}>✕</button>
+                style={{ width: 34, height: 34, borderRadius: 999, background: "#2A1A38", border: "none", cursor: "pointer", fontSize: "1rem", color: "#F6ECFB" }}>✕</button>
             </motion.div>
           </motion.div>
         )}

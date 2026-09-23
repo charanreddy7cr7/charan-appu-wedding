@@ -6,42 +6,42 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* Festive multi-colour palette */
-  --marigold:  #FF9F1C;   /* warm marigold orange */
-  --magenta:   #E63980;   /* festive pink */
-  --teal:      #0FA3B1;   /* bright teal */
-  --purple:    #7B2CBF;   /* royal purple */
-  --coral:     #FF5D5D;   /* coral red */
-  --lime:      #8AC926;   /* fresh green */
+  /* Festive multi-colour palette (brightened for dark mode) */
+  --marigold:  #FFB43C;   /* warm marigold orange */
+  --magenta:   #FF5CA0;   /* festive pink */
+  --teal:      #2CC7D6;   /* bright teal */
+  --purple:    #B57BFF;   /* light royal purple */
+  --coral:     #FF7A7A;   /* coral red */
+  --lime:      #A8E63C;   /* fresh green */
 
-  /* Surfaces */
-  --cream:     #FFF8F0;   /* warm cream base */
-  --cream-2:   #FFEFE0;   /* soft peach section */
-  --ink:       #2B1B3D;   /* deep aubergine ink (text) */
-  --ink-soft:  #5A4A6A;   /* softer body text */
-  --white:     #FFFFFF;
+  /* Surfaces — dark mode */
+  --cream:     #1A1024;   /* deep aubergine-black base */
+  --cream-2:   #241531;   /* slightly lighter section */
+  --ink:       #F6ECFB;   /* light lilac-white text */
+  --ink-soft:  #C4B2D4;   /* softer body text */
+  --white:     #2A1A38;   /* "card" surface (dark panel) */
 
-  /* Aliases used by older components — mapped into the festive palette */
+  /* Aliases used by components */
   --gold:        var(--marigold);
   --gold-mid:    var(--marigold);
   --gold-light:  #FFD9A0;
-  --gold-dark:   #C77A00;
+  --gold-dark:   #FFB43C;
   --gold-old:    var(--marigold);
   --bg-base:     var(--cream);
   --bg-section:  var(--cream);
   --bg-section-alt: var(--cream-2);
   --bg-card:     var(--white);
-  --bg-input:    var(--white);
-  --bg-hover:    #FFF3E8;
+  --bg-input:    #33223F;
+  --bg-hover:    #3A2747;
   --text-primary: var(--ink);
   --text-body:    var(--ink-soft);
   --text-subtle:  var(--magenta);
   --text-muted:   #9585A5;
-  --border:       rgba(43,27,61,0.14);
+  --border:       rgba(246,236,251,0.16);
   --border-focus: var(--magenta);
-  --border-card:  rgba(43,27,61,0.1);
-  --error:        #E63946;
-  --success:      #2A9D8F;
+  --border-card:  rgba(246,236,251,0.12);
+  --error:        #FF7A8A;
+  --success:      #4FD1B5;
   --ivory:        var(--cream);
   --ivory-dark:   var(--cream-2);
   --charcoal:     var(--ink);
@@ -166,10 +166,10 @@ p { line-height: 1.7; }
 .fest-card {
   background: var(--white);
   border-radius: 22px;
-  box-shadow: 0 10px 30px rgba(43,27,61,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.fest-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(43,27,61,0.14); }
+.fest-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.55); }
 
 /* ─── Form elements ──────────────────────────────────────────────────────── */
 input[type="text"], input[type="email"], input[type="tel"],

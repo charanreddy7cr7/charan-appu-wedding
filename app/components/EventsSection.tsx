@@ -13,12 +13,12 @@ const events: EventItem[] = [
   { id: "haldi",      emoji: "☀️", name: "Haldi",      date: "Fri, Nov 20", time: "1:00 – 4:00 PM",  venue: "[Venue TBD]", dress: "Beach Pink", color: "#FF6FB5", tilt: -1.5 },
   { id: "ceremony",   emoji: "🪔", name: "Bride & Groom Ceremony", date: "Fri, Nov 20", time: "5:00 – 7:00 PM", venue: "[Venue TBD]", dress: "White", color: "#7B2CBF", tilt: 2 },
   { id: "wedding",    emoji: "🪷", name: "Wedding",    date: "Sat, Nov 21", time: "10:00 AM onwards", venue: "[Venue TBD]", dress: "Half-White & Green", color: "#2A9D8F", tilt: -2 },
-  { id: "reception",  emoji: "🎉", name: "Reception",  date: "Sun, Nov 22", time: "6:00 PM – 12 AM", venue: "[Venue TBD]", dress: "Black", color: "#2B1B3D", tilt: 1.5 },
+  { id: "reception",  emoji: "🎉", name: "Reception",  date: "Sun, Nov 22", time: "6:00 PM – 12 AM", venue: "[Venue TBD]", dress: "Black", color: "#F6ECFB", tilt: 1.5 },
 ];
 
 export default function EventsSection() {
   return (
-    <section id="events" className="py-20 px-6 relative overflow-hidden" style={{ background: "#FFEFE0" }}>
+    <section id="events" className="py-20 px-6 relative overflow-hidden" style={{ background: "#241531" }}>
       {/* Playful blobs */}
       <div className="absolute top-10 -left-16 w-64 h-64 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(255,159,28,0.16), transparent 70%)" }} />
@@ -55,17 +55,17 @@ export default function EventsSection() {
                 <span style={{ fontSize: "3rem" }}>{e.emoji}</span>
               </div>
               <div className="p-6">
-                <h3 style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "1.3rem", color: "#2B1B3D" }}>
+                <h3 style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "1.3rem", color: "#F6ECFB" }}>
                   {e.name}
                 </h3>
                 <div className="mt-3 space-y-1.5">
                   <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.9rem", color: e.color }}>
                     📅 {e.date}
                   </p>
-                  <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.85rem", color: "#5A4A6A" }}>
+                  <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.85rem", color: "#C4B2D4" }}>
                     🕙 {e.time}
                   </p>
-                  <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.85rem", color: "#5A4A6A" }}>
+                  <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.85rem", color: "#C4B2D4" }}>
                     📍 {e.venue}
                   </p>
                 </div>

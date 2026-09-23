@@ -59,7 +59,7 @@ export default function EnvelopeIntro() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.7 } }}
           className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
-          style={{ background: "radial-gradient(circle at 50% 30%, #FFF1F6 0%, #FFF8F0 50%, #FFEFE0 100%)" }}
+          style={{ background: "radial-gradient(circle at 50% 30%, #2A1230 0%, #1A1024 50%, #241531 100%)" }}
         >
           <Confetti count={60} />
 
@@ -95,10 +95,10 @@ export default function EnvelopeIntro() {
 
             <div className="squiggle my-4" />
 
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, color: "#2B1B3D", fontSize: "1.1rem" }}>
+            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, color: "#F6ECFB", fontSize: "1.1rem" }}>
               Apoorva <span style={{ color: "#FF9F1C" }}>&amp;</span> Charan
             </p>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, color: "#5A4A6A", fontSize: "0.9rem", marginTop: "0.3rem" }}>
+            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, color: "#C4B2D4", fontSize: "0.9rem", marginTop: "0.3rem" }}>
               November 19–22, 2026
             </p>
 

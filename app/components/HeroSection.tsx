@@ -8,7 +8,7 @@ export default function HeroSection() {
     <section
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6"
-      style={{ background: "radial-gradient(circle at 20% 20%, #FFEFE0 0%, #FFF8F0 55%, #FFF1F6 100%)" }}
+      style={{ background: "radial-gradient(circle at 20% 20%, #241531 0%, #1A1024 55%, #2A1230 100%)" }}
     >
       <Confetti count={44} />
 
@@ -46,7 +46,7 @@ export default function HeroSection() {
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.28 }}
-          className="mt-1" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "0.82rem", color: "#5A4A6A" }}
+          className="mt-1" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "0.82rem", color: "#C4B2D4" }}
         >
           Daughter of Vajra &amp; Sanjeev Gonegari
         </motion.p>
@@ -73,7 +73,7 @@ export default function HeroSection() {
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.42 }}
-          className="mt-1" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "0.82rem", color: "#5A4A6A" }}
+          className="mt-1" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "0.82rem", color: "#C4B2D4" }}
         >
           Son of Late Sri Jaidi Bhaskar &amp; Sukanya
         </motion.p>
@@ -82,10 +82,10 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}
           className="mt-8 inline-flex items-center gap-3 px-6 py-3 rounded-full"
-          style={{ background: "#fff", boxShadow: "0 8px 24px rgba(43,27,61,0.1)" }}
+          style={{ background: "#2A1A38", boxShadow: "0 8px 24px rgba(0,0,0,0.35)" }}
         >
           <span style={{ fontSize: "1.2rem" }}>📅</span>
-          <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, color: "#2B1B3D", fontSize: "1rem" }}>
+          <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, color: "#F6ECFB", fontSize: "1rem" }}>
             November 19–22, 2026
           </span>
         </motion.div>

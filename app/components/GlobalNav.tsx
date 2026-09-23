@@ -34,7 +34,7 @@ export default function GlobalNav() {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 nav-blur transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}
-        style={{ background: scrolled ? "rgba(255,248,240,0.9)" : "transparent", boxShadow: scrolled ? "0 4px 20px rgba(43,27,61,0.08)" : "none" }}>
+        style={{ background: scrolled ? "rgba(26,16,36,0.92)" : "transparent", boxShadow: scrolled ? "0 4px 20px rgba(43,27,61,0.08)" : "none" }}>
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
           <a href="#home" onClick={(e) => { e.preventDefault(); go("#home"); }}
             className="festive-text" style={{ fontFamily: "'Fraunces', serif", fontWeight: 700, fontSize: "1.3rem", textDecoration: "none" }}>
@@ -45,9 +45,9 @@ export default function GlobalNav() {
             {navLinks.map((l) => (
               <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); go(l.href); }}
                 className="transition-colors"
-                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: "0.85rem", color: "#5A4A6A", textDecoration: "none" }}
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: "0.85rem", color: "#C4B2D4", textDecoration: "none" }}
                 onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#E63980")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#5A4A6A")}>
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#C4B2D4")}>
                 {l.label}
               </a>
             ))}
@@ -72,13 +72,13 @@ export default function GlobalNav() {
             initial={{ opacity: 0, x: "100%" }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
             className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8"
-            style={{ background: "linear-gradient(160deg, #FFF1F6, #FFF8F0)" }}>
+            style={{ background: "linear-gradient(160deg, #241531, #1A1024)" }}>
             <span className="festive-text" style={{ fontFamily: "'Fraunces', serif", fontWeight: 700, fontSize: "2rem" }}>A &amp; C</span>
             {navLinks.map((l, i) => (
               <motion.a key={l.href} href={l.href}
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}
                 onClick={(e) => { e.preventDefault(); go(l.href); }}
-                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "1.3rem", color: "#2B1B3D", textDecoration: "none" }}>
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "1.3rem", color: "#F6ECFB", textDecoration: "none" }}>
                 {l.label}
               </motion.a>
             ))}

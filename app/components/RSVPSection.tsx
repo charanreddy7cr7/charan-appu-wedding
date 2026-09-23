@@ -37,7 +37,7 @@ const weddingEvents = [
   { key: "mehendi"    as const, label: "Mehendi",    emoji: "🤚", color: "#8E1537" },
   { key: "engagement" as const, label: "Engagement",  emoji: "💍", color: "#E63946" },
   { key: "haldi"      as const, label: "Haldi",       emoji: "☀️", color: "#FF6FB5" },
-  { key: "ceremony"   as const, label: "Ceremony",    emoji: "🪔", color: "#7B2CBF" },
+  { key: "ceremony"   as const, label: "Ceremony",    emoji: "🪔", color: "#B57BFF" },
   { key: "wedding"    as const, label: "Wedding",     emoji: "🪷", color: "#2A9D8F" },
   { key: "reception"  as const, label: "Reception",   emoji: "🎉", color: "#FF9F1C" },
 ];
@@ -54,13 +54,13 @@ const mealOptions = [
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
 const labelStyle: React.CSSProperties = {
-  display: "block", color: "#7B2CBF", fontFamily: "'Poppins', sans-serif",
+  display: "block", color: "#B57BFF", fontFamily: "'Poppins', sans-serif",
   fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.1em",
   textTransform: "uppercase", marginBottom: "0.5rem",
 };
 const panelStyle: React.CSSProperties = {
-  background: "#FFFFFF", borderRadius: "22px", padding: "1.6rem",
-  boxShadow: "0 10px 30px rgba(43,27,61,0.08)",
+  background: "#2A1A38", borderRadius: "22px", padding: "1.6rem",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
 };
 
 export default function RSVPSection() {
@@ -115,7 +115,7 @@ export default function RSVPSection() {
   const allDeclined = form.guests.length > 0 && form.guests.every((g) => g.attending === "declines");
 
   return (
-    <section id="rsvp" className="py-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: "#FFF1F6" }}>
+    <section id="rsvp" className="py-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: "#1A1024" }}>
       <div className="absolute top-0 -right-20 w-72 h-72 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(230,57,128,0.14), transparent 70%)" }} />
 
@@ -129,8 +129,8 @@ export default function RSVPSection() {
             Will you join us?
           </h2>
           <div className="squiggle mt-4 mb-5" />
-          <p style={{ fontFamily: "'Poppins', sans-serif", color: "#5A4A6A", fontSize: "1.05rem", maxWidth: 460, margin: "0 auto" }}>
-            Will you be joining us in celebration? Come and bless us — <span style={{ color: "#7B2CBF", fontWeight: 600 }}>your presence makes us more happy.</span>
+          <p style={{ fontFamily: "'Poppins', sans-serif", color: "#C4B2D4", fontSize: "1.05rem", maxWidth: 460, margin: "0 auto" }}>
+            Will you be joining us in celebration? Come and bless us — <span style={{ color: "#B57BFF", fontWeight: 600 }}>your presence makes us more happy.</span>
           </p>
           <p className="mt-3" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.8rem", color: "#9585A5" }}>
             Please respond by <strong style={{ color: "#E63980" }}>October 1, 2026</strong>
@@ -146,7 +146,7 @@ export default function RSVPSection() {
               <h3 className="festive-text" style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "1.9rem" }}>
                 {allDeclined ? "We'll miss you!" : "Woohoo — you're in!"}
               </h3>
-              <p className="mt-3" style={{ fontFamily: "'Poppins', sans-serif", color: "#5A4A6A" }}>
+              <p className="mt-3" style={{ fontFamily: "'Poppins', sans-serif", color: "#C4B2D4" }}>
                 {allDeclined
                   ? "Thank you for letting us know. We'll keep you in our hearts. 💛"
                   : "Your RSVP is confirmed. A confirmation email is on its way! 💌"}
@@ -158,7 +158,7 @@ export default function RSVPSection() {
 
               {/* Contact */}
               <div style={panelStyle}>
-                <p style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "1.1rem", color: "#2B1B3D", marginBottom: "1rem" }}>👋 Your details</p>
+                <p style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "1.1rem", color: "#F6ECFB", marginBottom: "1rem" }}>👋 Your details</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="sm:col-span-2">
                     <label style={labelStyle}>Your name *</label>
@@ -180,16 +180,16 @@ export default function RSVPSection() {
 
               {/* Guests */}
               <div style={panelStyle}>
-                <p style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "1.1rem", color: "#2B1B3D", marginBottom: "0.3rem" }}>🎊 Who&apos;s coming?</p>
+                <p style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "1.1rem", color: "#F6ECFB", marginBottom: "0.3rem" }}>🎊 Who&apos;s coming?</p>
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.85rem", color: "#9585A5", marginBottom: "1.2rem" }}>
                   Add each guest, confirm attendance, and pick the events they&apos;ll join.
                 </p>
 
                 <div className="space-y-5">
                   {form.guests.map((guest, i) => (
-                    <div key={i} style={{ border: "2px solid rgba(43,27,61,0.08)", borderRadius: 18, padding: "1.1rem", background: "#FFFDFB" }}>
+                    <div key={i} style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 18, padding: "1.1rem", background: "#33223F" }}>
                       <div className="flex items-center justify-between mb-3">
-                        <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.1em", color: "#7B2CBF", textTransform: "uppercase" }}>Guest {i + 1}</span>
+                        <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.1em", color: "#B57BFF", textTransform: "uppercase" }}>Guest {i + 1}</span>
                         {i > 0 && (
                           <button type="button" onClick={() => removeGuest(i)}
                             style={{ color: "#E63946", fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.72rem", background: "none", border: "none", cursor: "pointer" }}>
@@ -215,8 +215,8 @@ export default function RSVPSection() {
                               <button key={choice} type="button" onClick={() => updateGuest(i, "attending", choice)}
                                 style={{
                                   padding: "0.75rem", borderRadius: 999,
-                                  border: `2px solid ${active ? c : "rgba(43,27,61,0.15)"}`,
-                                  background: active ? c : "#fff", color: active ? "#fff" : "#5A4A6A",
+                                  border: `2px solid ${active ? c : "rgba(246,236,251,0.2)"}`,
+                                  background: active ? c : "#33223F", color: active ? "#fff" : "#C4B2D4",
                                   fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.8rem",
                                   cursor: "pointer", transition: "all 0.15s",
                                 }}>
@@ -231,14 +231,14 @@ export default function RSVPSection() {
                         <>
                           <div className="grid grid-cols-2 gap-3 mb-3">
                             {(["adults", "kids"] as const).map((field) => (
-                              <div key={field} className="flex items-center justify-between p-3" style={{ border: "2px solid rgba(43,27,61,0.08)", borderRadius: 14 }}>
-                                <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.72rem", color: "#5A4A6A", textTransform: "uppercase" }}>{field}</span>
+                              <div key={field} className="flex items-center justify-between p-3" style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 14 }}>
+                                <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.72rem", color: "#C4B2D4", textTransform: "uppercase" }}>{field}</span>
                                 <div className="flex items-center gap-2">
                                   <button type="button" onClick={() => adjustCount(i, field, -1)} aria-label={`less ${field}`}
-                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFEFE0", color: "#E63980", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>−</button>
-                                  <span style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "1.1rem", minWidth: "1.4rem", textAlign: "center", color: "#2B1B3D" }}>{guest[field]}</span>
+                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#3A2747", color: "#FF5CA0", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>−</button>
+                                  <span style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "1.1rem", minWidth: "1.4rem", textAlign: "center", color: "#F6ECFB" }}>{guest[field]}</span>
                                   <button type="button" onClick={() => adjustCount(i, field, 1)} aria-label={`more ${field}`}
-                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFEFE0", color: "#E63980", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>+</button>
+                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#3A2747", color: "#FF5CA0", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>+</button>
                                 </div>
                               </div>
                             ))}
@@ -257,9 +257,9 @@ export default function RSVPSection() {
                               const on = guest[ev.key];
                               return (
                                 <label key={ev.key} className="flex items-center gap-2 cursor-pointer p-2"
-                                  style={{ borderRadius: 999, border: `2px solid ${on ? ev.color : "rgba(43,27,61,0.12)"}`, background: on ? `${ev.color}18` : "#fff", transition: "all 0.15s" }}>
+                                  style={{ borderRadius: 999, border: `2px solid ${on ? ev.color : "rgba(246,236,251,0.18)"}`, background: on ? `${ev.color}26` : "#33223F", transition: "all 0.15s" }}>
                                   <input type="checkbox" checked={on} onChange={(e) => updateGuest(i, ev.key, e.target.checked)} className="sr-only" />
-                                  <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: on ? 700 : 500, fontSize: "0.74rem", color: on ? ev.color : "#5A4A6A" }}>
+                                  <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: on ? 700 : 500, fontSize: "0.74rem", color: on ? ev.color : "#C4B2D4" }}>
                                     {ev.emoji} {ev.label}
                                   </span>
                                 </label>
@@ -279,7 +279,7 @@ export default function RSVPSection() {
 
               {/* Extras */}
               <div style={panelStyle}>
-                <p style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "1.1rem", color: "#2B1B3D", marginBottom: "1rem" }}>✨ A few more things</p>
+                <p style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "1.1rem", color: "#F6ECFB", marginBottom: "1rem" }}>✨ A few more things</p>
                 <div className="space-y-4">
                   <div>
                     <label style={labelStyle}>Dietary notes</label>
@@ -302,7 +302,7 @@ export default function RSVPSection() {
               {/* Submit */}
               <div className="text-center pt-2">
                 {validationError && (
-                  <div className="mb-5 inline-block" style={{ color: "#E63946", fontFamily: "'Poppins', sans-serif", fontWeight: 500, background: "#FFF0F0", border: "2px solid #FFD0D0", borderRadius: 14, padding: "0.7rem 1.25rem" }}>
+                  <div className="mb-5 inline-block" style={{ color: "#FF7A8A", fontFamily: "'Poppins', sans-serif", fontWeight: 500, background: "#3A1F2A", border: "2px solid #6B2A3A", borderRadius: 14, padding: "0.7rem 1.25rem" }}>
                     ⚠ {validationError}
                   </div>
                 )}
