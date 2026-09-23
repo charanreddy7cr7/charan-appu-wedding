@@ -113,9 +113,9 @@ export default function EnvelopeIntro() {
             className="relative z-10 flex flex-col items-center text-center px-8 mx-4"
             style={{ maxWidth: 640, width: "100%" }}
           >
-            {/* Lord Ganapathi — perfectly centered, face on the 50% width axis */}
+            {/* Lord Ganapathi — transparent cutout, perfectly centered, no box/frame */}
             <img
-              src="/ganapathi-gold.jpg"
+              src="/ganapathi.png"
               alt="Lord Ganapathi"
               style={{
                 display: "block",
@@ -123,6 +123,7 @@ export default function EnvelopeIntro() {
                 height: "auto",
                 objectFit: "contain",
                 margin: "0 auto 1.5rem",
+                background: "transparent",
               }}
             />
 
