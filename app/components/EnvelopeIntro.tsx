@@ -60,7 +60,7 @@ export default function EnvelopeIntro() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.7 } }}
           className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
-          style={{ background: "radial-gradient(circle at 50% 30%, #0A1428 0%, #0B1834 50%, #12213F 100%)" }}
+          style={{ background: "radial-gradient(circle at 50% 25%, #FFFFFF 0%, #EAF3FA 45%, #CFE3F0 100%)" }}
         >
           <Confetti count={60} />
 
@@ -72,8 +72,16 @@ export default function EnvelopeIntro() {
             initial={{ opacity: 0, scale: 0.85, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 160, damping: 16 }}
-            className="relative z-10 text-center px-8 py-12 mx-4 fest-card"
-            style={{ maxWidth: 460, width: "100%" }}
+            className="relative z-10 text-center px-8 py-12 mx-4"
+            style={{
+              maxWidth: 460, width: "100%",
+              background: "rgba(255,255,255,0.72)",
+              border: "1px solid rgba(90,130,184,0.35)",
+              borderRadius: 8,
+              backdropFilter: "blur(14px)",
+              WebkitBackdropFilter: "blur(14px)",
+              boxShadow: "0 16px 44px rgba(90,130,184,0.28)",
+            }}
           >
             {/* Lord Ganapathi — blended into the invite (transparent PNG, no frame) */}
             <motion.img
@@ -86,31 +94,39 @@ export default function EnvelopeIntro() {
                 height: "auto",
                 margin: "0 auto 0.5rem",
                 objectFit: "contain",
-                filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.35))",
+                filter: "drop-shadow(0 6px 16px rgba(90,130,184,0.3))",
               }}
             />
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.24em", color: "#2E6CA6", textTransform: "uppercase" }}>
               Shubh Vivah
             </p>
 
-            <h2 className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 6vw, 2.6rem)", fontWeight: 600, margin: "0.6rem 0" }}>
+            <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 6vw, 2.6rem)", fontWeight: 600, margin: "0.6rem 0", color: "#1E3E6B" }}>
               You&apos;re Invited!
             </h2>
 
-            <div className="squiggle my-4" />
+            <div className="squiggle my-4" style={{ filter: "hue-rotate(190deg) saturate(0.6)" }} />
 
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, color: "#F4EFE4", fontSize: "1.1rem" }}>
-              Apoorva <span style={{ color: "#E7CE8E" }}>&amp;</span> Charan
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, color: "#1E3E6B", fontSize: "1.1rem" }}>
+              Apoorva <span style={{ color: "#2E6CA6" }}>&amp;</span> Charan
             </p>
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: "#D9D2C4", fontSize: "0.9rem", marginTop: "0.3rem" }}>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: "#4A6788", fontSize: "0.9rem", marginTop: "0.3rem" }}>
               November 19–22, 2026
             </p>
 
-            <button onClick={enter} disabled={opening} className="btn-fest mt-8">
+            <button onClick={enter} disabled={opening} className="mt-8"
+              style={{
+                display: "inline-block", padding: "0.85rem 2.4rem", borderRadius: 2,
+                fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "0.82rem",
+                letterSpacing: "0.18em", textTransform: "uppercase", cursor: opening ? "wait" : "pointer",
+                border: "1px solid #2E6CA6", color: "#fff",
+                background: "linear-gradient(120deg, #2E6CA6, #5A97C9)",
+                opacity: opening ? 0.7 : 1, transition: "all 0.25s ease",
+              }}>
               {opening ? "With blessings…" : "Open Invitation"}
             </button>
 
-            <p className="audio-note">🔊 Best experienced with sound on</p>
+            <p className="audio-note" style={{ color: "#6E8AA8" }}>🔊 Best experienced with sound on</p>
           </motion.div>
         </motion.div>
       )}
