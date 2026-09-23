@@ -59,7 +59,7 @@ export default function EnvelopeIntro() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.7 } }}
           className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
-          style={{ background: "radial-gradient(circle at 50% 30%, #2A1230 0%, #1A1024 50%, #241531 100%)" }}
+          style={{ background: "radial-gradient(circle at 50% 30%, #0A1428 0%, #0B1834 50%, #12213F 100%)" }}
         >
           <Confetti count={60} />
 
@@ -84,25 +84,25 @@ export default function EnvelopeIntro() {
                 filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.35))",
               }}
             />
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.24em", color: "#E63980", textTransform: "uppercase" }}>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
               Shubh Vivah
             </p>
 
-            <h2 className="festive-text" style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(1.8rem, 6vw, 2.6rem)", fontWeight: 600, margin: "0.6rem 0" }}>
+            <h2 className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 6vw, 2.6rem)", fontWeight: 600, margin: "0.6rem 0" }}>
               You&apos;re Invited!
             </h2>
 
             <div className="squiggle my-4" />
 
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, color: "#F6ECFB", fontSize: "1.1rem" }}>
-              Apoorva <span style={{ color: "#FF9F1C" }}>&amp;</span> Charan
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, color: "#F4EFE4", fontSize: "1.1rem" }}>
+              Apoorva <span style={{ color: "#E7CE8E" }}>&amp;</span> Charan
             </p>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, color: "#C4B2D4", fontSize: "0.9rem", marginTop: "0.3rem" }}>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: "#D9D2C4", fontSize: "0.9rem", marginTop: "0.3rem" }}>
               November 19–22, 2026
             </p>
 
             <button onClick={enter} disabled={opening} className="btn-fest mt-8">
-              {opening ? "Let's celebrate! 🎉" : "Open Invitation 💌"}
+              {opening ? "With blessings…" : "Open Invitation"}
             </button>
 
             <p className="audio-note">🔊 Best experienced with sound on</p>
