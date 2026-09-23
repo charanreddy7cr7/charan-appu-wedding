@@ -97,7 +97,7 @@ export default function EnvelopeIntro() {
           key="intro"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.7 } }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-start overflow-y-auto"
           style={{
             backgroundColor: "#000000",
             backgroundImage: "url('/ganapathi-gold.jpg')",
@@ -117,7 +117,7 @@ export default function EnvelopeIntro() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
             className="relative z-10 flex flex-col items-center text-center px-8 mx-4"
-            style={{ maxWidth: 640, width: "100%", marginTop: "auto", marginBottom: "7vh" }}
+            style={{ maxWidth: 640, width: "100%", marginTop: "min(58vw, 58vh)" }}
           >
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.3em", color: "#E7CE8E", textTransform: "uppercase" }}>
               Shubh Vivah
