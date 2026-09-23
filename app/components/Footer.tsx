@@ -1,173 +1,55 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MandalaCorner, LotusDivider, DiyaIcon, KolamBorder } from "./TeluguGraphics";
+import Confetti from "./Confetti";
 
 export default function Footer() {
   return (
-    <footer
-      className="relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #EFE6D2 0%, #FBF6EC 100%)" }}
-    >
-      {/* Top border */}
-      <div
-        className="h-px w-full"
-        style={{ background: "linear-gradient(90deg, transparent, #C9A84C, transparent)" }}
-      />
+    <footer className="relative overflow-hidden py-24 px-6 text-center"
+      style={{ background: "linear-gradient(160deg, #7B2CBF 0%, #E63980 60%, #FF9F1C 100%)" }}>
+      <Confetti count={30} />
 
-      {/* Kolam decorative border */}
-      <KolamBorder color="#C9A84C" opacity={0.08} />
-
-      {/* Mandala corners */}
-      <div className="absolute top-0 left-0 pointer-events-none hidden md:block">
-        <MandalaCorner size={120} color="#C9A84C" opacity={0.15} />
-      </div>
-      <div className="absolute top-0 right-0 pointer-events-none hidden md:block" style={{ transform: "scaleX(-1)" }}>
-        <MandalaCorner size={120} color="#C9A84C" opacity={0.15} />
-      </div>
-
-      {/* Radial glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse 80% 60% at 50% 80%, rgba(139,105,20,0.04) 0%, transparent 70%)",
-        }}
-      />
-
-      <div className="relative z-10 py-24 px-6 text-center">
-        {/* Ornament */}
+      <div className="relative z-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ duration: 1 }}
-          className="mb-6 flex items-center justify-center gap-6"
+          initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
+          style={{ fontSize: "2.6rem", marginBottom: "0.5rem" }}
         >
-          <DiyaIcon size={28} />
-          <span style={{ color: "#C9A84C", opacity: 0.4, fontSize: "2rem" }}>✦</span>
-          <DiyaIcon size={28} />
+          💛
         </motion.div>
-
-        <div className="flex justify-center mb-8">
-          <LotusDivider color="#C9A84C" width={240} opacity={0.4} />
-        </div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="tracking-[0.3em] text-xs mb-8"
-          style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
-        >
-          NOVEMBER 19–22, 2026
-        </motion.p>
 
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="gold-text"
-          style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: "clamp(2.5rem, 8vw, 6rem)",
-            fontWeight: 400,
-            letterSpacing: "0.06em",
-            lineHeight: 1.1,
-          }}
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, color: "#fff", fontSize: "clamp(2.2rem, 7vw, 4rem)", lineHeight: 1.1 }}
         >
-          See You
-          <br />
-          in November
+          See you on
+          <br />the dance floor!
         </motion.h2>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
-          <p
-            className="mt-6 text-2xl"
-            style={{ color: "#C9A84C" }}
-          >
-            ❤️
-          </p>
-
-          <div className="section-divider mt-6 mb-6" />
-
-          <p
-            className="italic text-xl"
-            style={{ color: "#3D2B00", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
-          >
-            Apoorva &amp; Charan
-          </p>
-          <p
-            className="mt-2 italic"
-            style={{ color: "rgba(139,105,20,0.7)", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
-          >
-            Two hearts, one forever. 💛
-          </p>
-        </motion.div>
+        <p className="mt-6" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "#fff", fontSize: "1.4rem" }}>
+          Apoorva &amp; Charan
+        </p>
+        <p className="mt-1" style={{ fontFamily: "'Poppins', sans-serif", color: "rgba(255,255,255,0.85)", fontSize: "0.9rem" }}>
+          November 2026
+        </p>
 
         {/* Quick links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ delay: 0.8 }}
-          className="mt-14 flex flex-wrap justify-center gap-6"
-        >
+        <div className="mt-10 flex flex-wrap justify-center gap-6">
           {[
             { label: "Events", href: "#events" },
             { label: "RSVP", href: "#rsvp" },
             { label: "Gallery", href: "#gallery" },
-          ].map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-xs tracking-[0.2em] transition-opacity duration-200 hover:opacity-100"
-              style={{
-                color: "rgba(201,168,76,0.4)",
-                fontFamily: "'Lato', sans-serif",
-                fontWeight: 300,
-                textDecoration: "none",
-              }}
-            >
-              {link.label.toUpperCase()}
+            { label: "Host Login", href: "/admin/" },
+          ].map((l) => (
+            <a key={l.href} href={l.href}
+              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: "0.8rem", letterSpacing: "0.08em", color: "#fff", textDecoration: "none", opacity: 0.9 }}>
+              {l.label}
             </a>
           ))}
-          <a
-            href="/admin/"
-            className="text-xs tracking-[0.2em] transition-opacity duration-200 hover:opacity-100"
-            style={{
-              color: "rgba(201,168,76,0.4)",
-              fontFamily: "'Lato', sans-serif",
-              fontWeight: 300,
-              textDecoration: "none",
-            }}
-          >
-            HOST LOGIN
-          </a>
-        </motion.div>
+        </div>
 
-        {/* Bottom note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ delay: 1 }}
-          className="mt-14 text-xs"
-          style={{
-            color: "rgba(139,105,20,0.4)",
-            fontFamily: "'Lato', sans-serif",
-            fontWeight: 300,
-            letterSpacing: "0.1em",
-          }}
-        >
-          Made with ❤️ for Apoorva &amp; Charan · 2026
-        </motion.p>
+        <p className="mt-12" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.72rem", color: "rgba(255,255,255,0.7)" }}>
+          Made with 💛 for Apoorva &amp; Charan · 2026
+        </p>
       </div>
     </footer>
   );

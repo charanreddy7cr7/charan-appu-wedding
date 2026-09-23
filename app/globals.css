@@ -1,369 +1,245 @@
 @import "tailwindcss";
 
-/* ─── Design Tokens ──────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════════════
+   FESTIVE CELEBRATION THEME — a joyful, vibrant, multi-colour design.
+   Fonts: Fraunces (expressive display) + Poppins (friendly sans).
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 :root {
-  /* Gold palette */
-  --gold:          #B8860B;   /* deep antique gold — high contrast on white */
-  --gold-mid:      #C9A84C;   /* mid gold for accents */
-  --gold-light:    #E8D5A3;   /* soft gold for dividers / decorative */
-  --gold-dark:     #7A5800;   /* darkest gold for headings on white */
+  /* Festive multi-colour palette */
+  --marigold:  #FF9F1C;   /* warm marigold orange */
+  --magenta:   #E63980;   /* festive pink */
+  --teal:      #0FA3B1;   /* bright teal */
+  --purple:    #7B2CBF;   /* royal purple */
+  --coral:     #FF5D5D;   /* coral red */
+  --lime:      #8AC926;   /* fresh green */
 
-  /* Background scale — warm ivory cream theme */
-  --bg-base:       #FBF6EC;   /* warm ivory base */
-  --bg-section:    #F7F0E1;   /* main section bg */
-  --bg-section-alt:#EFE6D2;   /* alternating section bg */
-  --bg-card:       #FFFDF7;   /* card / form panel bg */
-  --bg-input:      #FFFFFF;   /* input fields */
-  --bg-hover:      #FFF8E8;   /* input focus / hover tint */
+  /* Surfaces */
+  --cream:     #FFF8F0;   /* warm cream base */
+  --cream-2:   #FFEFE0;   /* soft peach section */
+  --ink:       #2B1B3D;   /* deep aubergine ink (text) */
+  --ink-soft:  #5A4A6A;   /* softer body text */
+  --white:     #FFFFFF;
 
-  /* Text scale — dark on ivory */
-  --text-primary:  #2B1D0E;   /* deep espresso — headings */
-  --text-body:     #4A3728;   /* warm brown — body copy */
-  --text-subtle:   #7A5A2E;   /* bronze — labels, captions */
-  --text-muted:    #9C8460;   /* muted tan — placeholders, footnotes */
-
-  /* Borders */
-  --border:        rgba(184,134,11,0.25);   /* gold-tinted border */
-  --border-focus:  rgba(184,134,11,0.75);   /* focused input border */
-  --border-card:   rgba(184,134,11,0.2);    /* card border */
-
-  /* Semantic */
-  --error:         #B91C1C;
-  --success:       #15803D;
-
-  /* Legacy aliases → warm ivory cream */
-  --gold-old:      #C9A84C;
-  --ivory:         #FBF6EC;
-  --ivory-dark:    #EFE6D2;
-  --charcoal:      #2B1D0E;
-  --off-white:     #FFFDF7;
-
-  /* Event palettes (event cards stay colorful) */
-  --mehendi-primary:   #2D6A4F;
-  --mehendi-secondary: #E91E8C;
-  --haldi-primary:     #E65100;
-  --haldi-secondary:   #FDD835;
-  --wedding-primary:   #FAF6EE;
-  --wedding-secondary: #C9A84C;
-  --sangeeth-primary:  #0D0D2B;
-  --sangeeth-secondary:#D4AF37;
+  /* Aliases used by older components — mapped into the festive palette */
+  --gold:        var(--marigold);
+  --gold-mid:    var(--marigold);
+  --gold-light:  #FFD9A0;
+  --gold-dark:   #C77A00;
+  --gold-old:    var(--marigold);
+  --bg-base:     var(--cream);
+  --bg-section:  var(--cream);
+  --bg-section-alt: var(--cream-2);
+  --bg-card:     var(--white);
+  --bg-input:    var(--white);
+  --bg-hover:    #FFF3E8;
+  --text-primary: var(--ink);
+  --text-body:    var(--ink-soft);
+  --text-subtle:  var(--magenta);
+  --text-muted:   #9585A5;
+  --border:       rgba(43,27,61,0.14);
+  --border-focus: var(--magenta);
+  --border-card:  rgba(43,27,61,0.1);
+  --error:        #E63946;
+  --success:      #2A9D8F;
+  --ivory:        var(--cream);
+  --ivory-dark:   var(--cream-2);
+  --charcoal:     var(--ink);
+  --off-white:    var(--white);
 }
 
 /* ─── Reset & Base ───────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
-
 body {
-  background-color: var(--bg-base);
-  color: var(--text-body);
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: 'Poppins', system-ui, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Typography ─────────────────────────────────────────────────────────── */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--text-primary);
-  line-height: 1.2;
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  color: var(--ink);
+  line-height: 1.1;
 }
+p { line-height: 1.7; }
 
-p { line-height: 1.75; }
-
-/* ─── Gold Shimmer Text ──────────────────────────────────────────────────── */
-@keyframes goldShimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position:  200% center; }
-}
-
-.gold-text {
-  background: linear-gradient(
-    90deg,
-    var(--gold-dark),
-    var(--gold),
-    #D4A843,
-    var(--gold),
-    var(--gold-dark)
-  );
-  background-size: 200% auto;
+/* ─── Festive rainbow text ───────────────────────────────────────────────── */
+.festive-text {
+  background: linear-gradient(100deg, var(--magenta), var(--marigold), var(--teal), var(--purple));
+  background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: goldShimmer 5s linear infinite;
+  animation: hueShift 8s linear infinite;
+}
+@keyframes hueShift {
+  0%   { background-position: 0% center; }
+  100% { background-position: 300% center; }
 }
 
-/* ─── Utilities ──────────────────────────────────────────────────────────── */
-.gold-border {
-  border: 1px solid var(--gold-mid);
-  box-shadow: 0 0 16px rgba(184,134,11,0.1);
+/* Legacy .gold-text now maps to festive gradient so old markup still pops */
+.gold-text {
+  background: linear-gradient(100deg, var(--magenta), var(--marigold), var(--purple));
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: hueShift 8s linear infinite;
 }
 
+/* ─── Pill buttons ───────────────────────────────────────────────────────── */
+.btn-fest {
+  display: inline-block;
+  padding: 0.9rem 2.4rem;
+  border-radius: 999px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background: linear-gradient(120deg, var(--magenta), var(--marigold));
+  box-shadow: 0 8px 22px rgba(230,57,128,0.35);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.btn-fest:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 30px rgba(230,57,128,0.45); }
+.btn-fest:active { transform: translateY(-1px); }
+.btn-fest:disabled { opacity: 0.6; cursor: wait; }
+
+.btn-outline {
+  display: inline-block;
+  padding: 0.85rem 2.2rem;
+  border-radius: 999px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--purple);
+  background: transparent;
+  border: 2px solid var(--purple);
+  transition: all 0.18s ease;
+}
+.btn-outline:hover { background: var(--purple); color: #fff; transform: translateY(-2px); }
+
+/* ─── Decorative squiggle divider ────────────────────────────────────────── */
+.squiggle {
+  width: 120px; height: 12px; margin: 0 auto;
+  background: repeating-linear-gradient(90deg,
+    var(--magenta) 0 8px, var(--marigold) 8px 16px, var(--teal) 16px 24px, var(--purple) 24px 32px);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='12'%3E%3Cpath d='M0 6 Q 15 0 30 6 T 60 6 T 90 6 T 120 6' stroke='black' stroke-width='4' fill='none'/%3E%3C/svg%3E") no-repeat center;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='12'%3E%3Cpath d='M0 6 Q 15 0 30 6 T 60 6 T 90 6 T 120 6' stroke='black' stroke-width='4' fill='none'/%3E%3C/svg%3E") no-repeat center;
+}
+/* Legacy divider → festive gradient bar */
 .section-divider {
-  width: 80px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 0 auto;
+  width: 90px; height: 4px; border-radius: 999px; margin: 0 auto;
+  background: linear-gradient(90deg, var(--magenta), var(--marigold), var(--teal));
 }
 
-/* Section background helpers */
-.section-ivory     { background: var(--bg-section); }
-.section-ivory-alt { background: var(--bg-section-alt); }
-
-/* ─── Animations ─────────────────────────────────────────────────────────── */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-18px); }
+/* ─── Confetti ───────────────────────────────────────────────────────────── */
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  border-radius: 2px;
+  pointer-events: none;
+  animation: confettiFall linear infinite;
+}
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
 }
 
-@keyframes pulse-gold {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.45; }
-}
-
-@keyframes particle-drift {
-  0%   { transform: translateY(100vh) rotate(0deg);   opacity: 0; }
-  10%  { opacity: 0.7; }
-  90%  { opacity: 0.7; }
-  100% { transform: translateY(-20px) rotate(720deg); opacity: 0; }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ─── Particles ──────────────────────────────────────────────────────────── */
+/* Legacy particle → soft confetti dot */
 .particle {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  animation: particle-drift linear infinite;
+  animation: confettiFall linear infinite;
 }
+
+/* ─── Cards ──────────────────────────────────────────────────────────────── */
+.fest-card {
+  background: var(--white);
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(43,27,61,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.fest-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(43,27,61,0.14); }
+
+/* ─── Form elements ──────────────────────────────────────────────────────── */
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="password"], textarea, select {
+  background: var(--white);
+  color: var(--ink);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  padding: 0.8rem 1.1rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--magenta);
+  box-shadow: 0 0 0 4px rgba(230,57,128,0.12);
+}
+input::placeholder, textarea::placeholder { color: var(--text-muted); }
 
 /* ─── Scrollbar ──────────────────────────────────────────────────────────── */
-::-webkit-scrollbar             { width: 5px; }
-::-webkit-scrollbar-track       { background: var(--bg-section); }
-::-webkit-scrollbar-thumb       { background: var(--gold-mid); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream-2); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--magenta), var(--marigold)); border-radius: 4px; }
 
-/* ─── Focus Styles ───────────────────────────────────────────────────────── */
-:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 3px;
-}
+:focus-visible { outline: 3px solid var(--magenta); outline-offset: 3px; }
 
-/* ─── Nav ────────────────────────────────────────────────────────────────── */
-.nav-blur {
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-}
+.nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
 
-/* ─── Form Elements — global defaults ───────────────────────────────────── */
-
-/* All text inputs and textareas on the site */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"],
-textarea {
-  background:    var(--bg-input);
-  color:         var(--text-primary);
-  border:        1.5px solid var(--border);
-  border-radius: 3px;
-  font-family:   'Cormorant Garamond', Georgia, serif;
-  font-size:     1rem;
-  padding:       0.75rem 1rem;
-  width:         100%;
-  outline:       none;
-  transition:    border-color 0.2s, box-shadow 0.2s;
-  -webkit-appearance: none;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-input[type="password"]:focus,
-textarea:focus {
-  border-color: var(--border-focus);
-  box-shadow:   0 0 0 3px rgba(184,134,11,0.1);
-  background:   var(--bg-hover);
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: var(--text-muted);
-  opacity: 1;
-}
-
-/* Form labels */
-.form-label {
-  display:        block;
-  color:          var(--gold-dark);
-  font-family:    'Lato', sans-serif;
-  font-weight:    400;
-  font-size:      0.68rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom:  0.5rem;
-}
-
-/* Primary CTA button */
-.btn-primary {
-  display:         inline-block;
-  background:      var(--gold);
-  color:           #FFFFFF;
-  border:          none;
-  padding:         0.85rem 2.5rem;
-  font-family:     'Lato', sans-serif;
-  font-weight:     600;
-  font-size:       0.78rem;
-  letter-spacing:  0.28em;
-  text-transform:  uppercase;
-  cursor:          pointer;
-  transition:      background 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow:      0 2px 12px rgba(184,134,11,0.25);
-  border-radius:   2px;
-}
-.btn-primary:hover {
-  background:   var(--gold-dark);
-  box-shadow:   0 4px 18px rgba(184,134,11,0.35);
-  transform:    translateY(-1px);
-}
-.btn-primary:active  { transform: translateY(0); }
-.btn-primary:disabled {
-  background:   var(--gold-light);
-  color:        var(--text-muted);
-  cursor:       wait;
-  box-shadow:   none;
-}
-
-/* Ghost / outline button */
-.btn-ghost {
-  display:         inline-block;
-  background:      transparent;
-  color:           var(--gold);
-  border:          1.5px solid var(--gold-mid);
-  padding:         0.75rem 2rem;
-  font-family:     'Lato', sans-serif;
-  font-weight:     400;
-  font-size:       0.75rem;
-  letter-spacing:  0.22em;
-  text-transform:  uppercase;
-  cursor:          pointer;
-  transition:      background 0.2s, color 0.2s, border-color 0.2s;
-  border-radius:   2px;
-}
-.btn-ghost:hover {
-  background:    var(--gold);
-  color:         #FFFFFF;
-  border-color:  var(--gold);
-}
-
-/* Form card panel */
-.form-panel {
-  background:   var(--bg-card);
-  border:       1.5px solid var(--border-card);
-  padding:      1.5rem;
-  border-radius:4px;
-}
-
-/* ─── Floating Music Player ──────────────────────────────────────────────── */
+/* ─── Floating music button ──────────────────────────────────────────────── */
 .music-btn {
-  position:         fixed;
-  bottom:           24px;
-  right:            24px;
-  z-index:          40;
-  display:          flex;
-  align-items:      center;
-  gap:              8px;
-  padding:          10px 18px;
-  background:       rgba(255, 252, 245, 0.95);
-  border:           1.5px solid var(--gold-mid);
-  border-radius:    999px;
-  color:            var(--gold-dark);
-  font-family:      'Lato', sans-serif;
-  font-weight:      500;
-  font-size:        0.7rem;
-  letter-spacing:   0.16em;
-  text-transform:   uppercase;
-  cursor:           pointer;
-  backdrop-filter:  blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow:       0 2px 16px rgba(184,134,11,0.18), 0 1px 4px rgba(0,0,0,0.08);
-  transition:       transform 0.2s, box-shadow 0.2s, background 0.2s;
+  position: fixed; bottom: 22px; right: 22px; z-index: 40;
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 20px; border-radius: 999px;
+  background: linear-gradient(120deg, var(--purple), var(--magenta));
+  border: none; color: #fff;
+  font-family: 'Poppins', sans-serif; font-weight: 600;
+  font-size: 0.75rem; letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(123,44,191,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.music-btn:hover {
-  transform:   translateY(-2px);
-  background:  rgba(255, 248, 232, 0.98);
-  box-shadow:  0 4px 20px rgba(184,134,11,0.28);
-}
-.music-icon { font-size: 1.1rem; line-height: 1; display: inline-block; }
+.music-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(123,44,191,0.5); }
+.music-icon { font-size: 1.1rem; line-height: 1; }
 .music-icon.spin { animation: musicSpin 3s linear infinite; }
-@keyframes musicSpin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-@media (max-width: 640px) {
-  .music-label { display: none; }
-  .music-btn   { padding: 12px; bottom: 16px; right: 16px; }
-}
+@keyframes musicSpin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+@media (max-width: 640px) { .music-label { display: none; } .music-btn { padding: 13px; } }
 
-/* ─── Envelope / Ganesha Intro (legacy CSS kept) ─────────────────────────── */
-.envelope-overlay {
-  position:   fixed;
-  inset:      0;
-  z-index:    9999;
-  display:    flex;
-  align-items:center;
-  justify-content: center;
-  background: radial-gradient(circle at 50% 40%, #14140f 0%, #0A0A0A 70%);
-  opacity:    1;
-  transition: opacity 0.7s ease;
-}
+/* ─── Ganesha / intro overlay (kept minimal) ─────────────────────────────── */
+.envelope-overlay { position: fixed; inset: 0; z-index: 9999; display: flex;
+  align-items: center; justify-content: center; opacity: 1; transition: opacity 0.7s ease; }
 .envelope-overlay.is-gone { opacity: 0; pointer-events: none; }
+.envelope-stage { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 24px; }
+.tap-hint { font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 0.06em;
+  font-size: 0.8rem; margin: 0; animation: pulse 2.2s ease-in-out infinite; }
+.tap-hint.delivered { color: var(--marigold); }
+.audio-note { margin-top: 10px; font-family: 'Poppins', sans-serif; font-weight: 400;
+  font-size: 0.7rem; letter-spacing: 0.04em; opacity: 0.6; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+@keyframes pulse-gold { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
 
-.envelope-stage {
-  display:        flex;
-  flex-direction: column;
-  align-items:    center;
-  gap:            28px;
-  padding:        24px;
-}
-
-.tap-hint {
-  color:          var(--gold-dark);
-  font-family:    "Cinzel", Georgia, serif;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  font-size:      0.68rem;
-  opacity:        0.9;
-  animation:      pulse-gold 2.2s ease-in-out infinite;
-  margin:         0;
-}
-.tap-hint.delivered { color: #c8960a; font-size: 0.8rem; }
-
-.audio-note {
-  margin-top:     12px;
-  color:          var(--text-muted);
-  font-family:    "Lato", sans-serif;
-  font-weight:    300;
-  font-size:      0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-/* ─── Reduced Motion ─────────────────────────────────────────────────────── */
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .gold-text,
-  .music-icon.spin,
-  .tap-hint,
-  .particle {
+  .festive-text, .gold-text, .confetti-piece, .particle, .music-icon.spin, .tap-hint {
     animation: none !important;
   }
-  .gold-text {
-    background: var(--gold-dark);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .festive-text, .gold-text {
+    background: var(--magenta);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
 }

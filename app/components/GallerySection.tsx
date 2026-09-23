@@ -3,204 +3,74 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Add your photos to /public/gallery/ then set placeholder:false and the src path.
-const galleryItems = [
-  { id: 1, alt: "Apoorva & Charan — Engagement",   caption: "The Beginning",   src: "", placeholder: true, aspect: "portrait" },
-  { id: 2, alt: "Apoorva & Charan — Together",       caption: "Our Journey",     src: "", placeholder: true, aspect: "landscape" },
-  { id: 3, alt: "Apoorva Reddy Gonegari",            caption: "The Bride",       src: "", placeholder: true, aspect: "portrait" },
-  { id: 4, alt: "Charan Reddy Jaidi",                caption: "The Groom",       src: "", placeholder: true, aspect: "portrait" },
-  { id: 5, alt: "Apoorva & Charan — Celebration",    caption: "Celebrations",    src: "", placeholder: true, aspect: "landscape" },
-  { id: 6, alt: "Apoorva & Charan — Families",       caption: "Two Families",    src: "", placeholder: true, aspect: "portrait" },
-  { id: 7, alt: "Apoorva & Charan — Forever",        caption: "Forever Begins",  src: "", placeholder: true, aspect: "landscape" },
-];
-
-const gradients = [
-  "linear-gradient(135deg, #1B4332, #2D6A4F)",
-  "linear-gradient(135deg, #7C2D12, #EA580C)",
-  "linear-gradient(135deg, #1A0A00, #3D2314)",
-  "linear-gradient(135deg, #020014, #1A1040)",
-  "linear-gradient(135deg, #2D1B69, #7C3AED)",
-  "linear-gradient(135deg, #0C1A2E, #1E3A5F)",
+// Add photos to /public/gallery then set placeholder:false + src.
+const items = [
+  { id: 1, caption: "The Beginning",   src: "", placeholder: true, color: "#E63980" },
+  { id: 2, caption: "Our Journey",     src: "", placeholder: true, color: "#FF9F1C" },
+  { id: 3, caption: "The Bride",       src: "", placeholder: true, color: "#7B2CBF" },
+  { id: 4, caption: "The Groom",       src: "", placeholder: true, color: "#0FA3B1" },
+  { id: 5, caption: "Celebrations",    src: "", placeholder: true, color: "#8AC926" },
+  { id: 6, caption: "Forever Begins",  src: "", placeholder: true, color: "#FF5D5D" },
 ];
 
 export default function GallerySection() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
-    <section
-      id="gallery"
-      className="py-16 px-6 relative overflow-hidden"
-      style={{ background: "var(--ivory)" }}
-    >
-      <div
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, #C9A84C, transparent)" }}
-      />
-
+    <section id="gallery" className="py-20 px-6 relative" style={{ background: "#FFEFE0" }}>
       <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <p
-            className="tracking-[0.3em] text-xs mb-4"
-            style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
-          >
-            OUR MOMENTS
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#E63980", textTransform: "uppercase" }}>
+            Our moments
           </p>
-          <h2
-            style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(2rem, 5vw, 3.5rem)",
-              color: "#2B1D0E",
-              fontWeight: 400,
-              letterSpacing: "0.08em",
-            }}
-          >
+          <h2 className="festive-text mt-3" style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "clamp(2.2rem, 6vw, 3.6rem)" }}>
             Gallery
           </h2>
-          <div className="section-divider mt-6 mb-6" />
-          <p
-            className="italic text-lg"
-            style={{ color: "#7A5A2E", fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
-          >
-            A few of our favourite moments — with more to come.
+          <div className="squiggle mt-5" />
+          <p className="mt-4" style={{ fontFamily: "'Poppins', sans-serif", color: "#5A4A6A" }}>
+            A few of our favourite moments — more to come! 📸
           </p>
         </motion.div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {galleryItems.map((item, i) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              whileHover={{ scale: 1.02 }}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {items.map((it, i) => (
+            <motion.div key={it.id}
+              initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
+              transition={{ delay: i * 0.06 }} whileHover={{ scale: 1.03, rotate: i % 2 ? 1.5 : -1.5 }}
               onClick={() => setLightbox(i)}
-              className="relative cursor-pointer overflow-hidden group"
-              style={{
-                aspectRatio: item.aspect === "portrait" ? "3/4" : "4/3",
-                background: gradients[i % gradients.length],
-              }}
-            >
-              {/* Real image or placeholder */}
-              {!item.placeholder && item.src ? (
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+              className="relative cursor-pointer overflow-hidden fest-card"
+              style={{ aspectRatio: "1", borderRadius: 20 }}>
+              {!it.placeholder && it.src ? (
+                <img src={it.src} alt={it.caption} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
               ) : (
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <div
-                    className="text-4xl mb-3 opacity-40"
-                    style={{ color: "#C9A84C" }}
-                  >
-                    ♾
-                  </div>
-                  <p
-                    className="text-sm tracking-[0.1em] text-center px-4 mb-1"
-                    style={{ color: "#8B6914", fontFamily: "'Cinzel', serif", fontWeight: 500 }}
-                  >
-                    {item.caption}
-                  </p>
-                  <p
-                    className="text-xs tracking-[0.15em] opacity-40 text-center px-4"
-                    style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300 }}
-                  >
-                    PHOTO COMING SOON
-                  </p>
+                <div className="absolute inset-0 flex flex-col items-center justify-center"
+                  style={{ background: `linear-gradient(140deg, ${it.color}22, ${it.color}0A)` }}>
+                  <span style={{ fontSize: "2rem" }}>📷</span>
+                  <p className="mt-2 px-3 text-center" style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, color: it.color, fontSize: "0.95rem" }}>{it.caption}</p>
+                  <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.62rem", color: "#9585A5", letterSpacing: "0.1em", marginTop: 2 }}>COMING SOON</p>
                 </div>
               )}
-
-              {/* Hover overlay */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                style={{ background: "rgba(201,168,76,0.15)" }}
-              >
-                <span
-                  className="text-2xl"
-                  style={{ color: "#C9A84C" }}
-                >
-                  ↗
-                </span>
-              </div>
-
-              {/* Corner accents */}
-              <span className="absolute top-2 left-2 w-3 h-3 border-t border-l opacity-40" style={{ borderColor: "#C9A84C" }} />
-              <span className="absolute bottom-2 right-2 w-3 h-3 border-b border-r opacity-40" style={{ borderColor: "#C9A84C" }} />
             </motion.div>
           ))}
         </div>
-
-        {/* Lightbox */}
-        <AnimatePresence>
-          {lightbox !== null && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setLightbox(null)}
-              className="fixed inset-0 z-50 flex items-center justify-center p-4"
-              style={{ background: "rgba(0,0,0,0.92)" }}
-            >
-              <motion.div
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.8 }}
-                onClick={(e) => e.stopPropagation()}
-                className="relative max-w-2xl w-full"
-                style={{
-                  aspectRatio: galleryItems[lightbox].aspect === "portrait" ? "3/4" : "4/3",
-                  background: gradients[lightbox % gradients.length],
-                  maxHeight: "80vh",
-                }}
-              >
-                {!galleryItems[lightbox].placeholder && galleryItems[lightbox].src ? (
-                  <img
-                    src={galleryItems[lightbox].src}
-                    alt={galleryItems[lightbox].alt}
-                    className="absolute inset-0 w-full h-full object-contain"
-                    style={{ background: "#0A0A0A" }}
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-6xl mb-4" style={{ color: "#C9A84C", opacity: 0.3 }}>♾</div>
-                    <p
-                      className="text-sm tracking-[0.2em] opacity-30"
-                      style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif" }}
-                    >
-                      PHOTO COMING SOON
-                    </p>
-                  </div>
-                )}
-
-                <button
-                  onClick={() => setLightbox(null)}
-                  className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center"
-                  style={{
-                    background: "rgba(201,168,76,0.2)",
-                    border: "1px solid #C9A84C",
-                    color: "#C9A84C",
-                    cursor: "pointer",
-                    fontFamily: "'Lato', sans-serif",
-                  }}
-                  aria-label="Close lightbox"
-                >
-                  ✕
-                </button>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
+
+      <AnimatePresence>
+        {lightbox !== null && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            onClick={() => setLightbox(null)} className="fixed inset-0 z-50 flex items-center justify-center p-6"
+            style={{ background: "rgba(43,27,61,0.85)" }}>
+            <motion.div initial={{ scale: 0.85 }} animate={{ scale: 1 }} exit={{ scale: 0.85 }}
+              onClick={(e) => e.stopPropagation()} className="relative max-w-lg w-full fest-card flex flex-col items-center justify-center"
+              style={{ aspectRatio: "1", background: `linear-gradient(140deg, ${items[lightbox].color}22, #fff)` }}>
+              <span style={{ fontSize: "3rem" }}>📷</span>
+              <p className="mt-2" style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, color: items[lightbox].color, fontSize: "1.3rem" }}>{items[lightbox].caption}</p>
+              <button onClick={() => setLightbox(null)} className="absolute top-3 right-3"
+                style={{ width: 34, height: 34, borderRadius: 999, background: "#fff", border: "none", cursor: "pointer", fontSize: "1rem", color: "#2B1B3D" }}>✕</button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

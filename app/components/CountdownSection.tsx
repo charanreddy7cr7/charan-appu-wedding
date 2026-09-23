@@ -1,173 +1,94 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { motion } from "framer-motion";
 
-interface TimeLeft {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
+function useMounted() {
+  return useSyncExternalStore(() => () => {}, () => true, () => false);
 }
+
+interface TimeLeft { days: number; hours: number; minutes: number; seconds: number; }
 
 function getTimeLeft(target: Date): TimeLeft {
   const diff = target.getTime() - Date.now();
   if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   return {
-    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((diff / (1000 * 60)) % 60),
+    days: Math.floor(diff / 86400000),
+    hours: Math.floor((diff / 3600000) % 24),
+    minutes: Math.floor((diff / 60000) % 60),
     seconds: Math.floor((diff / 1000) % 60),
   };
 }
 
-function CountUnit({ value, label }: { value: number; label: string }) {
+const unitColors = ["#E63980", "#FF9F1C", "#0FA3B1", "#7B2CBF"];
+
+function Unit({ value, label, color }: { value: number; label: string; color: string }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-      transition={{ duration: 0.8 }}
-      className="flex flex-col items-center"
-    >
+    <div className="flex flex-col items-center">
       <div
-        className="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center gold-border"
+        className="flex items-center justify-center rounded-3xl"
         style={{
-          background: "rgba(201,168,76,0.05)",
+          width: "clamp(4.5rem, 18vw, 7rem)",
+          height: "clamp(4.5rem, 18vw, 7rem)",
+          background: "#fff",
+          boxShadow: `0 10px 26px ${color}33`,
+          border: `3px solid ${color}`,
         }}
       >
-        {/* Corner accents */}
-        <span className="absolute top-1 left-1 w-2 h-2 border-t border-l" style={{ borderColor: "#C9A84C" }} />
-        <span className="absolute top-1 right-1 w-2 h-2 border-t border-r" style={{ borderColor: "#C9A84C" }} />
-        <span className="absolute bottom-1 left-1 w-2 h-2 border-b border-l" style={{ borderColor: "#C9A84C" }} />
-        <span className="absolute bottom-1 right-1 w-2 h-2 border-b border-r" style={{ borderColor: "#C9A84C" }} />
-
         <motion.span
           key={value}
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="gold-text"
-          style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: "clamp(1.8rem, 5vw, 2.8rem)",
-            fontWeight: 500,
-          }}
+          initial={{ y: -8, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "clamp(1.8rem, 6vw, 3rem)", color }}
         >
           {String(value).padStart(2, "0")}
         </motion.span>
       </div>
-      <p
-        className="mt-3 tracking-[0.25em] text-xs"
-        style={{
-          color: "#C9A84C",
-          fontFamily: "'Lato', sans-serif",
-          fontWeight: 300,
-        }}
-      >
+      <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#5A4A6A", marginTop: "0.6rem" }}>
         {label}
-      </p>
-    </motion.div>
+      </span>
+    </div>
   );
 }
 
 export default function CountdownSection() {
-  // Wedding date: November 21, 2026 — 10:00 AM
+  const mounted = useMounted();
   const weddingDate = new Date("2026-11-21T10:00:00");
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(getTimeLeft(weddingDate));
-  const [mounted, setMounted] = useState(false);
+  const [t, setT] = useState<TimeLeft>(getTimeLeft(weddingDate));
 
   useEffect(() => {
-    setMounted(true);
-    const interval = setInterval(() => {
-      setTimeLeft(getTimeLeft(weddingDate));
-    }, 1000);
-    return () => clearInterval(interval);
+    const id = setInterval(() => setT(getTimeLeft(weddingDate)), 1000);
+    return () => clearInterval(id);
   }, []);
-
   if (!mounted) return null;
 
   return (
-    <section
-      id="countdown"
-      className="py-16 px-6 relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #FBF6EC 0%, #EFE6D2 100%)" }}
-    >
-      {/* Subtle background pattern */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `radial-gradient(circle, #C9A84C 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
+    <section id="countdown" className="py-20 px-6 relative" style={{ background: "#FFF8F0" }}>
+      <div className="max-w-3xl mx-auto text-center">
         <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          className="tracking-[0.3em] mb-4"
-          style={{ color: "#C9A84C", fontFamily: "'Lato', sans-serif", fontWeight: 300, fontSize: "clamp(0.9rem, 2.5vw, 1.4rem)" }}
+          initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#E63980", textTransform: "uppercase" }}
         >
-          THE CELEBRATION BEGINS IN
+          Let the celebrations begin in
         </motion.p>
 
-        <div className="flex items-center justify-center gap-4 md:gap-8 flex-wrap">
-          <CountUnit value={timeLeft.days} label="DAYS" />
-
-          <span className="gold-text text-4xl mb-6 font-light">·</span>
-
-          <CountUnit value={timeLeft.hours} label="HOURS" />
-
-          <span className="gold-text text-4xl mb-6 font-light">·</span>
-
-          <CountUnit value={timeLeft.minutes} label="MINUTES" />
-
-          <span className="gold-text text-4xl mb-6 font-light">·</span>
-
-          <CountUnit value={timeLeft.seconds} label="SECONDS" />
+        <div className="flex items-center justify-center gap-3 sm:gap-6 flex-wrap mt-8">
+          <Unit value={t.days} label="Days" color={unitColors[0]} />
+          <Unit value={t.hours} label="Hours" color={unitColors[1]} />
+          <Unit value={t.minutes} label="Minutes" color={unitColors[2]} />
+          <Unit value={t.seconds} label="Seconds" color={unitColors[3]} />
         </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ delay: 0.3 }}
-          className="mt-8 tracking-[0.15em]"
-          style={{
-            color: "#C9A84C",
-            fontFamily: "'Cinzel', serif",
-            fontSize: "clamp(1.4rem, 4vw, 2.2rem)",
-            fontWeight: 400,
-          }}
+        <motion.h2
+          initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+          className="festive-text mt-12"
+          style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: "clamp(1.8rem, 5vw, 2.8rem)" }}
         >
           November 19–22, 2026
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="section-divider mt-12"
-        />
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ delay: 0.6 }}
-          className="mt-6 italic"
-          style={{
-            color: "#3D2B00",
-            fontFamily: "'Cormorant Garamond', serif",
-            fontWeight: 300,
-            fontSize: "clamp(1.25rem, 3.5vw, 1.75rem)",
-          }}
-        >
-          Save the date and join us!
-        </motion.p>
+        </motion.h2>
+        <p className="mt-3" style={{ fontFamily: "'Poppins', sans-serif", color: "#5A4A6A", fontSize: "1.05rem" }}>
+          Save the date — we can&apos;t wait to celebrate with you! 🎊
+        </p>
       </div>
     </section>
   );
