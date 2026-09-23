@@ -102,7 +102,7 @@ export default function EnvelopeIntro() {
             backgroundColor: "#000000",
             backgroundImage: "url('/ganapathi-gold.jpg')",
             backgroundSize: "cover",
-            backgroundPosition: "54% center",
+            backgroundPosition: "62% center",
             backgroundRepeat: "no-repeat",
           }}
         >
