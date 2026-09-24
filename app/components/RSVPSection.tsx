@@ -161,7 +161,7 @@ export default function RSVPSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="sm:col-span-2">
                     <label style={labelStyle}>Your name *</label>
-                    <input required type="text" placeholder="e.g. Ravi Kumar" value={form.primaryName}
+                    <input required type="text" placeholder="Full name" value={form.primaryName}
                       onChange={(e) => setForm((p) => ({ ...p, primaryName: e.target.value }))} />
                   </div>
                   <div>
