@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // Add photos to /public/gallery then set placeholder:false + src.
 const items = [
   { id: 1, caption: "The Oasis Ranch", src: "/gallery/oasis-ranch.jpg", placeholder: false, color: "#C9A24B" },
-  { id: 2, caption: "Our Journey",     src: "", placeholder: true, color: "#E7CE8E" },
+  { id: 2, caption: "The Meridian Venue", src: "/gallery/meridian-venue.jpg", placeholder: false, color: "#E7CE8E" },
   { id: 3, caption: "The Bride",       src: "", placeholder: true, color: "#C9A24B" },
   { id: 4, caption: "The Groom",       src: "", placeholder: true, color: "#C9A24B" },
   { id: 5, caption: "Celebrations",    src: "", placeholder: true, color: "#C9A24B" },
