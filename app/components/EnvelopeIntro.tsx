@@ -97,46 +97,63 @@ export default function EnvelopeIntro() {
           key="intro"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.7 } }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-start overflow-y-auto"
-          style={{
-            backgroundColor: "#000000",
-            backgroundImage: "url('/ganapathi-gold.jpg')",
-            backgroundSize: "contain",
-            backgroundPosition: "center top",
-            backgroundRepeat: "no-repeat",
-          }}
+          className="fixed inset-0 z-[9999] flex items-center justify-center overflow-y-auto py-8"
+          style={{ background: "radial-gradient(circle at 50% 30%, #151210 0%, #0B0B0B 60%, #050505 100%)" }}
         >
-          {/* Dark vignette so text stays readable over the image */}
-          <div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(circle at 50% 40%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 100%)" }} />
-
           <Confetti count={40} />
 
+          {/* Centered rectangle card framing the Ganapathi */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="relative z-10 flex flex-col items-center text-center px-8 mx-4"
-            style={{ maxWidth: 640, width: "100%", marginTop: "min(58vw, 58vh)" }}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 150, damping: 18 }}
+            className="relative z-10 flex flex-col items-center text-center mx-4"
+            style={{
+              width: "min(90vw, 460px)",
+              padding: "1.6rem 1.6rem 2.2rem",
+              borderRadius: 10,
+              background: "linear-gradient(160deg, #12100C 0%, #0A0A0A 100%)",
+              border: "1.5px solid rgba(201,162,75,0.55)",
+              boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,162,75,0.12)",
+            }}
           >
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.3em", color: "#E7CE8E", textTransform: "uppercase" }}>
+            {/* Corner flourishes */}
+            <span style={{ position: "absolute", top: 12, left: 12, width: 22, height: 22, borderTop: "1.5px solid #C9A24B", borderLeft: "1.5px solid #C9A24B", opacity: 0.8 }} />
+            <span style={{ position: "absolute", top: 12, right: 12, width: 22, height: 22, borderTop: "1.5px solid #C9A24B", borderRight: "1.5px solid #C9A24B", opacity: 0.8 }} />
+            <span style={{ position: "absolute", bottom: 12, left: 12, width: 22, height: 22, borderBottom: "1.5px solid #C9A24B", borderLeft: "1.5px solid #C9A24B", opacity: 0.8 }} />
+            <span style={{ position: "absolute", bottom: 12, right: 12, width: 22, height: 22, borderBottom: "1.5px solid #C9A24B", borderRight: "1.5px solid #C9A24B", opacity: 0.8 }} />
+
+            {/* Ganapathi image — centered inside the rectangle */}
+            <img
+              src="/ganapathi-gold.jpg"
+              alt="Lord Ganapathi"
+              style={{
+                display: "block",
+                width: "100%",
+                height: "auto",
+                borderRadius: 6,
+                objectFit: "cover",
+              }}
+            />
+
+            <p className="mt-5" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.3em", color: "#E7CE8E", textTransform: "uppercase" }}>
               Shubh Vivah
             </p>
 
-            <h2 className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 6vw, 2.8rem)", fontWeight: 600, margin: "0.6rem 0", textShadow: "0 2px 20px rgba(0,0,0,0.7)" }}>
+            <h2 className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.7rem, 6vw, 2.4rem)", fontWeight: 600, margin: "0.5rem 0" }}>
               You&apos;re Invited!
             </h2>
 
-            <div className="squiggle my-4" />
+            <div className="squiggle my-3" />
 
-            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, color: "#F4EFE4", fontSize: "1.25rem", letterSpacing: "0.05em", textShadow: "0 2px 14px rgba(0,0,0,0.8)" }}>
+            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, color: "#F4EFE4", fontSize: "1.2rem", letterSpacing: "0.05em" }}>
               Apoorva <span style={{ color: "#E7CE8E" }}>&amp;</span> Charan
             </p>
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: "#D9D2C4", fontSize: "0.95rem", marginTop: "0.3rem", textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: "#D9D2C4", fontSize: "0.92rem", marginTop: "0.3rem" }}>
               November 19–22, 2026
             </p>
 
-            <button onClick={enter} disabled={opening} className="btn-fest mt-8">
+            <button onClick={enter} disabled={opening} className="btn-fest mt-6">
               {opening ? "With blessings…" : "Open Invitation"}
             </button>
 
