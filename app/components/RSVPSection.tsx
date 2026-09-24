@@ -90,18 +90,18 @@ export default function RSVPSection() {
     for (let i = 0; i < form.guests.length; i++) {
       const g = form.guests[i];
       if (!g.name.trim()) { setValidation(`Please enter a name for Guest ${i + 1}.`); return; }
-      if (!g.attending)   { setValidation(`Please confirm attendance for ${g.name || `Guest ${i + 1}`}.`); return; }
-      if (g.attending === "accepts") {
-        const keys = ["mehendi","engagement","haldi","ceremony","wedding","reception"] as const;
-        if (!keys.some((k) => g[k])) { setValidation(`Please select at least one event for ${g.name || `Guest ${i + 1}`}.`); return; }
-      }
+      const keys = ["mehendi","engagement","haldi","ceremony","wedding","reception"] as const;
+      if (!keys.some((k) => g[k])) { setValidation(`Please select at least one event for ${g.name || `Guest ${i + 1}`}.`); return; }
     }
+    // Everyone who RSVPs is attending.
+    const guests = form.guests.map((g) => ({ ...g, attending: "accepts" as const }));
+    const payload = { ...form, guests };
     setValidation("");
     setSubmitState("submitting");
     try {
       const res = await fetch("https://wa3r5hutq1.execute-api.us-east-1.amazonaws.com/api/rsvp", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
       if (res.ok && data.success) {
@@ -111,7 +111,7 @@ export default function RSVPSection() {
     } catch { setSubmitState("error"); }
   };
 
-  const allDeclined = form.guests.length > 0 && form.guests.every((g) => g.attending === "declines");
+  const allDeclined = false;
 
   return (
     <section id="rsvp" className="py-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: "#0B0B0B" }}>
@@ -209,32 +209,7 @@ export default function RSVPSection() {
                           onChange={(e) => updateGuest(i, "name", e.target.value)} />
                       </div>
 
-                      {/* Accepts / Declines */}
-                      <div className="mb-4">
-                        <label style={labelStyle}>Attendance *</label>
-                        <div className="grid grid-cols-2 gap-3">
-                          {(["accepts", "declines"] as const).map((choice) => {
-                            const active = guest.attending === choice;
-                            const c = choice === "accepts" ? "#2A9D8F" : "#E63946";
-                            return (
-                              <button key={choice} type="button" onClick={() => updateGuest(i, "attending", choice)}
-                                style={{
-                                  padding: "0.75rem", borderRadius: 999,
-                                  border: `2px solid ${active ? c : "rgba(246,236,251,0.2)"}`,
-                                  background: active ? c : "#141414", color: active ? "#fff" : "#D9D2C4",
-                                  fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.8rem",
-                                  cursor: "pointer", transition: "all 0.15s",
-                                }}>
-                                {choice === "accepts" ? "✓ Joyfully Accepts" : "✕ Regretfully Declines"}
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      {guest.attending === "accepts" && (
-                        <>
-                          <div className="grid grid-cols-2 gap-3 mb-3">
+                      <div className="grid grid-cols-2 gap-3 mb-3">
                             {(["adults", "kids"] as const).map((field) => (
                               <div key={field} className="flex items-center justify-between p-3" style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 14 }}>
                                 <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", color: "#D9D2C4", textTransform: "uppercase" }}>{field}</span>
@@ -264,8 +239,6 @@ export default function RSVPSection() {
                               );
                             })}
                           </div>
-                        </>
-                      )}
                     </div>
                   ))}
                 </div>
