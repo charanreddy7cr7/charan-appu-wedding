@@ -22,6 +22,7 @@ interface FormData {
   primaryName: string;
   email: string;
   phone: string;
+  meal: string;
   guests: GuestEntry[];
   dietary: string;
   songRequest: string;
@@ -63,7 +64,7 @@ const panelStyle: React.CSSProperties = {
 
 export default function RSVPSection() {
   const [form, setForm] = useState<FormData>({
-    primaryName: "", email: "", phone: "",
+    primaryName: "", email: "", phone: "", meal: "",
     guests: [defaultGuest()],
     dietary: "", songRequest: "", message: "",
   });
@@ -173,6 +174,12 @@ export default function RSVPSection() {
                     <input type="tel" placeholder="+1 (555) 000-0000" value={form.phone}
                       onChange={(e) => setForm((p) => ({ ...p, phone: e.target.value }))} />
                   </div>
+                  <div>
+                    <label style={labelStyle}>Meal preference</label>
+                    <select value={form.meal} onChange={(e) => setForm((p) => ({ ...p, meal: e.target.value }))} style={{ cursor: "pointer" }}>
+                      {mealOptions.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+                    </select>
+                  </div>
                 </div>
               </div>
 
@@ -240,13 +247,6 @@ export default function RSVPSection() {
                                 </div>
                               </div>
                             ))}
-                          </div>
-
-                          <div className="mb-4">
-                            <label style={labelStyle}>Meal preference</label>
-                            <select value={guest.meal} onChange={(e) => updateGuest(i, "meal", e.target.value)} style={{ cursor: "pointer" }}>
-                              {mealOptions.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
-                            </select>
                           </div>
 
                           <label style={labelStyle}>Events attending *</label>
