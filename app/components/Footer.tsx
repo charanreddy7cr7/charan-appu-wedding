@@ -53,10 +53,10 @@ export default function Footer() {
             Invited by
           </p>
           <p className="mt-2" style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.05rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
-            Soumya &amp; Shashindhar
+            Soumya &amp; Shashindhar Jaidi
           </p>
           <p className="mt-1" style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.05rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
-            Ajay &amp; Anjali
+            Anjali &amp; Ajay Maggidi
           </p>
         </div>
 
