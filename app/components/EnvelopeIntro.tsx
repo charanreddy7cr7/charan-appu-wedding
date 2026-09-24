@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Confetti from "./Confetti";
 
@@ -11,7 +11,6 @@ function useMounted() {
 
 /**
  * Festive intro — a bright, joyful welcome card the guest taps to enter.
- * Plays the entrance Ganapathi song while visible; stops it on enter.
  * Shows once per browser session.
  */
 export default function EnvelopeIntro() {
@@ -23,7 +22,6 @@ export default function EnvelopeIntro() {
 
   const [opening, setOpening] = useState(false);
   const [manualDismiss, setManualDismiss] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const dismissed = initiallySeen || manualDismiss;
 
@@ -32,49 +30,12 @@ export default function EnvelopeIntro() {
     if ("scrollRestoration" in window.history) window.history.scrollRestoration = "manual";
     window.scrollTo(0, 0);
     document.body.style.overflow = "hidden";
-
-    // Entrance Ganapathi song — only for this screen.
-    const audio = new Audio("/music/entrance-ganapathi.mp3");
-    audio.volume = 0.6;
-    audio.loop = true;
-    audio.setAttribute("playsinline", "true");
-    audioRef.current = audio;
-
-    // Try to autoplay; if blocked, start on the first user interaction.
-    const tryPlay = () => { audio.play().catch(() => {}); };
-    tryPlay();
-    const onFirst = () => { tryPlay(); removeFirst(); };
-    const removeFirst = () => {
-      document.removeEventListener("pointerdown", onFirst);
-      document.removeEventListener("touchend", onFirst);
-      document.removeEventListener("keydown", onFirst);
-    };
-    document.addEventListener("pointerdown", onFirst);
-    document.addEventListener("touchend", onFirst);
-    document.addEventListener("keydown", onFirst);
-
-    return () => {
-      document.body.style.overflow = "";
-      removeFirst();
-      audio.pause();
-      audioRef.current = null;
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [mounted, dismissed]);
-
-  function stopEntranceAudio() {
-    const a = audioRef.current;
-    if (!a) return;
-    // Gentle fade-out then stop
-    const fade = setInterval(() => {
-      if (a.volume > 0.08) { a.volume = Math.max(0, a.volume - 0.08); }
-      else { a.pause(); a.currentTime = 0; clearInterval(fade); }
-    }, 60);
-  }
 
   function enter() {
     if (opening) return;
     setOpening(true);
-    stopEntranceAudio();
     try {
       window.sessionStorage.setItem("ca_intro_seen", "1");
       window.dispatchEvent(new Event("hr:play-music"));
@@ -157,7 +118,6 @@ export default function EnvelopeIntro() {
               {opening ? "With blessings…" : "Open Invitation"}
             </button>
 
-            <p className="audio-note" style={{ color: "#B79A5E" }}>🔊 Best experienced with sound on</p>
           </motion.div>
         </motion.div>
       )}
