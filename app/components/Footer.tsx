@@ -48,16 +48,19 @@ export default function Footer() {
         </div>
 
         {/* Invited by */}
-        <div className="mt-12 pt-8" style={{ borderTop: "1px solid rgba(201,162,75,0.2)", maxWidth: 360, marginLeft: "auto", marginRight: "auto" }}>
+        <div className="mt-12 pt-8" style={{ borderTop: "1px solid rgba(201,162,75,0.2)", maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.7rem", letterSpacing: "0.2em", color: "#9AA4BD", textTransform: "uppercase" }}>
             Invited by
           </p>
-          <p className="mt-2" style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.05rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
-            Soumya &amp; Shashindhar Jaidi
-          </p>
-          <p className="mt-1" style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.05rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
-            Anjali &amp; Ajay Maggidi
-          </p>
+          <div className="mt-3 flex items-start justify-center gap-6 flex-wrap">
+            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
+              Soumya &amp; Shashindhar Jaidi
+            </p>
+            <span style={{ color: "#C9A24B", opacity: 0.6 }}>·</span>
+            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
+              Anjali &amp; Ajay Maggidi
+            </p>
+          </div>
         </div>
 
         <p className="mt-8" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.72rem", color: "#9AA4BD" }}>
