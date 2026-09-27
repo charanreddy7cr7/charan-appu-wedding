@@ -38,18 +38,6 @@ export default function HeroSection() {
           style={{ width: "min(70vw, 240px)", height: "auto", filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.4))" }}
         />
 
-        {/* Elegant eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="inline-block mb-8"
-        >
-          <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "0.72rem", letterSpacing: "0.34em", color: "#C9A24B", textTransform: "uppercase" }}>
-            ✦ Together with their families ✦
-          </span>
-        </motion.div>
-
         {/* Names */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -110,14 +98,6 @@ export default function HeroSection() {
             style={{ width: "72%", height: "auto", objectFit: "contain" }} />
         </motion.div>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.85 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
-        >
-          <a href="#rsvp" className="btn-fest">RSVP</a>
-          <a href="#events" className="btn-outline">View Events</a>
-        </motion.div>
       </div>
 
       {/* Scroll cue */}

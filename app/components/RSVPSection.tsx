@@ -124,6 +124,9 @@ export default function RSVPSection() {
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.2em", color: "#C9A24B", textTransform: "uppercase" }}>
             Apoorva &amp; Charan
           </p>
+          <p className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontWeight: 700, fontSize: "0.95rem", letterSpacing: "0.35em", marginTop: "0.5rem" }}>
+            RSVP
+          </p>
           <h2 className="festive-text mt-2" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(2.2rem, 6vw, 3.6rem)" }}>
             Will you join us?
           </h2>
