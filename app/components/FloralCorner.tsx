@@ -83,43 +83,7 @@ export function FloralCorner({
         <path d="M30 150 q -12 8 -12 22 q 14 -4 12 -22 z" />
       </g>
 
-      {/* ── Navy roses ── */}
-      {/* Big rose top-left */}
-      <g transform="translate(58 52)">
-        <circle r="46" fill="url(#rose1)" />
-        <circle r="46" fill="none" stroke="#5A82B8" strokeWidth="0.8" opacity="0.5" />
-        {/* petal spiral */}
-        <g fill="none" stroke="#5A82B8" strokeWidth="1.1" opacity="0.7">
-          <circle r="34" />
-          <circle r="24" />
-          <circle r="15" />
-          <circle r="7" />
-          <path d="M-34 0 A34 34 0 0 1 0 -34" />
-          <path d="M0 34 A34 34 0 0 1 -34 0" />
-          <path d="M24 0 A24 24 0 0 1 0 24" />
-        </g>
-      </g>
-
-      {/* Medium rose lower-left */}
-      <g transform="translate(34 132)">
-        <circle r="34" fill="url(#rose2)" />
-        <g fill="none" stroke="#4A7098" strokeWidth="1" opacity="0.65">
-          <circle r="25" />
-          <circle r="16" />
-          <circle r="8" />
-          <path d="M-25 0 A25 25 0 0 1 0 -25" />
-          <path d="M0 25 A25 25 0 0 1 -25 0" />
-        </g>
-      </g>
-
-      {/* Small bud */}
-      <g transform="translate(96 118)">
-        <circle r="18" fill="url(#rose1)" />
-        <g fill="none" stroke="#5A82B8" strokeWidth="0.9" opacity="0.6">
-          <circle r="12" />
-          <circle r="6" />
-        </g>
-      </g>
+      {/* ── Navy roses removed — gold ferns & leaves only ── */}
     </svg>
   );
 }
