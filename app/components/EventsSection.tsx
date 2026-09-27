@@ -91,10 +91,6 @@ export default function EventsSection() {
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <img src="/wedding-family-gold.png" alt="Wedding family scene"
-            className="mx-auto mb-6"
-            style={{ width: "min(90vw, 620px)", height: "auto",
-              filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.4))" }} />
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
             6 Celebrations · Nov 19–22
           </p>
