@@ -68,6 +68,14 @@ export default function HeroSection() {
           Son of Late Sri Jaidi Bhaskar &amp; Smt. Sukanya
         </motion.p>
 
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-4"
+        >
+          <a href="#rsvp" className="btn-fest">RSVP</a>
+          <a href="#events" className="btn-outline">View Events</a>
+        </motion.div>
 
       </div>
 
