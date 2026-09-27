@@ -29,6 +29,15 @@ export default function HeroSection() {
         style={{ background: "radial-gradient(circle, rgba(201,162,75,0.14), transparent 70%)" }} />
 
       <div className="relative z-10 text-center max-w-3xl">
+        {/* Temple deities — Sri Venkateswara & Padmavathi */}
+        <motion.img
+          src="/temple-deities-gold.png"
+          alt="Sri Venkateswara & Padmavathi"
+          initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
+          className="mx-auto mb-6"
+          style={{ width: "min(70vw, 240px)", height: "auto", filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.4))" }}
+        />
+
         {/* Elegant eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: -8 }}
