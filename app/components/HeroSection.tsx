@@ -21,7 +21,7 @@ export default function HeroSection() {
           alt="Sri Venkateswara & Padmavathi"
           initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
           className="mx-auto mb-6"
-          style={{ width: "min(70vw, 240px)", height: "auto", filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.4))" }}
+          style={{ width: "clamp(90px, 22vw, 140px)", height: "auto", filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.4))" }}
         />
 
         {/* Names */}
