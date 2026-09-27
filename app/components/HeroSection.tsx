@@ -68,21 +68,6 @@ export default function HeroSection() {
           Son of Late Sri Jaidi Bhaskar &amp; Smt. Sukanya
         </motion.p>
 
-        {/* Sacred kalash on a soft ivory badge (line art reads on the dark bg) */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}
-          className="mt-8 mx-auto flex items-center justify-center"
-          style={{
-            width: "clamp(110px, 22vw, 150px)",
-            height: "clamp(110px, 22vw, 150px)",
-            borderRadius: "9999px",
-            background: "radial-gradient(circle, #FBF6EC 0%, #F1E7CF 78%, rgba(241,231,207,0) 100%)",
-            boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
-          }}
-        >
-          <img src="/kalash.png" alt="Kalash"
-            style={{ width: "72%", height: "auto", objectFit: "contain" }} />
-        </motion.div>
 
       </div>
 
