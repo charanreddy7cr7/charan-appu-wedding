@@ -55,7 +55,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.28 }}
           className="mt-1" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontStyle: "italic", fontSize: "0.9rem", color: "#D9D2C4" }}
         >
-          Daughter of Vajra &amp; Sanjeev Gonegari
+          Daughter of Smt. Vajra &amp; Sri Sanjeev Gonegari
         </motion.p>
 
         <motion.div
@@ -82,7 +82,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.42 }}
           className="mt-1" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: "0.82rem", color: "#D9D2C4" }}
         >
-          Son of Late Sri Jaidi Bhaskar &amp; Sukanya
+          Son of Late Sri Jaidi Bhaskar &amp; Smt. Sukanya
         </motion.p>
 
         {/* Date pill */}
