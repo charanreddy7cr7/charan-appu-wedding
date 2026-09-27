@@ -13,6 +13,14 @@ export default function HeroSection() {
     >
       <Confetti count={44} />
 
+      {/* Auspicious Telugu blessings across the top */}
+      <div className="absolute top-6 left-0 right-0 z-20 px-6 flex items-center justify-between pointer-events-none"
+        style={{ maxWidth: 1100, marginLeft: "auto", marginRight: "auto" }}>
+        <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "clamp(0.7rem, 2vw, 1rem)", color: "#E7CE8E", letterSpacing: "0.02em" }}>శ్రీరస్తు</span>
+        <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "clamp(0.7rem, 2vw, 1rem)", color: "#E7CE8E", letterSpacing: "0.02em" }}>శుభమస్తు</span>
+        <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "clamp(0.7rem, 2vw, 1rem)", color: "#E7CE8E", letterSpacing: "0.02em" }}>అవిఘ్నమస్తు</span>
+      </div>
+
       {/* Floral corners — navy roses + gold ferns (top-left & bottom-right mirrored) */}
       <FloralCorner size={300} className="absolute top-0 left-0 pointer-events-none select-none"
         style={{ opacity: 0.95 }} />
