@@ -21,13 +21,6 @@ export default function HeroSection() {
         style={{ opacity: 0.95, transform: "rotate(180deg)" }} />
 
       {/* Big soft colour blobs */}
-      <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(201,162,75,0.16), transparent 70%)" }} />
-      <div className="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(231,206,142,0.12), transparent 70%)" }} />
-      <div className="absolute top-1/3 right-10 w-40 h-40 rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(201,162,75,0.14), transparent 70%)" }} />
-
       <div className="relative z-10 text-center max-w-3xl">
         {/* Temple deities — Sri Venkateswara & Padmavathi */}
         <motion.img
