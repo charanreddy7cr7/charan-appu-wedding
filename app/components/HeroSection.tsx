@@ -15,13 +15,13 @@ export default function HeroSection() {
 
       {/* Big soft colour blobs */}
       <div className="relative z-10 text-center max-w-3xl">
-        {/* Temple deities — Sri Venkateswara & Padmavathi */}
+        {/* Wedding family scene */}
         <motion.img
-          src="/temple-deities-gold.png"
-          alt="Sri Venkateswara & Padmavathi"
+          src="/wedding-family-gold.png"
+          alt="Wedding family scene"
           initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
           className="mx-auto mb-6"
-          style={{ width: "clamp(90px, 22vw, 140px)", height: "auto", filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.4))" }}
+          style={{ width: "min(90vw, 520px)", height: "auto", filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.4))" }}
         />
 
         {/* Names */}
