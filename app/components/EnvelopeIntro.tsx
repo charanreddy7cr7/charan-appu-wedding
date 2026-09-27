@@ -63,6 +63,14 @@ export default function EnvelopeIntro() {
         >
           <Confetti count={40} />
 
+          {/* Auspicious Telugu blessings across the top */}
+          <div className="absolute top-5 left-0 right-0 z-20 px-8 flex items-center justify-between"
+            style={{ maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
+            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#E7CE8E" }}>శ్రీరస్తు</span>
+            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#E7CE8E" }}>శుభమస్తు</span>
+            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#E7CE8E" }}>అవిఘ్నమస్తు</span>
+          </div>
+
           {/* Centered rectangle card framing the Ganapathi */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
