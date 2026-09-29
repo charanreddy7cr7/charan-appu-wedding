@@ -146,12 +146,12 @@ export default function RSVPSection() {
               <Confetti count={40} />
               <div style={{ fontSize: "3.4rem", marginBottom: "0.6rem" }}>{allDeclined ? "🙏" : "🎉"}</div>
               <h3 className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.9rem" }}>
-                {allDeclined ? "We'll miss you!" : "With joy, you're confirmed"}
+                {allDeclined ? "We'll miss you!" : "With love, you're confirmed"}
               </h3>
               <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D9D2C4" }}>
                 {allDeclined
                   ? "Thank you for letting us know. We'll keep you in our hearts. 💛"
-                  : "Your RSVP is confirmed. A confirmation email is on its way! 💌"}
+                  : "Your response has been recorded. 💛"}
               </p>
             </motion.div>
           ) : (
@@ -287,7 +287,7 @@ export default function RSVPSection() {
                   </p>
                 )}
                 <p className="mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.72rem", color: "#9AA4BD" }}>
-                  A confirmation email will be sent after we receive your RSVP.
+                  Your response will be recorded once you submit.
                 </p>
               </div>
             </motion.form>
