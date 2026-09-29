@@ -30,7 +30,7 @@ function Unit({ value, label, color }: { value: number; label: string; color: st
         style={{
           width: "clamp(4.5rem, 18vw, 7rem)",
           height: "clamp(4.5rem, 18vw, 7rem)",
-          background: "#0A4030",
+          background: "#3D2011",
           boxShadow: `0 10px 26px ${color}33`,
           border: `3px solid ${color}`,
         }}
@@ -63,7 +63,7 @@ export default function CountdownSection() {
   if (!mounted) return null;
 
   return (
-    <section id="countdown" className="py-20 px-6 relative" style={{ background: "#04231A" }}>
+    <section id="countdown" className="py-20 px-6 relative" style={{ background: "#241009" }}>
       <div className="max-w-3xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
