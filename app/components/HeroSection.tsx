@@ -8,7 +8,7 @@ export default function HeroSection() {
     <section
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6"
-      style={{ background: "radial-gradient(circle at 20% 20%, #10244D 0%, #0A1A3F 55%, #060F28 100%)" }}
+      style={{ background: "radial-gradient(circle at 20% 20%, #073528 0%, #04231A 55%, #021710 100%)" }}
     >
       <Confetti count={44} />
 

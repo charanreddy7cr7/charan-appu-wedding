@@ -107,23 +107,19 @@ function BananaLeaf({ flip = false }: { flip?: boolean }) {
 export default function WeddingDecor() {
   return (
     <div className="fixed inset-0 z-30 pointer-events-none" aria-hidden="true">
-      {/* Orange outline frame */}
-      <div className="absolute" style={{
-        inset: "10px",
-        border: "2px solid #E8871E",
-        borderRadius: "4px",
-        boxShadow: "inset 0 0 0 1px rgba(232,135,30,0.35)",
-      }} />
+      {/* Orange side borders only (no top/bottom) */}
+      <div className="absolute top-0 bottom-0" style={{ left: "8px", width: "2px", background: "#E8871E", opacity: 0.85 }} />
+      <div className="absolute top-0 bottom-0" style={{ right: "8px", width: "2px", background: "#E8871E", opacity: 0.85 }} />
 
       {/* Dark ornamental carved vertical borders on both edges */}
       <div className="absolute top-0 bottom-0 left-0" style={{
         width: "34px",
-        background: "linear-gradient(90deg, #071230 0%, #0E2148 70%, transparent 100%)",
+        background: "linear-gradient(90deg, #021710 0%, #063024 70%, transparent 100%)",
         borderRight: "1px solid rgba(201,162,75,0.35)",
       }} />
       <div className="absolute top-0 bottom-0 right-0" style={{
         width: "34px",
-        background: "linear-gradient(270deg, #071230 0%, #0E2148 70%, transparent 100%)",
+        background: "linear-gradient(270deg, #021710 0%, #063024 70%, transparent 100%)",
         borderLeft: "1px solid rgba(201,162,75,0.35)",
       }} />
 
