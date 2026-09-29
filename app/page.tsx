@@ -2,6 +2,7 @@ import GlobalNav from "./components/GlobalNav";
 import EnvelopeIntro from "./components/EnvelopeIntro";
 import MusicPlayer from "./components/MusicPlayer";
 import AutoScroll from "./components/AutoScroll";
+import WeddingDecor from "./components/WeddingDecor";
 import HeroSection from "./components/HeroSection";
 import CountdownSection from "./components/CountdownSection";
 import EventsSection from "./components/EventsSection";
@@ -17,6 +18,7 @@ export default function Home() {
       <EnvelopeIntro />
       <MusicPlayer />
       <AutoScroll />
+      <WeddingDecor />
       <GlobalNav />
       <HeroSection />
       <EventsSection />
