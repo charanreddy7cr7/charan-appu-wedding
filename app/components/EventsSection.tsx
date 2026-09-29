@@ -80,7 +80,7 @@ const events: EventItem[] = [
 
 export default function EventsSection() {
   return (
-    <section id="events" className="py-20 px-6 relative overflow-hidden" style={{ background: "#0B0B0B" }}>
+    <section id="events" className="py-20 px-6 relative overflow-hidden" style={{ background: "#0A1A3F" }}>
       <div className="absolute top-10 -left-16 w-64 h-64 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,162,75,0.14), transparent 70%)" }} />
       <div className="absolute bottom-10 -right-16 w-72 h-72 rounded-full pointer-events-none"

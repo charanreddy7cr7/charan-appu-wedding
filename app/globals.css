@@ -8,10 +8,10 @@
 
 :root {
   /* Core palette */
-  --navy:       #0B0B0B;   /* black base */
-  --navy-2:     #151210;   /* slightly warm black section */
-  --navy-3:     #050505;   /* darkest black */
-  --navy-card:  #1C1712;   /* card / panel — warm charcoal */
+  --navy:       #0A1A3F;   /* deep navy base */
+  --navy-2:     #10244D;   /* lighter navy section */
+  --navy-3:     #060F28;   /* darkest navy */
+  --navy-card:  #13294F;   /* card / panel navy */
 
   --gold:       #C9A24B;   /* warm antique gold */
   --gold-light: #E7CE8E;   /* light champagne gold */
@@ -211,7 +211,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); }
   position: fixed; bottom: 22px; right: 22px; z-index: 40;
   display: flex; align-items: center; gap: 8px;
   padding: 11px 18px; border-radius: 999px;
-  background: rgba(11,11,11,0.9);
+  background: rgba(10,26,63,0.92);
   border: 1px solid var(--gold); color: var(--gold);
   font-family: 'Cinzel', serif; font-weight: 500;
   font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;

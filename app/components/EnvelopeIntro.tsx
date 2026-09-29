@@ -59,7 +59,7 @@ export default function EnvelopeIntro() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.7 } }}
           className="fixed inset-0 z-[9999] flex items-center justify-center overflow-y-auto py-8"
-          style={{ background: "radial-gradient(circle at 50% 30%, #151210 0%, #0B0B0B 60%, #050505 100%)" }}
+          style={{ background: "radial-gradient(circle at 50% 30%, #10244D 0%, #0A1A3F 60%, #060F28 100%)" }}
         >
           <Confetti count={40} />
 
@@ -81,7 +81,7 @@ export default function EnvelopeIntro() {
               width: "min(90vw, 460px)",
               padding: "1.6rem 1.6rem 2.2rem",
               borderRadius: 10,
-              background: "linear-gradient(160deg, #12100C 0%, #0A0A0A 100%)",
+              background: "linear-gradient(160deg, #10244D 0%, #0A1A3F 100%)",
               border: "1.5px solid rgba(201,162,75,0.55)",
               boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,162,75,0.12)",
             }}

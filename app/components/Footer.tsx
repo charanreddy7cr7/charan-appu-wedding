@@ -6,7 +6,7 @@ import Confetti from "./Confetti";
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden py-24 px-6 text-center"
-      style={{ background: "linear-gradient(160deg, #050505 0%, #151210 55%, #0B0B0B 100%)" }}>
+      style={{ background: "linear-gradient(160deg, #060F28 0%, #10244D 55%, #0A1A3F 100%)" }}>
       <Confetti count={30} />
 
       <div className="relative z-10">
