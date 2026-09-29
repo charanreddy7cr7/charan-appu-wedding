@@ -27,12 +27,8 @@ function GarlandColumn({ flip = false }: { flip?: boolean }) {
       style={{ transform: flip ? "scaleX(-1)" : undefined }}
       aria-hidden="true"
     >
-      {/* golden pearl/bead string */}
-      <line x1="20" y1="0" x2="20" y2="820" stroke="#C9A24B" strokeWidth="1.5" opacity="0.7" />
-      {Array.from({ length: 46 }).map((_, i) => (
-        <circle key={`b${i}`} cx="20" cy={10 + i * 18} r="3" fill="#E7CE8E"
-          stroke="#A07E2E" strokeWidth="0.5" opacity="0.9" />
-      ))}
+      {/* short suspension line for the bell */}
+      <line x1="20" y1="0" x2="20" y2="810" stroke="#C9A24B" strokeWidth="1" opacity="0.4" />
 
       {/* small golden temple bell suspended at the bottom */}
       <g transform="translate(20 828)">
