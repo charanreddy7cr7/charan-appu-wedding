@@ -13,7 +13,7 @@ const codes = [
 
 export default function DressCodeSection() {
   return (
-    <section id="dresscode" className="py-20 px-6 relative" style={{ background: "#241009" }}>
+    <section id="dresscode" className="py-20 px-6 relative" style={{ background: "#0A1A3F" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>

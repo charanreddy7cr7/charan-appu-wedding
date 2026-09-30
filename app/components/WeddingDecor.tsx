@@ -51,12 +51,12 @@ export default function WeddingDecor() {
       {/* Dark ornamental carved vertical borders on both edges */}
       <div className="absolute top-0 bottom-0 left-0" style={{
         width: "34px",
-        background: "linear-gradient(90deg, #180A05 0%, #2A1509 70%, transparent 100%)",
+        background: "linear-gradient(90deg, #060F28 0%, #063024 70%, transparent 100%)",
         borderRight: "1px solid rgba(201,162,75,0.35)",
       }} />
       <div className="absolute top-0 bottom-0 right-0" style={{
         width: "34px",
-        background: "linear-gradient(270deg, #180A05 0%, #2A1509 70%, transparent 100%)",
+        background: "linear-gradient(270deg, #060F28 0%, #063024 70%, transparent 100%)",
         borderLeft: "1px solid rgba(201,162,75,0.35)",
       }} />
 
