@@ -76,47 +76,6 @@ export function FloralCorner({
         <path d="M172 92 q 20 -8 30 -26 q -22 -2 -30 26 z" />
       </g>
 
-      {/* ── Navy roses ── */}
-      {/* large rose near the corner */}
-      <g transform="translate(70 62)">
-        <circle r="52" fill="url(#fcRoseA)" />
-        <g fill="none" stroke="#6E97CC" strokeWidth="1.2" opacity="0.55">
-          <ellipse rx="40" ry="40" />
-          <ellipse rx="29" ry="29" />
-          <ellipse rx="18" ry="18" />
-          <ellipse rx="8" ry="8" />
-          <path d="M-40 0 A40 40 0 0 1 8 -39" />
-          <path d="M0 40 A40 40 0 0 1 -39 -10" />
-          <path d="M29 0 A29 29 0 0 1 -6 28" />
-        </g>
-        {/* outer petals */}
-        <g fill="#2B4E80" opacity="0.9">
-          {[30, 90, 150, 210, 270, 330].map((a) => {
-            const r = (a * Math.PI) / 180;
-            return <ellipse key={a} cx={Math.cos(r) * 46} cy={Math.sin(r) * 46} rx="16" ry="11"
-              transform={`rotate(${a} ${Math.cos(r) * 46} ${Math.sin(r) * 46})`} />;
-          })}
-        </g>
-      </g>
-
-      {/* medium rose */}
-      <g transform="translate(150 120)">
-        <circle r="34" fill="url(#fcRoseB)" />
-        <g fill="none" stroke="#5A82B8" strokeWidth="1" opacity="0.5">
-          <ellipse rx="25" ry="25" />
-          <ellipse rx="15" ry="15" />
-          <ellipse rx="7" ry="7" />
-        </g>
-      </g>
-
-      {/* small bud */}
-      <g transform="translate(40 128)">
-        <circle r="20" fill="url(#fcRoseA)" />
-        <g fill="none" stroke="#6E97CC" strokeWidth="0.9" opacity="0.5">
-          <ellipse rx="13" ry="13" />
-          <ellipse rx="6" ry="6" />
-        </g>
-      </g>
     </svg>
   );
 }
