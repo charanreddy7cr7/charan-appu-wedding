@@ -76,6 +76,52 @@ export function FloralCorner({
         <path d="M172 92 q 20 -8 30 -26 q -22 -2 -30 26 z" />
       </g>
 
+      {/* ── Navy roses (solid petal blooms, no concentric rings) ── */}
+      {/* large rose near the corner */}
+      <g transform="translate(70 62)">
+        <circle r="30" fill="url(#fcRoseA)" />
+        <g fill="#2B4E80" opacity="0.92">
+          {[30, 90, 150, 210, 270, 330].map((a) => {
+            const r = (a * Math.PI) / 180;
+            return <ellipse key={a} cx={Math.cos(r) * 40} cy={Math.sin(r) * 40} rx="18" ry="12"
+              transform={`rotate(${a} ${Math.cos(r) * 40} ${Math.sin(r) * 40})`} />;
+          })}
+        </g>
+        <g fill="#3E6299" opacity="0.95">
+          {[0, 72, 144, 216, 288].map((a) => {
+            const r = (a * Math.PI) / 180;
+            return <ellipse key={a} cx={Math.cos(r) * 20} cy={Math.sin(r) * 20} rx="13" ry="9"
+              transform={`rotate(${a} ${Math.cos(r) * 20} ${Math.sin(r) * 20})`} />;
+          })}
+        </g>
+        <circle r="10" fill="#4E77B0" />
+      </g>
+
+      {/* medium rose */}
+      <g transform="translate(150 120)">
+        <circle r="20" fill="url(#fcRoseB)" />
+        <g fill="#2B4E80" opacity="0.9">
+          {[45, 135, 225, 315].map((a) => {
+            const r = (a * Math.PI) / 180;
+            return <ellipse key={a} cx={Math.cos(r) * 24} cy={Math.sin(r) * 24} rx="12" ry="8"
+              transform={`rotate(${a} ${Math.cos(r) * 24} ${Math.sin(r) * 24})`} />;
+          })}
+        </g>
+        <circle r="7" fill="#4E77B0" />
+      </g>
+
+      {/* small bud */}
+      <g transform="translate(40 128)">
+        <circle r="13" fill="url(#fcRoseA)" />
+        <g fill="#3E6299" opacity="0.9">
+          {[0, 120, 240].map((a) => {
+            const r = (a * Math.PI) / 180;
+            return <ellipse key={a} cx={Math.cos(r) * 12} cy={Math.sin(r) * 12} rx="8" ry="5.5"
+              transform={`rotate(${a} ${Math.cos(r) * 12} ${Math.sin(r) * 12})`} />;
+          })}
+        </g>
+      </g>
+
     </svg>
   );
 }
