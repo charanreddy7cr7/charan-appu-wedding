@@ -24,7 +24,7 @@ export default function HeroSection() {
           alt="Wedding family scene"
           initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
           className="mx-auto mb-6"
-          style={{ width: "min(90vw, 520px)", height: "auto", filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.4))" }}
+          style={{ width: "min(90vw, 520px)", height: "auto", filter: "drop-shadow(0 0 10px rgba(212,175,55,0.55)) drop-shadow(0 3px 10px rgba(154,118,40,0.4))", WebkitFilter: "drop-shadow(0 0 10px rgba(212,175,55,0.55))" }}
         />
 
         {/* Names */}
