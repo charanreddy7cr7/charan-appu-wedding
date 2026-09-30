@@ -38,9 +38,9 @@ const weddingEvents = [
   { key: "mehendi"    as const, label: "Mehendi",    emoji: "🤚", color: "#8E1537" },
   { key: "engagement" as const, label: "Engagement",  emoji: "💍", color: "#E63946" },
   { key: "haldi"      as const, label: "Haldi",       emoji: "☀️", color: "#FF6FB5" },
-  { key: "ceremony"   as const, label: "Ceremony",    emoji: "🪔", color: "#B08A2E" },
+  { key: "ceremony"   as const, label: "Ceremony",    emoji: "🪔", color: "#B89043" },
   { key: "wedding"    as const, label: "Wedding",     emoji: "🪷", color: "#2A9D8F" },
-  { key: "reception"  as const, label: "Reception",   emoji: "🎉", color: "#B08A2E" },
+  { key: "reception"  as const, label: "Reception",   emoji: "🎉", color: "#B89043" },
 ];
 
 const mealOptions = [
@@ -53,7 +53,7 @@ const mealOptions = [
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
 const labelStyle: React.CSSProperties = {
-  display: "block", color: "#B08A2E", fontFamily: "'Cormorant Garamond', serif",
+  display: "block", color: "#B89043", fontFamily: "'Cormorant Garamond', serif",
   fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.1em",
   textTransform: "uppercase", marginBottom: "0.5rem",
 };
@@ -114,7 +114,7 @@ export default function RSVPSection() {
   const allDeclined = false;
 
   return (
-    <section id="rsvp" className="py-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: "#F4F1EA" }}>
+    <section id="rsvp" className="py-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: "#FCFBF7" }}>
       <div className="absolute top-0 -right-20 w-72 h-72 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,162,75,0.14), transparent 70%)" }} />
 
@@ -132,7 +132,7 @@ export default function RSVPSection() {
           </h2>
           <div className="squiggle mt-4 mb-5" />
           <p style={{ fontFamily: "'Cormorant Garamond', serif", color: "#57503F", fontSize: "1.05rem", maxWidth: 460, margin: "0 auto" }}>
-            Will you be joining us in celebration? Come and bless us — <span style={{ color: "#B08A2E", fontWeight: 600 }}>your presence makes us more happy.</span>
+            Will you be joining us in celebration? Come and bless us — <span style={{ color: "#B89043", fontWeight: 600 }}>your presence makes us more happy.</span>
           </p>
           <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.8rem", color: "#8A8172" }}>
             Please respond by <strong style={{ color: "#C9A24B" }}>October 1, 2026</strong>
@@ -197,7 +197,7 @@ export default function RSVPSection() {
                   {form.guests.map((guest, i) => (
                     <div key={i} style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 18, padding: "1.1rem", background: "#FFFFFF" }}>
                       <div className="flex items-center justify-between mb-3">
-                        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.1em", color: "#B08A2E", textTransform: "uppercase" }}>Guest {i + 1}</span>
+                        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.1em", color: "#B89043", textTransform: "uppercase" }}>Guest {i + 1}</span>
                         {i > 0 && (
                           <button type="button" onClick={() => removeGuest(i)}
                             style={{ color: "#E63946", fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", background: "none", border: "none", cursor: "pointer" }}>
@@ -218,10 +218,10 @@ export default function RSVPSection() {
                                 <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", color: "#57503F", textTransform: "uppercase" }}>{field}</span>
                                 <div className="flex items-center gap-2">
                                   <button type="button" onClick={() => adjustCount(i, field, -1)} aria-label={`less ${field}`}
-                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFFFFF", color: "#B08A2E", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>−</button>
+                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFFFFF", color: "#B89043", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>−</button>
                                   <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", minWidth: "1.4rem", textAlign: "center", color: "#2E2A22" }}>{guest[field]}</span>
                                   <button type="button" onClick={() => adjustCount(i, field, 1)} aria-label={`more ${field}`}
-                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFFFFF", color: "#B08A2E", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>+</button>
+                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFFFFF", color: "#B89043", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>+</button>
                                 </div>
                               </div>
                             ))}

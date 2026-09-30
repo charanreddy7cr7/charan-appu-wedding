@@ -6,7 +6,7 @@ import Confetti from "./Confetti";
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden py-24 px-6 text-center"
-      style={{ background: "linear-gradient(160deg, #FBF9F4 0%, #EBE6DB 55%, #F4F1EA 100%)" }}>
+      style={{ background: "linear-gradient(160deg, #FFFFFF 0%, #F5F1E8 55%, #FCFBF7 100%)" }}>
       <Confetti count={30} />
 
       <div className="relative z-10">
@@ -19,7 +19,7 @@ export default function Footer() {
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, color: "#B08A2E", fontSize: "clamp(2.2rem, 7vw, 4rem)", lineHeight: 1.1 }}
+          style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, color: "#B89043", fontSize: "clamp(2.2rem, 7vw, 4rem)", lineHeight: 1.1 }}
         >
           See you
           <br />in Dallas!
@@ -53,11 +53,11 @@ export default function Footer() {
             Invited by
           </p>
           <div className="mt-3 flex items-start justify-center gap-6 flex-wrap">
-            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#B08A2E", letterSpacing: "0.03em" }}>
+            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#B89043", letterSpacing: "0.03em" }}>
               Soumya &amp; Shashindhar Jaidi
             </p>
             <span style={{ color: "#C9A24B", opacity: 0.6 }}>·</span>
-            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#B08A2E", letterSpacing: "0.03em" }}>
+            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#B89043", letterSpacing: "0.03em" }}>
               Anjali &amp; Ajay Maggidi
             </p>
           </div>

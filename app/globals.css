@@ -8,13 +8,13 @@
 
 :root {
   /* Core palette — stone white light theme */
-  --navy:       #F4F1EA;   /* stone white base */
-  --navy-2:     #EBE6DB;   /* slightly deeper stone section */
-  --navy-3:     #FBF9F4;   /* lightest stone */
+  --navy:       #FCFBF7;   /* soft white base */
+  --navy-2:     #F5F1E8;   /* faint ivory section */
+  --navy-3:     #FFFFFF;   /* pure white */
   --navy-card:  #FFFFFF;   /* card / panel white */
 
-  --gold:       #B08A2E;   /* antique gold (dark enough for light bg) */
-  --gold-light: #C9A24B;   /* mid gold */
+  --gold:       #B89043;   /* white-gold */
+  --gold-light: #CBAA5E;   /* light white-gold */
   --gold-bright:#E7CE8E;   /* bright gold highlight */
   --gold-deep:  #8A6A1E;   /* deep gold for headings on light */
 

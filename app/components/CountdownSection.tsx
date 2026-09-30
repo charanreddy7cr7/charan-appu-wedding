@@ -20,7 +20,7 @@ function getTimeLeft(target: Date): TimeLeft {
   };
 }
 
-const unitColors = ["#C9A24B", "#B08A2E", "#C9A24B", "#C9A24B"];
+const unitColors = ["#C9A24B", "#B89043", "#C9A24B", "#C9A24B"];
 
 function Unit({ value, label, color }: { value: number; label: string; color: string }) {
   return (
@@ -63,7 +63,7 @@ export default function CountdownSection() {
   if (!mounted) return null;
 
   return (
-    <section id="countdown" className="py-20 px-6 relative" style={{ background: "#F4F1EA" }}>
+    <section id="countdown" className="py-20 px-6 relative" style={{ background: "#FCFBF7" }}>
       <div className="max-w-3xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}

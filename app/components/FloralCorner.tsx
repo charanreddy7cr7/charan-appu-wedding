@@ -37,7 +37,7 @@ export function FloralCorner({
           <stop offset="100%" stopColor="#0F2444" />
         </radialGradient>
         <linearGradient id="fcGold" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#B08A2E" />
+          <stop offset="0%" stopColor="#B89043" />
           <stop offset="50%" stopColor="#C9A24B" />
           <stop offset="100%" stopColor="#9A7628" />
         </linearGradient>

@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // Add photos to /public/gallery then set placeholder:false + src.
 const items = [
   { id: 1, caption: "The Oasis Ranch", src: "/gallery/oasis-ranch.jpg", placeholder: false, color: "#C9A24B" },
-  { id: 2, caption: "The Meridian Venue", src: "/gallery/meridian-venue.jpg", placeholder: false, color: "#B08A2E" },
+  { id: 2, caption: "The Meridian Venue", src: "/gallery/meridian-venue.jpg", placeholder: false, color: "#B89043" },
   { id: 3, caption: "The Bride",       src: "", placeholder: true, color: "#C9A24B" },
   { id: 4, caption: "The Groom",       src: "", placeholder: true, color: "#C9A24B" },
   { id: 5, caption: "Celebrations",    src: "", placeholder: true, color: "#C9A24B" },
@@ -17,7 +17,7 @@ export default function GallerySection() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
-    <section id="gallery" className="py-20 px-6 relative" style={{ background: "#EBE6DB" }}>
+    <section id="gallery" className="py-20 px-6 relative" style={{ background: "#F5F1E8" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>

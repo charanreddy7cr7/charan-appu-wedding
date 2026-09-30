@@ -63,7 +63,7 @@ const events: EventItem[] = [
     mapQuery: "The+Bliss+at+Aubrey,+4381+US-377,+Aubrey,+TX+76227",
     dress: "Antique Gold",
     // Antique gold
-    bg: "linear-gradient(160deg, #B08A2E 0%, #C9A24B 55%, #A07E2E 100%)",
+    bg: "linear-gradient(160deg, #B89043 0%, #C9A24B 55%, #A07E2E 100%)",
     accent: "#4A3611", text: "#2E2208", textMuted: "#5C4A1E", chipBg: "rgba(46,34,8,0.1)", tilt: -2,
   },
   {
@@ -80,7 +80,7 @@ const events: EventItem[] = [
 
 export default function EventsSection() {
   return (
-    <section id="events" className="py-20 px-6 relative overflow-hidden" style={{ background: "#F4F1EA" }}>
+    <section id="events" className="py-20 px-6 relative overflow-hidden" style={{ background: "#FCFBF7" }}>
       <div className="absolute top-10 -left-16 w-64 h-64 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,162,75,0.14), transparent 70%)" }} />
       <div className="absolute bottom-10 -right-16 w-72 h-72 rounded-full pointer-events-none"

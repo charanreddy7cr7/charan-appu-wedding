@@ -59,16 +59,16 @@ export default function EnvelopeIntro() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.7 } }}
           className="fixed inset-0 z-[9999] flex items-center justify-center overflow-y-auto py-8"
-          style={{ background: "radial-gradient(circle at 50% 30%, #EBE6DB 0%, #F4F1EA 60%, #FBF9F4 100%)" }}
+          style={{ background: "radial-gradient(circle at 50% 30%, #F5F1E8 0%, #FCFBF7 60%, #FFFFFF 100%)" }}
         >
           <Confetti count={40} />
 
           {/* Auspicious Telugu blessings across the top */}
           <div className="absolute top-5 left-0 right-0 z-20 px-8 flex items-center justify-between"
             style={{ maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
-            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#B08A2E" }}>శ్రీరస్తు</span>
-            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#B08A2E" }}>శుభమస్తు</span>
-            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#B08A2E" }}>అవిఘ్నమస్తు</span>
+            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#B89043" }}>శ్రీరస్తు</span>
+            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#B89043" }}>శుభమస్తు</span>
+            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#B89043" }}>అవిఘ్నమస్తు</span>
           </div>
 
           {/* Centered rectangle card framing the Ganapathi */}
@@ -81,7 +81,7 @@ export default function EnvelopeIntro() {
               width: "min(90vw, 460px)",
               padding: "1.6rem 1.6rem 2.2rem",
               borderRadius: 10,
-              background: "linear-gradient(160deg, #EBE6DB 0%, #F4F1EA 100%)",
+              background: "linear-gradient(160deg, #F5F1E8 0%, #FCFBF7 100%)",
               border: "1.5px solid rgba(201,162,75,0.55)",
               boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,162,75,0.12)",
             }}
@@ -105,7 +105,7 @@ export default function EnvelopeIntro() {
               }}
             />
 
-            <p className="mt-5" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.3em", color: "#B08A2E", textTransform: "uppercase" }}>
+            <p className="mt-5" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.3em", color: "#B89043", textTransform: "uppercase" }}>
               Shubh Vivah
             </p>
 
@@ -116,7 +116,7 @@ export default function EnvelopeIntro() {
             <div className="squiggle my-3" />
 
             <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, color: "#2E2A22", fontSize: "1.2rem", letterSpacing: "0.05em" }}>
-              Apoorva <span style={{ color: "#B08A2E" }}>&amp;</span> Charan
+              Apoorva <span style={{ color: "#B89043" }}>&amp;</span> Charan
             </p>
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: "#57503F", fontSize: "0.92rem", marginTop: "0.3rem" }}>
               November 19–22, 2026

@@ -60,7 +60,7 @@ export default function GlobalNav() {
           <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center"
             style={{ background: "transparent", border: "none", cursor: "pointer" }} aria-label="Menu">
             <motion.span animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 7 : 0 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#C9A24B" }} />
-            <motion.span animate={{ opacity: menuOpen ? 0 : 1 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#B08A2E" }} />
+            <motion.span animate={{ opacity: menuOpen ? 0 : 1 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#B89043" }} />
             <motion.span animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -7 : 0 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#C9A24B" }} />
           </button>
         </div>
@@ -72,7 +72,7 @@ export default function GlobalNav() {
             initial={{ opacity: 0, x: "100%" }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
             className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8"
-            style={{ background: "linear-gradient(160deg, #EBE6DB, #F4F1EA)" }}>
+            style={{ background: "linear-gradient(160deg, #F5F1E8, #FCFBF7)" }}>
             <span className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontWeight: 700, fontSize: "2rem" }}>A &amp; C</span>
             {navLinks.map((l, i) => (
               <motion.a key={l.href} href={l.href}
