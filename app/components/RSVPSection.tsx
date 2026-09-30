@@ -35,7 +35,6 @@ const defaultGuest = (): GuestEntry => ({
 });
 
 const weddingEvents = [
-  { key: "mehendi"    as const, label: "Mehendi",    emoji: "🤚", color: "#8E1537" },
   { key: "engagement" as const, label: "Engagement",  emoji: "💍", color: "#E63946" },
   { key: "haldi"      as const, label: "Haldi",       emoji: "☀️", color: "#FF6FB5" },
   { key: "ceremony"   as const, label: "Ceremony",    emoji: "🪔", color: "#B89043" },
@@ -90,7 +89,7 @@ export default function RSVPSection() {
     for (let i = 0; i < form.guests.length; i++) {
       const g = form.guests[i];
       if (!g.name.trim()) { setValidation(`Please enter a name for Guest ${i + 1}.`); return; }
-      const keys = ["mehendi","engagement","haldi","ceremony","wedding","reception"] as const;
+      const keys = ["engagement","haldi","ceremony","wedding","reception"] as const;
       if (!keys.some((k) => g[k])) { setValidation(`Please select at least one event for ${g.name || `Guest ${i + 1}`}.`); return; }
     }
     // Everyone who RSVPs is attending.

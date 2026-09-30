@@ -180,9 +180,9 @@ p { line-height: 1.7; }
 /* ─── Form elements ──────────────────────────────────────────────────────── */
 input[type="text"], input[type="email"], input[type="tel"],
 input[type="password"], textarea, select {
-  background: #141414;
-  color: var(--ivory);
-  border: 1px solid rgba(201,162,75,0.3);
+  background: #FFFFFF;
+  color: #2E2A22;
+  border: 1.5px solid rgba(176,138,46,0.5);
   border-radius: 3px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem;
@@ -195,7 +195,7 @@ input:focus, textarea:focus, select:focus {
   border-color: var(--gold);
   box-shadow: 0 0 0 3px rgba(201,162,75,0.15);
 }
-input::placeholder, textarea::placeholder { color: var(--muted); }
+input::placeholder, textarea::placeholder { color: #9A9484; opacity: 1; }
 
 /* ─── Scrollbar ──────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
