@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // Add photos to /public/gallery then set placeholder:false + src.
 const items = [
   { id: 1, caption: "The Oasis Ranch", src: "/gallery/oasis-ranch.jpg", placeholder: false, color: "#C9A24B" },
-  { id: 2, caption: "The Meridian Venue", src: "/gallery/meridian-venue.jpg", placeholder: false, color: "#E7CE8E" },
+  { id: 2, caption: "The Meridian Venue", src: "/gallery/meridian-venue.jpg", placeholder: false, color: "#B08A2E" },
   { id: 3, caption: "The Bride",       src: "", placeholder: true, color: "#C9A24B" },
   { id: 4, caption: "The Groom",       src: "", placeholder: true, color: "#C9A24B" },
   { id: 5, caption: "Celebrations",    src: "", placeholder: true, color: "#C9A24B" },
@@ -17,7 +17,7 @@ export default function GallerySection() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
-    <section id="gallery" className="py-20 px-6 relative" style={{ background: "#10244D" }}>
+    <section id="gallery" className="py-20 px-6 relative" style={{ background: "#EBE6DB" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
@@ -27,7 +27,7 @@ export default function GallerySection() {
             Gallery
           </h2>
           <div className="squiggle mt-5" />
-          <p className="mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D9D2C4" }}>
+          <p className="mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#57503F" }}>
             A few of our favourite moments — more to come! 📸
           </p>
         </motion.div>
@@ -47,7 +47,7 @@ export default function GallerySection() {
                   style={{ background: `linear-gradient(140deg, ${it.color}22, ${it.color}0A)` }}>
                   <span style={{ fontSize: "2rem" }}>📷</span>
                   <p className="mt-2 px-3 text-center" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, color: it.color, fontSize: "0.95rem" }}>{it.caption}</p>
-                  <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.62rem", color: "#9AA4BD", letterSpacing: "0.1em", marginTop: 2 }}>COMING SOON</p>
+                  <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.62rem", color: "#8A8172", letterSpacing: "0.1em", marginTop: 2 }}>COMING SOON</p>
                 </div>
               )}
             </motion.div>
@@ -66,7 +66,7 @@ export default function GallerySection() {
               <span style={{ fontSize: "3rem" }}>📷</span>
               <p className="mt-2" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, color: items[lightbox].color, fontSize: "1.3rem" }}>{items[lightbox].caption}</p>
               <button onClick={() => setLightbox(null)} className="absolute top-3 right-3"
-                style={{ width: 34, height: 34, borderRadius: 999, background: "#13294F", border: "none", cursor: "pointer", fontSize: "1rem", color: "#F4EFE4" }}>✕</button>
+                style={{ width: 34, height: 34, borderRadius: 999, background: "#FFFFFF", border: "none", cursor: "pointer", fontSize: "1rem", color: "#2E2A22" }}>✕</button>
             </motion.div>
           </motion.div>
         )}

@@ -6,7 +6,7 @@ import Confetti from "./Confetti";
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden py-24 px-6 text-center"
-      style={{ background: "linear-gradient(160deg, #060F28 0%, #10244D 55%, #0A1A3F 100%)" }}>
+      style={{ background: "linear-gradient(160deg, #FBF9F4 0%, #EBE6DB 55%, #F4F1EA 100%)" }}>
       <Confetti count={30} />
 
       <div className="relative z-10">
@@ -19,16 +19,16 @@ export default function Footer() {
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, color: "#E7CE8E", fontSize: "clamp(2.2rem, 7vw, 4rem)", lineHeight: 1.1 }}
+          style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, color: "#B08A2E", fontSize: "clamp(2.2rem, 7vw, 4rem)", lineHeight: 1.1 }}
         >
           See you
           <br />in Dallas!
         </motion.h2>
 
-        <p className="mt-6" style={{ fontFamily: "'Cinzel', serif", fontStyle: "italic", color: "#F4EFE4", fontSize: "1.4rem" }}>
+        <p className="mt-6" style={{ fontFamily: "'Cinzel', serif", fontStyle: "italic", color: "#2E2A22", fontSize: "1.4rem" }}>
           Apoorva &amp; Charan
         </p>
-        <p className="mt-1" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D9D2C4", fontSize: "0.9rem" }}>
+        <p className="mt-1" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#57503F", fontSize: "0.9rem" }}>
           November 2026
         </p>
 
@@ -49,21 +49,21 @@ export default function Footer() {
 
         {/* Invited by */}
         <div className="mt-12 pt-8" style={{ borderTop: "1px solid rgba(201,162,75,0.2)", maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.7rem", letterSpacing: "0.2em", color: "#9AA4BD", textTransform: "uppercase" }}>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.7rem", letterSpacing: "0.2em", color: "#8A8172", textTransform: "uppercase" }}>
             Invited by
           </p>
           <div className="mt-3 flex items-start justify-center gap-6 flex-wrap">
-            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
+            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#B08A2E", letterSpacing: "0.03em" }}>
               Soumya &amp; Shashindhar Jaidi
             </p>
             <span style={{ color: "#C9A24B", opacity: 0.6 }}>·</span>
-            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
+            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#B08A2E", letterSpacing: "0.03em" }}>
               Anjali &amp; Ajay Maggidi
             </p>
           </div>
         </div>
 
-        <p className="mt-8" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.72rem", color: "#9AA4BD" }}>
+        <p className="mt-8" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.72rem", color: "#8A8172" }}>
           With love, Apoorva &amp; Charan · 2026
         </p>
       </div>

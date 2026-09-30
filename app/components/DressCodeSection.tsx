@@ -6,14 +6,14 @@ const codes = [
   { event: "Mehendi",    emoji: "🤚", theme: "Maroon", swatches: ["#6E1533", "#8E1537", "#4A0D22"], color: "#C97A97" },
   { event: "Engagement", emoji: "💍", theme: "Red", swatches: ["#C1121F", "#E63946", "#8E1116"], color: "#F08A80" },
   { event: "Haldi",      emoji: "☀️", theme: "Beach Pink", swatches: ["#FF6FB5", "#FF9CC7", "#F25FA6"], color: "#FF9CC7" },
-  { event: "Bride & Groom Ceremony", emoji: "🪔", theme: "White", swatches: ["#FFFFFF", "#F4F0E6", "#EDE7D6"], color: "#E7CE8E" },
-  { event: "Wedding",    emoji: "🪷", theme: "Antique Gold", swatches: ["#E7CE8E", "#C9A24B", "#A07E2E"], color: "#E7CE8E" },
+  { event: "Bride & Groom Ceremony", emoji: "🪔", theme: "White", swatches: ["#FFFFFF", "#F4F0E6", "#EDE7D6"], color: "#B08A2E" },
+  { event: "Wedding",    emoji: "🪷", theme: "Antique Gold", swatches: ["#B08A2E", "#C9A24B", "#A07E2E"], color: "#B08A2E" },
   { event: "Reception",  emoji: "🎉", theme: "Black · Neon Lights", swatches: ["#0E0A1A", "#000000", "#B57BFF"], color: "#B57BFF" },
 ];
 
 export default function DressCodeSection() {
   return (
-    <section id="dresscode" className="py-20 px-6 relative" style={{ background: "#0A1A3F" }}>
+    <section id="dresscode" className="py-20 px-6 relative" style={{ background: "#F4F1EA" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
@@ -23,7 +23,7 @@ export default function DressCodeSection() {
             Dress Code
           </h2>
           <div className="squiggle mt-5" />
-          <p className="mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D9D2C4" }}>
+          <p className="mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#57503F" }}>
             Dress to celebrate — here&apos;s the colour palette for each event! 🎨
           </p>
         </motion.div>
@@ -34,7 +34,7 @@ export default function DressCodeSection() {
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ delay: i * 0.07 }} className="fest-card p-6 text-center">
               <div style={{ fontSize: "2.2rem" }}>{c.emoji}</div>
-              <h3 style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.15rem", color: "#F4EFE4", marginTop: "0.4rem" }}>
+              <h3 style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.15rem", color: "#2E2A22", marginTop: "0.4rem" }}>
                 {c.event}
               </h3>
               <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.85rem", color: c.color, marginTop: "0.3rem" }}>

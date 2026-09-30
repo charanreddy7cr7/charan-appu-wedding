@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6"
-      style={{ background: "radial-gradient(circle at 20% 20%, #10244D 0%, #0A1A3F 55%, #060F28 100%)" }}
+      style={{ background: "radial-gradient(circle at 20% 20%, #EBE6DB 0%, #F4F1EA 55%, #FBF9F4 100%)" }}
     >
       <Confetti count={44} />
 
@@ -39,7 +39,7 @@ export default function HeroSection() {
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.28 }}
-          className="mt-1" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontStyle: "italic", fontSize: "0.9rem", color: "#D9D2C4" }}
+          className="mt-1" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontStyle: "italic", fontSize: "0.9rem", color: "#57503F" }}
         >
           Daughter of Smt. Vajra &amp; Sri Sanjeev Gonegari
         </motion.p>
@@ -66,7 +66,7 @@ export default function HeroSection() {
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.42 }}
-          className="mt-1" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: "0.82rem", color: "#D9D2C4" }}
+          className="mt-1" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: "0.82rem", color: "#57503F" }}
         >
           Son of Late Sri Jaidi Bhaskar &amp; Smt. Sukanya
         </motion.p>
@@ -87,7 +87,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.7rem", letterSpacing: "0.2em", color: "#9AA4BD" }}>SCROLL</span>
+        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.7rem", letterSpacing: "0.2em", color: "#8A8172" }}>SCROLL</span>
         <motion.span animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.4 }} style={{ fontSize: "1.2rem" }}>🎊</motion.span>
       </motion.div>
     </section>

@@ -1,6 +1,6 @@
 "use client";
 
-const COLORS = ["#C9A24B", "#E7CE8E", "#F0DCA0", "#A07E2E", "#D9C583", "#C9A24B"];
+const COLORS = ["#C9A24B", "#B08A2E", "#B08A2E", "#A07E2E", "#D9C583", "#C9A24B"];
 
 // Deterministic pseudo-random in [0,1) from a seed — pure, so it's safe to call
 // during render and produces identical output on server & client (no hydration mismatch).

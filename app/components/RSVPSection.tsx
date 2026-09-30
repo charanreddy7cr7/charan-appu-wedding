@@ -38,9 +38,9 @@ const weddingEvents = [
   { key: "mehendi"    as const, label: "Mehendi",    emoji: "🤚", color: "#8E1537" },
   { key: "engagement" as const, label: "Engagement",  emoji: "💍", color: "#E63946" },
   { key: "haldi"      as const, label: "Haldi",       emoji: "☀️", color: "#FF6FB5" },
-  { key: "ceremony"   as const, label: "Ceremony",    emoji: "🪔", color: "#E7CE8E" },
+  { key: "ceremony"   as const, label: "Ceremony",    emoji: "🪔", color: "#B08A2E" },
   { key: "wedding"    as const, label: "Wedding",     emoji: "🪷", color: "#2A9D8F" },
-  { key: "reception"  as const, label: "Reception",   emoji: "🎉", color: "#E7CE8E" },
+  { key: "reception"  as const, label: "Reception",   emoji: "🎉", color: "#B08A2E" },
 ];
 
 const mealOptions = [
@@ -53,12 +53,12 @@ const mealOptions = [
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
 const labelStyle: React.CSSProperties = {
-  display: "block", color: "#E7CE8E", fontFamily: "'Cormorant Garamond', serif",
+  display: "block", color: "#B08A2E", fontFamily: "'Cormorant Garamond', serif",
   fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.1em",
   textTransform: "uppercase", marginBottom: "0.5rem",
 };
 const panelStyle: React.CSSProperties = {
-  background: "#13294F", borderRadius: "22px", padding: "1.6rem",
+  background: "#FFFFFF", borderRadius: "22px", padding: "1.6rem",
   boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
 };
 
@@ -114,7 +114,7 @@ export default function RSVPSection() {
   const allDeclined = false;
 
   return (
-    <section id="rsvp" className="py-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: "#0A1A3F" }}>
+    <section id="rsvp" className="py-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: "#F4F1EA" }}>
       <div className="absolute top-0 -right-20 w-72 h-72 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,162,75,0.14), transparent 70%)" }} />
 
@@ -131,10 +131,10 @@ export default function RSVPSection() {
             Will you join us?
           </h2>
           <div className="squiggle mt-4 mb-5" />
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D9D2C4", fontSize: "1.05rem", maxWidth: 460, margin: "0 auto" }}>
-            Will you be joining us in celebration? Come and bless us — <span style={{ color: "#E7CE8E", fontWeight: 600 }}>your presence makes us more happy.</span>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", color: "#57503F", fontSize: "1.05rem", maxWidth: 460, margin: "0 auto" }}>
+            Will you be joining us in celebration? Come and bless us — <span style={{ color: "#B08A2E", fontWeight: 600 }}>your presence makes us more happy.</span>
           </p>
-          <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.8rem", color: "#9AA4BD" }}>
+          <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.8rem", color: "#8A8172" }}>
             Please respond by <strong style={{ color: "#C9A24B" }}>October 1, 2026</strong>
           </p>
         </motion.div>
@@ -148,7 +148,7 @@ export default function RSVPSection() {
               <h3 className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.9rem" }}>
                 {allDeclined ? "We'll miss you!" : "With love, you're confirmed"}
               </h3>
-              <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D9D2C4" }}>
+              <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#57503F" }}>
                 {allDeclined
                   ? "Thank you for letting us know. We'll keep you in our hearts. 💛"
                   : "Your response has been recorded. 💛"}
@@ -160,7 +160,7 @@ export default function RSVPSection() {
 
               {/* Contact */}
               <div style={panelStyle}>
-                <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", color: "#F4EFE4", marginBottom: "1rem" }}>👋 Your details</p>
+                <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", color: "#2E2A22", marginBottom: "1rem" }}>👋 Your details</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="sm:col-span-2">
                     <label style={labelStyle}>Your name *</label>
@@ -188,16 +188,16 @@ export default function RSVPSection() {
 
               {/* Guests */}
               <div style={panelStyle}>
-                <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", color: "#F4EFE4", marginBottom: "0.3rem" }}>🎊 Who&apos;s coming?</p>
-                <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.85rem", color: "#9AA4BD", marginBottom: "1.2rem" }}>
+                <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", color: "#2E2A22", marginBottom: "0.3rem" }}>🎊 Who&apos;s coming?</p>
+                <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.85rem", color: "#8A8172", marginBottom: "1.2rem" }}>
                   Add each guest, confirm attendance, and pick the events they&apos;ll join.
                 </p>
 
                 <div className="space-y-5">
                   {form.guests.map((guest, i) => (
-                    <div key={i} style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 18, padding: "1.1rem", background: "#063024" }}>
+                    <div key={i} style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 18, padding: "1.1rem", background: "#FFFFFF" }}>
                       <div className="flex items-center justify-between mb-3">
-                        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.1em", color: "#E7CE8E", textTransform: "uppercase" }}>Guest {i + 1}</span>
+                        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.1em", color: "#B08A2E", textTransform: "uppercase" }}>Guest {i + 1}</span>
                         {i > 0 && (
                           <button type="button" onClick={() => removeGuest(i)}
                             style={{ color: "#E63946", fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", background: "none", border: "none", cursor: "pointer" }}>
@@ -215,13 +215,13 @@ export default function RSVPSection() {
                       <div className="grid grid-cols-2 gap-3 mb-3">
                             {(["adults", "kids"] as const).map((field) => (
                               <div key={field} className="flex items-center justify-between p-3" style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 14 }}>
-                                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", color: "#D9D2C4", textTransform: "uppercase" }}>{field}</span>
+                                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", color: "#57503F", textTransform: "uppercase" }}>{field}</span>
                                 <div className="flex items-center gap-2">
                                   <button type="button" onClick={() => adjustCount(i, field, -1)} aria-label={`less ${field}`}
-                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#13294F", color: "#E7CE8E", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>−</button>
-                                  <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", minWidth: "1.4rem", textAlign: "center", color: "#F4EFE4" }}>{guest[field]}</span>
+                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFFFFF", color: "#B08A2E", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>−</button>
+                                  <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", minWidth: "1.4rem", textAlign: "center", color: "#2E2A22" }}>{guest[field]}</span>
                                   <button type="button" onClick={() => adjustCount(i, field, 1)} aria-label={`more ${field}`}
-                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#13294F", color: "#E7CE8E", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>+</button>
+                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFFFFF", color: "#B08A2E", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>+</button>
                                 </div>
                               </div>
                             ))}
@@ -233,9 +233,9 @@ export default function RSVPSection() {
                               const on = guest[ev.key];
                               return (
                                 <label key={ev.key} className="flex items-center gap-2 cursor-pointer p-2"
-                                  style={{ borderRadius: 999, border: `2px solid ${on ? ev.color : "rgba(246,236,251,0.18)"}`, background: on ? `${ev.color}26` : "#063024", transition: "all 0.15s" }}>
+                                  style={{ borderRadius: 999, border: `2px solid ${on ? ev.color : "rgba(246,236,251,0.18)"}`, background: on ? `${ev.color}26` : "#FFFFFF", transition: "all 0.15s" }}>
                                   <input type="checkbox" checked={on} onChange={(e) => updateGuest(i, ev.key, e.target.checked)} className="sr-only" />
-                                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: on ? 700 : 500, fontSize: "0.74rem", color: on ? ev.color : "#D9D2C4" }}>
+                                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: on ? 700 : 500, fontSize: "0.74rem", color: on ? ev.color : "#57503F" }}>
                                     {ev.emoji} {ev.label}
                                   </span>
                                 </label>
@@ -253,7 +253,7 @@ export default function RSVPSection() {
 
               {/* Extras */}
               <div style={panelStyle}>
-                <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", color: "#F4EFE4", marginBottom: "1rem" }}>✨ A few more things</p>
+                <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", color: "#2E2A22", marginBottom: "1rem" }}>✨ A few more things</p>
                 <div className="space-y-4">
                   <div>
                     <label style={labelStyle}>🎵 Song request for the party</label>
@@ -286,7 +286,7 @@ export default function RSVPSection() {
                     Something went wrong. Please try again or email us directly.
                   </p>
                 )}
-                <p className="mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.72rem", color: "#9AA4BD" }}>
+                <p className="mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.72rem", color: "#8A8172" }}>
                   Your response will be recorded once you submit.
                 </p>
               </div>

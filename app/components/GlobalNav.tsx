@@ -45,9 +45,9 @@ export default function GlobalNav() {
             {navLinks.map((l) => (
               <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); go(l.href); }}
                 className="transition-colors"
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, fontSize: "0.85rem", color: "#D9D2C4", textDecoration: "none" }}
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, fontSize: "0.85rem", color: "#57503F", textDecoration: "none" }}
                 onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#C9A24B")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#D9D2C4")}>
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#57503F")}>
                 {l.label}
               </a>
             ))}
@@ -60,7 +60,7 @@ export default function GlobalNav() {
           <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center"
             style={{ background: "transparent", border: "none", cursor: "pointer" }} aria-label="Menu">
             <motion.span animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 7 : 0 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#C9A24B" }} />
-            <motion.span animate={{ opacity: menuOpen ? 0 : 1 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#E7CE8E" }} />
+            <motion.span animate={{ opacity: menuOpen ? 0 : 1 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#B08A2E" }} />
             <motion.span animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -7 : 0 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#C9A24B" }} />
           </button>
         </div>
@@ -72,13 +72,13 @@ export default function GlobalNav() {
             initial={{ opacity: 0, x: "100%" }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
             className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8"
-            style={{ background: "linear-gradient(160deg, #10244D, #0A1A3F)" }}>
+            style={{ background: "linear-gradient(160deg, #EBE6DB, #F4F1EA)" }}>
             <span className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontWeight: 700, fontSize: "2rem" }}>A &amp; C</span>
             {navLinks.map((l, i) => (
               <motion.a key={l.href} href={l.href}
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}
                 onClick={(e) => { e.preventDefault(); go(l.href); }}
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "1.3rem", color: "#F4EFE4", textDecoration: "none" }}>
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "1.3rem", color: "#2E2A22", textDecoration: "none" }}>
                 {l.label}
               </motion.a>
             ))}

@@ -33,7 +33,7 @@ function GarlandColumn({ flip = false }: { flip?: boolean }) {
       {/* small golden temple bell suspended at the bottom */}
       <g transform="translate(20 828)">
         <line x1="0" y1="-8" x2="0" y2="0" stroke="#C9A24B" strokeWidth="1.2" />
-        <path d="M-9 18 Q-9 2 0 0 Q9 2 9 18 Z" fill="#E7CE8E" stroke="#A07E2E" strokeWidth="0.8" />
+        <path d="M-9 18 Q-9 2 0 0 Q9 2 9 18 Z" fill="#B08A2E" stroke="#A07E2E" strokeWidth="0.8" />
         <ellipse cx="0" cy="18" rx="9" ry="2.5" fill="#C9A24B" />
         <circle cx="0" cy="22" r="2.2" fill="#A07E2E" />
       </g>
@@ -51,12 +51,12 @@ export default function WeddingDecor() {
       {/* Dark ornamental carved vertical borders on both edges */}
       <div className="absolute top-0 bottom-0 left-0" style={{
         width: "34px",
-        background: "linear-gradient(90deg, #060F28 0%, #063024 70%, transparent 100%)",
+        background: "linear-gradient(90deg, #FBF9F4 0%, #FFFFFF 70%, transparent 100%)",
         borderRight: "1px solid rgba(201,162,75,0.35)",
       }} />
       <div className="absolute top-0 bottom-0 right-0" style={{
         width: "34px",
-        background: "linear-gradient(270deg, #060F28 0%, #063024 70%, transparent 100%)",
+        background: "linear-gradient(270deg, #FBF9F4 0%, #FFFFFF 70%, transparent 100%)",
         borderLeft: "1px solid rgba(201,162,75,0.35)",
       }} />
 

@@ -20,7 +20,7 @@ function getTimeLeft(target: Date): TimeLeft {
   };
 }
 
-const unitColors = ["#C9A24B", "#E7CE8E", "#C9A24B", "#C9A24B"];
+const unitColors = ["#C9A24B", "#B08A2E", "#C9A24B", "#C9A24B"];
 
 function Unit({ value, label, color }: { value: number; label: string; color: string }) {
   return (
@@ -30,7 +30,7 @@ function Unit({ value, label, color }: { value: number; label: string; color: st
         style={{
           width: "clamp(4.5rem, 18vw, 7rem)",
           height: "clamp(4.5rem, 18vw, 7rem)",
-          background: "#13294F",
+          background: "#FFFFFF",
           boxShadow: `0 10px 26px ${color}33`,
           border: `3px solid ${color}`,
         }}
@@ -44,7 +44,7 @@ function Unit({ value, label, color }: { value: number; label: string; color: st
           {String(value).padStart(2, "0")}
         </motion.span>
       </div>
-      <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#D9D2C4", marginTop: "0.6rem" }}>
+      <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#57503F", marginTop: "0.6rem" }}>
         {label}
       </span>
     </div>
@@ -63,7 +63,7 @@ export default function CountdownSection() {
   if (!mounted) return null;
 
   return (
-    <section id="countdown" className="py-20 px-6 relative" style={{ background: "#0A1A3F" }}>
+    <section id="countdown" className="py-20 px-6 relative" style={{ background: "#F4F1EA" }}>
       <div className="max-w-3xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -86,7 +86,7 @@ export default function CountdownSection() {
         >
           November 19–22, 2026
         </motion.h2>
-        <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D9D2C4", fontSize: "1.05rem" }}>
+        <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#57503F", fontSize: "1.05rem" }}>
           Save the date — we can we can&apos;t wait to celebrate with you! 🎊apos;t wait to celebrate with you.
         </p>
       </div>

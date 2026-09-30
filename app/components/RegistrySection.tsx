@@ -8,7 +8,7 @@ const gifts = [
 
 export default function RegistrySection() {
   return (
-    <section id="registry" className="py-20 px-6 relative" style={{ background: "#0A1A3F" }}>
+    <section id="registry" className="py-20 px-6 relative" style={{ background: "#F4F1EA" }}>
       <div className="max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
@@ -18,7 +18,7 @@ export default function RegistrySection() {
             Gifts
           </h2>
           <div className="squiggle mt-5" />
-          <p className="mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D9D2C4", maxWidth: 460, margin: "1rem auto 0" }}>
+          <p className="mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#57503F", maxWidth: 460, margin: "1rem auto 0" }}>
             Your love and presence mean the world. If you&apos;d like to give a gift, here are a few options.
           </p>
         </motion.div>
@@ -30,8 +30,8 @@ export default function RegistrySection() {
               transition={{ delay: i * 0.08 }} whileHover={{ y: -6 }}
               className="fest-card p-8 text-center w-full" style={{ textDecoration: "none" }}>
               <div style={{ fontSize: "2.6rem" }}>{g.icon}</div>
-              <h3 style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.15rem", color: "#F4EFE4", marginTop: "0.6rem" }}>{g.name}</h3>
-              <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.85rem", color: "#D9D2C4", marginTop: "0.5rem" }}>{g.note}</p>
+              <h3 style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.15rem", color: "#2E2A22", marginTop: "0.6rem" }}>{g.name}</h3>
+              <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.85rem", color: "#57503F", marginTop: "0.5rem" }}>{g.note}</p>
               <span className="inline-block mt-5 px-5 py-2 rounded-full" style={{ background: `${g.color}18`, color: g.color, fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.78rem" }}>
                 {g.href.startsWith("http") ? "Open →" : "RSVP →"}
               </span>

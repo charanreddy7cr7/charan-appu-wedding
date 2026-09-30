@@ -7,20 +7,20 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* Core palette */
-  --navy:       #0A1A3F;   /* deep navy base */
-  --navy-2:     #10244D;   /* lighter navy section */
-  --navy-3:     #060F28;   /* darkest navy */
-  --navy-card:  #13294F;   /* card / panel navy */
+  /* Core palette — stone white light theme */
+  --navy:       #F4F1EA;   /* stone white base */
+  --navy-2:     #EBE6DB;   /* slightly deeper stone section */
+  --navy-3:     #FBF9F4;   /* lightest stone */
+  --navy-card:  #FFFFFF;   /* card / panel white */
 
-  --gold:       #C9A24B;   /* warm antique gold */
-  --gold-light: #E7CE8E;   /* light champagne gold */
-  --gold-bright:#F0DCA0;   /* bright gold highlight */
-  --gold-deep:  #A07E2E;   /* deep gold */
+  --gold:       #B08A2E;   /* antique gold (dark enough for light bg) */
+  --gold-light: #C9A24B;   /* mid gold */
+  --gold-bright:#E7CE8E;   /* bright gold highlight */
+  --gold-deep:  #8A6A1E;   /* deep gold for headings on light */
 
-  --ivory:      #F4EFE4;   /* warm ivory text */
-  --ivory-soft: #D9D2C4;   /* soft ivory body text */
-  --muted:      #9AA4BD;   /* muted blue-grey */
+  --ivory:      #2E2A22;   /* dark stone-charcoal text */
+  --ivory-soft: #57503F;   /* soft brown-grey body text */
+  --muted:      #8A8172;   /* muted taupe */
 
   /* Aliases for existing components */
   --marigold:  var(--gold);
@@ -42,17 +42,17 @@
   --bg-section: var(--navy);
   --bg-section-alt: var(--navy-2);
   --bg-card:    var(--navy-card);
-  --bg-input:   #141414;
-  --bg-hover:   #1C1712;
+  --bg-input:   #FFFFFF;
+  --bg-hover:   #FBF6EC;
   --text-primary: var(--ivory);
   --text-body:    var(--ivory-soft);
   --text-subtle:  var(--gold);
   --text-muted:   var(--muted);
-  --border:       rgba(201,162,75,0.32);
+  --border:       rgba(176,138,46,0.35);
   --border-focus: var(--gold);
-  --border-card:  rgba(201,162,75,0.25);
-  --error:        #E9899A;
-  --success:      #86D8B0;
+  --border-card:  rgba(176,138,46,0.28);
+  --error:        #B3261E;
+  --success:      #2E7D57;
   --ivory-dark:   var(--navy-2);
   --charcoal:     var(--ivory);
   --off-white:    var(--navy-card);
@@ -103,13 +103,13 @@ p { line-height: 1.7; }
   padding: 0.85rem 2.4rem;
   border-radius: 2px;
   font-family: 'Cinzel', serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.82rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   cursor: pointer;
   border: 1px solid var(--gold);
-  color: var(--navy);
+  color: #2E2A22;
   background: linear-gradient(120deg, var(--gold), var(--gold-light));
   transition: all 0.25s ease;
 }
@@ -211,7 +211,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); }
   position: fixed; bottom: 22px; right: 22px; z-index: 40;
   display: flex; align-items: center; gap: 8px;
   padding: 11px 18px; border-radius: 999px;
-  background: rgba(10,26,63,0.92);
+  background: rgba(255,255,255,0.92);
   border: 1px solid var(--gold); color: var(--gold);
   font-family: 'Cinzel', serif; font-weight: 500;
   font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
