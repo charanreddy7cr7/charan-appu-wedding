@@ -29,13 +29,6 @@ const OASIS = { venueName: "The Oasis Ranch", venueAddress: "Whitewright, TX", m
 
 const events: EventItem[] = [
   {
-    id: "mehendi", emoji: "🤚", name: "Mehendi",
-    date: "Thu, Nov 19", time: "6:00 – 8:00 PM", ...OASIS, dress: "Maroon",
-    // Complete maroon
-    bg: "linear-gradient(160deg, #4A0D22 0%, #6E1533 55%, #3A0A1B 100%)",
-    accent: "#F0A9C0", text: "#FCE9EF", textMuted: "#E3B8C6", chipBg: "rgba(255,255,255,0.12)", tilt: -2,
-  },
-  {
     id: "engagement", emoji: "💍", name: "Engagement",
     date: "Fri, Nov 20", time: "10:00 AM – 12 PM", ...OASIS, dress: "Red",
     // Red
@@ -92,7 +85,7 @@ export default function EventsSection() {
           className="text-center mb-14"
         >
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
-            6 Celebrations · Nov 19–22
+            5 Celebrations · Nov 20–22
           </p>
           <h2 className="festive-text mt-3" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(2.2rem, 6vw, 3.6rem)" }}>
             Wedding Celebration

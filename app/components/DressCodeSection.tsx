@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 
 const codes = [
-  { event: "Mehendi",    emoji: "🤚", theme: "Maroon", swatches: ["#6E1533", "#8E1537", "#4A0D22"], color: "#C97A97" },
   { event: "Engagement", emoji: "💍", theme: "Red", swatches: ["#C1121F", "#E63946", "#8E1116"], color: "#F08A80" },
   { event: "Haldi",      emoji: "☀️", theme: "Beach Pink", swatches: ["#FF6FB5", "#FF9CC7", "#F25FA6"], color: "#FF9CC7" },
   { event: "Bride & Groom Ceremony", emoji: "🪔", theme: "White", swatches: ["#FFFFFF", "#F4F0E6", "#EDE7D6"], color: "#B89043" },
