@@ -57,8 +57,11 @@ const labelStyle: React.CSSProperties = {
   textTransform: "uppercase", marginBottom: "0.5rem",
 };
 const panelStyle: React.CSSProperties = {
-  background: "#FFFCF5", borderRadius: "22px", padding: "1.6rem",
-  boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
+  background: "linear-gradient(160deg, rgba(255,252,245,0.97) 0%, rgba(245,238,220,0.97) 100%)",
+  borderRadius: "4px",
+  padding: "1.6rem",
+  border: "1.5px solid rgba(201,164,62,0.45)",
+  boxShadow: "0 6px 24px rgba(139,105,20,0.12), inset 0 1px 1px rgba(255,243,196,0.3)",
 };
 
 export default function RSVPSection() {
@@ -270,7 +273,7 @@ export default function RSVPSection() {
               {/* Submit */}
               <div className="text-center pt-2">
                 {validationError && (
-                  <div className="mb-5 inline-block" style={{ color: "#FF7A8A", fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, background: "#3A1F2A", border: "2px solid #6B2A3A", borderRadius: 14, padding: "0.7rem 1.25rem" }}>
+                  <div className="mb-5 inline-block" style={{ color: "#8B1A0A", fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, background: "#FFF0EC", border: "1.5px solid rgba(180,80,40,0.4)", borderRadius: 4, padding: "0.7rem 1.25rem" }}>
                     ⚠ {validationError}
                   </div>
                 )}
