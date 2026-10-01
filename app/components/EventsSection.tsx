@@ -46,7 +46,7 @@ const events: EventItem[] = [
     id: "ceremony", emoji: "🪔", name: "Bride & Groom Ceremony",
     date: "Fri, Nov 20", time: "5:00 – 7:00 PM", ...OASIS, dress: "White",
     // White / ivory
-    bg: "linear-gradient(160deg, #FFFFFF 0%, #F4F0E6 55%, #EDE7D6 100%)",
+    bg: "linear-gradient(160deg, #FFFCF5 0%, #F4F0E6 55%, #EDE7D6 100%)",
     accent: "#B08A34", text: "#2B2415", textMuted: "#6E6350", chipBg: "rgba(176,138,52,0.14)", tilt: 2,
   },
   {
@@ -73,7 +73,7 @@ const events: EventItem[] = [
 
 export default function EventsSection() {
   return (
-    <section id="events" className="py-20 px-6 relative overflow-hidden" style={{ background: "#FCFBF7" }}>
+    <section id="events" className="py-20 px-6 relative overflow-hidden" style={{ background: "#F2E8D8" }}>
       <div className="absolute top-10 -left-16 w-64 h-64 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,162,75,0.14), transparent 70%)" }} />
       <div className="absolute bottom-10 -right-16 w-72 h-72 rounded-full pointer-events-none"

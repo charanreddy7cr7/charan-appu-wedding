@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 const codes = [
   { event: "Engagement", emoji: "💍", theme: "Red", swatches: ["#C1121F", "#E63946", "#8E1116"], color: "#F08A80" },
   { event: "Haldi",      emoji: "☀️", theme: "Beach Pink", swatches: ["#FF6FB5", "#FF9CC7", "#F25FA6"], color: "#FF9CC7" },
-  { event: "Bride & Groom Ceremony", emoji: "🪔", theme: "White", swatches: ["#FFFFFF", "#F4F0E6", "#EDE7D6"], color: "#B89043" },
+  { event: "Bride & Groom Ceremony", emoji: "🪔", theme: "White", swatches: ["#FFFCF5", "#F4F0E6", "#EDE7D6"], color: "#B89043" },
   { event: "Wedding",    emoji: "🪷", theme: "Antique Gold", swatches: ["#B89043", "#C9A24B", "#A07E2E"], color: "#B89043" },
   { event: "Reception",  emoji: "🎉", theme: "Black · Neon Lights", swatches: ["#0E0A1A", "#000000", "#B57BFF"], color: "#B57BFF" },
 ];
 
 export default function DressCodeSection() {
   return (
-    <section id="dresscode" className="py-20 px-6 relative" style={{ background: "#FCFBF7" }}>
+    <section id="dresscode" className="py-20 px-6 relative" style={{ background: "#F2E8D8" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>

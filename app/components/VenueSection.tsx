@@ -141,7 +141,7 @@ export default function VenueSection() {
                 }}
                 onMouseEnter={(e) => {
                   (e.target as HTMLElement).style.background = "#C9A84C";
-                  (e.target as HTMLElement).style.color = "#FFFFFF";
+                  (e.target as HTMLElement).style.color = "#FFFCF5";
                 }}
                 onMouseLeave={(e) => {
                   (e.target as HTMLElement).style.background = "transparent";
