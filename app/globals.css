@@ -319,3 +319,117 @@ input::placeholder, textarea::placeholder { color: #B09070; opacity: 1; }
     background: var(--gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LUXURY HERO — marble hall look (ref: invitation-small.png)
+   Fluted gold pillars · recessed marble niches · beveled gold frames ·
+   top-down spotlight wash · brushed-gold plaque · polished floor.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Realistic marble surface for the inside of a niche */
+.marble-surface {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,246,222,0.9) 0%, transparent 55%),
+    repeating-linear-gradient(118deg,
+      transparent 0 22px,
+      rgba(176,140,86,0.10) 22px 23px,
+      transparent 23px 48px),
+    repeating-linear-gradient(42deg,
+      transparent 0 34px,
+      rgba(150,116,70,0.07) 34px 35px,
+      transparent 35px 70px),
+    linear-gradient(160deg, #F7EFDC 0%, #F0E4CA 45%, #EADBBE 100%);
+}
+
+/* Thick beveled gold frame that reads as a metal picture frame */
+.lux-niche {
+  position: relative;
+  border-radius: 5px;
+  padding: 10px;
+  background:
+    linear-gradient(135deg, #F4E2A0 0%, #C9A43E 22%, #8B6914 48%, #E8C86A 70%, #C9A43E 88%, #A07820 100%);
+  box-shadow:
+    0 10px 36px rgba(80,55,10,0.38),
+    inset 0 1px 1px rgba(255,247,210,0.85),
+    inset 0 -2px 3px rgba(90,65,12,0.5);
+}
+/* inner bevel ring */
+.lux-niche::before {
+  content: "";
+  position: absolute; inset: 6px;
+  border-radius: 3px;
+  padding: 2px;
+  background: linear-gradient(135deg, #FFF6D2, #B98E24, #FFF0B0, #8B6914);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+/* the recessed inner surface */
+.lux-niche-inner {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow:
+    inset 0 10px 26px rgba(90,65,20,0.30),
+    inset 0 -4px 14px rgba(120,90,35,0.20);
+}
+
+/* Warm top-down spotlight wash + two bright hotspots like recessed lights */
+.lux-lights::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 70%;
+  background:
+    radial-gradient(ellipse 28% 60% at 28% 0%, rgba(255,244,196,0.85) 0%, transparent 70%),
+    radial-gradient(ellipse 28% 60% at 72% 0%, rgba(255,244,196,0.85) 0%, transparent 70%),
+    radial-gradient(ellipse 90% 55% at 50% -8%, rgba(255,238,180,0.55) 0%, transparent 72%);
+  pointer-events: none; z-index: 1;
+  animation: luxGlow 4.5s ease-in-out infinite;
+}
+@keyframes luxGlow { 0%,100% { opacity: 0.85; } 50% { opacity: 1; } }
+
+/* Fluted gold pillar for the sides */
+.lux-pillar {
+  background:
+    repeating-linear-gradient(90deg,
+      #8B6914 0 2px, #C9A43E 2px 5px, #F0DCA0 5px 7px,
+      #E8C86A 7px 9px, #C9A43E 9px 12px, #8B6914 12px 14px);
+  box-shadow:
+    inset 2px 0 4px rgba(255,247,210,0.6),
+    inset -2px 0 5px rgba(80,55,10,0.5),
+    0 0 16px rgba(139,105,20,0.4);
+}
+.lux-pillar-cap {
+  background: linear-gradient(180deg, #F4E2A0, #C9A43E 45%, #8B6914 100%);
+  box-shadow: 0 2px 6px rgba(80,55,10,0.5), inset 0 1px 2px rgba(255,247,210,0.8);
+}
+
+/* Brushed-gold plaque with horizontal striations + screw rivets */
+.brushed-plate {
+  position: relative;
+  background:
+    repeating-linear-gradient(0deg,
+      rgba(255,247,210,0.0) 0 2px,
+      rgba(120,90,30,0.06) 2px 3px),
+    linear-gradient(135deg,
+      #EBCF78 0%, #D4AF37 18%, #C9A43E 38%,
+      #F2DFA2 55%, #C9A43E 72%, #A8841F 88%, #E0BE5C 100%);
+  background-size: 100% 100%, 200% 200%;
+  animation: platShimmer 9s ease-in-out infinite;
+  box-shadow:
+    0 6px 26px rgba(90,65,12,0.5),
+    inset 0 2px 3px rgba(255,247,210,0.65),
+    inset 0 -2px 4px rgba(90,65,12,0.4);
+}
+
+/* Polished marble floor with soft reflection */
+.lux-floor {
+  height: 46px;
+  background:
+    linear-gradient(180deg, rgba(255,246,222,0.9) 0%, rgba(216,195,150,0.7) 40%, rgba(190,165,120,0.5) 100%),
+    repeating-linear-gradient(100deg, transparent 0 30px, rgba(160,125,75,0.08) 30px 31px, transparent 31px 70px);
+  box-shadow: inset 0 10px 18px rgba(120,90,35,0.25);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.15) 100%);
+          mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.15) 100%);
+}
