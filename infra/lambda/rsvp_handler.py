@@ -161,7 +161,6 @@ def submit_rsvp(event: dict) -> dict:
         "rsvpId": rsvp_id,
         "submittedAt": submitted_at,
         "primaryName": primary_name,
-        "email": email,
         "phone": body.get("phone", ""),
         "guests": guests,
         "dietary": body.get("dietary", ""),
@@ -182,6 +181,11 @@ def submit_rsvp(event: dict) -> dict:
             "reception":   sum((int(g.get("adults", 0)) + int(g.get("kids", 0))) for g in attending_guests if g.get("reception")),
         }
     }
+
+    # Only include email when provided — the table has a GSI on email,
+    # and DynamoDB rejects empty-string values for index key attributes.
+    if email:
+        record["email"] = email
 
     # Save to DynamoDB
     table = dynamodb.Table(RSVP_TABLE)

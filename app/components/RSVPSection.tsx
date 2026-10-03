@@ -83,19 +83,20 @@ export default function RSVPSection() {
       return { ...p, guests: g };
     });
   };
-  const addGuest    = () => setForm((p) => ({ ...p, guests: [...p.guests, defaultGuest()] }));
-  const removeGuest = (i: number) => { if (form.guests.length > 1) setForm((p) => ({ ...p, guests: p.guests.filter((_, idx) => idx !== i) })); };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     for (let i = 0; i < form.guests.length; i++) {
       const g = form.guests[i];
-      if (!g.name.trim()) { setValidation(`Please enter a name for Guest ${i + 1}.`); return; }
       const keys = ["engagement","haldi","ceremony","wedding","reception"] as const;
-      if (!keys.some((k) => g[k])) { setValidation(`Please select at least one event for ${g.name || `Guest ${i + 1}`}.`); return; }
+      if (!keys.some((k) => g[k])) { setValidation(`Please select at least one event for Guest ${i + 1}.`); return; }
     }
-    // Everyone who RSVPs is attending.
-    const guests = form.guests.map((g) => ({ ...g, attending: "accepts" as const }));
+    // Everyone who RSVPs is attending. Guest name is optional — fill a fallback.
+    const guests = form.guests.map((g, idx) => ({
+      ...g,
+      name: g.name.trim() || `Guest ${idx + 1}`,
+      attending: "accepts" as const,
+    }));
     const payload = { ...form, guests };
     setValidation("");
     setSubmitState("submitting");
@@ -184,15 +185,6 @@ export default function RSVPSection() {
                 <div className="space-y-5 mt-5">
                   {form.guests.map((guest, i) => (
                     <div key={i} style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 18, padding: "1.1rem", background: "#FFFCF5" }}>
-                      {i > 0 && (
-                        <div className="flex items-center justify-end mb-3">
-                          <button type="button" onClick={() => removeGuest(i)}
-                            style={{ color: "#E63946", fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", background: "none", border: "none", cursor: "pointer" }}>
-                            Remove
-                          </button>
-                        </div>
-                      )}
-
                       <div className="grid grid-cols-2 gap-3 mb-3">
                             {(["adults", "kids"] as const).map((field) => (
                               <div key={field} className="flex items-center justify-between p-3" style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 14 }}>
@@ -226,10 +218,6 @@ export default function RSVPSection() {
                     </div>
                   ))}
                 </div>
-
-                <button type="button" onClick={addGuest} className="btn-outline mt-4 w-full" style={{ borderStyle: "dashed" }}>
-                  + Add another guest
-                </button>
               </div>
 
               {/* Extras */}
