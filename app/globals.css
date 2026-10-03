@@ -38,7 +38,7 @@
   --bg-section:   var(--marble-base);
   --bg-section-alt: var(--marble-mid);
   --bg-card:      #FFFCF5;
-  --bg-input:     #FFFCF5;
+  --bg-input:     #E6D4B0;
   --bg-hover:     #FFF8EC;
   --ivory:        var(--ink);
   --ivory-soft:   var(--ink-soft);
@@ -256,21 +256,22 @@ p { line-height: 1.7; }
 /* ─── Form elements ──────────────────────────────────────────────────────── */
 input[type="text"], input[type="email"], input[type="tel"],
 input[type="password"], textarea, select {
-  background: #FFFCF5;
-  color: #3D2B00;
-  border: 1.5px solid rgba(201,164,62,0.5);
+  background: #E6D4B0;
+  color: #2A1C00;
+  border: 1.5px solid rgba(139,105,20,0.75);
   border-radius: 3px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem; padding: 0.75rem 1rem;
   width: 100%; outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: inset 0 2px 5px rgba(100,75,20,0.18);
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 input:focus, textarea:focus, select:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(201,164,62,0.18);
-  background: #FFFFF8;
+  border-color: var(--gold-deep, #8B6914);
+  box-shadow: inset 0 2px 5px rgba(100,75,20,0.18), 0 0 0 3px rgba(201,164,62,0.28);
+  background: #EEDFC0;
 }
-input::placeholder, textarea::placeholder { color: #B09070; opacity: 1; }
+input::placeholder, textarea::placeholder { color: #8A6B38; opacity: 1; }
 
 /* ─── Scrollbar ──────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
