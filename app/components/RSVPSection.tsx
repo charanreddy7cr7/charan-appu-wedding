@@ -162,7 +162,7 @@ export default function RSVPSection() {
 
               {/* Contact */}
               <div style={panelStyle}>
-                <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", color: "#2E2A22", marginBottom: "1rem" }}>👋 Your details</p>
+                <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", color: "#2E2A22", marginBottom: "1rem" }}>👋 Guest details</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="sm:col-span-2">
                     <label style={labelStyle}>Your name *</label>
@@ -186,11 +186,8 @@ export default function RSVPSection() {
                     </select>
                   </div>
                 </div>
-              </div>
 
-              {/* Guests */}
-              <div style={panelStyle}>
-                <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", color: "#2E2A22", marginBottom: "0.3rem" }}>🎊 Who&apos;s coming?</p>
+                <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "0.95rem", color: "#2E2A22", margin: "1.5rem 0 0.3rem" }}>🎊 Who&apos;s coming?</p>
                 <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.85rem", color: "#8A8172", marginBottom: "1.2rem" }}>
                   Add each guest, confirm attendance, and pick the events they&apos;ll join.
                 </p>
