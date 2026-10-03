@@ -20,7 +20,6 @@ interface GuestEntry {
 
 interface FormData {
   primaryName: string;
-  email: string;
   phone: string;
   meal: string;
   guests: GuestEntry[];
@@ -66,7 +65,7 @@ const panelStyle: React.CSSProperties = {
 
 export default function RSVPSection() {
   const [form, setForm] = useState<FormData>({
-    primaryName: "", email: "", phone: "", meal: "",
+    primaryName: "", phone: "", meal: "",
     guests: [defaultGuest()],
     dietary: "", songRequest: "", message: "",
   });
@@ -168,11 +167,6 @@ export default function RSVPSection() {
                     <label style={labelStyle}>Your name *</label>
                     <input required type="text" placeholder="Full name" value={form.primaryName}
                       onChange={(e) => setForm((p) => ({ ...p, primaryName: e.target.value }))} />
-                  </div>
-                  <div>
-                    <label style={labelStyle}>Email *</label>
-                    <input required type="email" placeholder="your@email.com" value={form.email}
-                      onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))} />
                   </div>
                   <div>
                     <label style={labelStyle}>Phone (optional)</label>

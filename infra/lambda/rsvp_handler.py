@@ -143,8 +143,8 @@ def submit_rsvp(event: dict) -> dict:
     # Validate required fields
     primary_name = (body.get("primaryName") or "").strip()
     email = (body.get("email") or "").strip()
-    if not primary_name or not email:
-        return respond(400, {"error": "primaryName and email are required"})
+    if not primary_name:
+        return respond(400, {"error": "primaryName is required"})
 
     guests = body.get("guests", [])
     if not guests:
@@ -198,11 +198,12 @@ def submit_rsvp(event: dict) -> dict:
     except Exception as e:
         print(f"S3 backup failed (non-fatal): {e}")
 
-    # Send confirmation email to guest
-    try:
-        send_confirmation_email(record)
-    except Exception as e:
-        print(f"Confirmation email failed (non-fatal): {e}")
+    # Send confirmation email to guest (only if an email was provided)
+    if email:
+        try:
+            send_confirmation_email(record)
+        except Exception as e:
+            print(f"Confirmation email failed (non-fatal): {e}")
 
     # Send notification email to couple
     try:
