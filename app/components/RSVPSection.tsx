@@ -185,7 +185,7 @@ export default function RSVPSection() {
                 <div className="space-y-5 mt-5">
                   {form.guests.map((guest, i) => (
                     <div key={i} style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 18, padding: "1.1rem", background: "#FFFCF5" }}>
-                      <div className="grid grid-cols-2 gap-3 mb-3">
+                      <div className="grid grid-cols-2 gap-3">
                             {(["adults", "kids"] as const).map((field) => (
                               <div key={field} className="flex items-center justify-between p-3" style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 14 }}>
                                 <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", color: "#57503F", textTransform: "uppercase" }}>{field}</span>
@@ -199,24 +199,27 @@ export default function RSVPSection() {
                               </div>
                             ))}
                           </div>
-
-                          <label style={labelStyle}>Events attending *</label>
-                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                            {weddingEvents.map((ev) => {
-                              const on = guest[ev.key];
-                              return (
-                                <label key={ev.key} className="flex items-center gap-2 cursor-pointer p-2"
-                                  style={{ borderRadius: 999, border: `2px solid ${on ? ev.color : "rgba(246,236,251,0.18)"}`, background: on ? `${ev.color}26` : "#FFFCF5", transition: "all 0.15s" }}>
-                                  <input type="checkbox" checked={on} onChange={(e) => updateGuest(i, ev.key, e.target.checked)} className="sr-only" />
-                                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: on ? 700 : 500, fontSize: "0.74rem", color: on ? ev.color : "#57503F" }}>
-                                    {ev.emoji} {ev.label}
-                                  </span>
-                                </label>
-                              );
-                            })}
-                          </div>
                     </div>
                   ))}
+                </div>
+
+                {/* Events attending — at the bottom of Guest details */}
+                <div className="mt-5">
+                  <label style={labelStyle}>Events attending *</label>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    {weddingEvents.map((ev) => {
+                      const on = form.guests[0]?.[ev.key];
+                      return (
+                        <label key={ev.key} className="flex items-center gap-2 cursor-pointer p-2"
+                          style={{ borderRadius: 999, border: `2px solid ${on ? ev.color : "rgba(139,105,20,0.35)"}`, background: on ? `${ev.color}26` : "#E6D4B0", transition: "all 0.15s" }}>
+                          <input type="checkbox" checked={!!on} onChange={(e) => updateGuest(0, ev.key, e.target.checked)} className="sr-only" />
+                          <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: on ? 700 : 500, fontSize: "0.74rem", color: on ? ev.color : "#57503F" }}>
+                            {ev.emoji} {ev.label}
+                          </span>
+                        </label>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 
