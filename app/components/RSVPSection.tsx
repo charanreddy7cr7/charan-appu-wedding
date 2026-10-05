@@ -137,7 +137,7 @@ export default function RSVPSection() {
             Will you be joining us in celebration? Come and bless us — <span style={{ color: "#B89043", fontWeight: 600 }}>your presence makes us more happy.</span>
           </p>
           <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.8rem", color: "#8A8172" }}>
-            Please respond by <strong style={{ color: "#C9A24B" }}>October 1, 2026</strong>
+            Please respond by <strong style={{ color: "#C9A24B" }}>October 30, 2026</strong>
           </p>
         </motion.div>
 
