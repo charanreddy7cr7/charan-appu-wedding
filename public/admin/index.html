@@ -122,6 +122,9 @@
   const EVENT_LABEL = { mehendi: "Mehendi", engagement: "Engagement", haldi: "Haldi", ceremony: "Bride & Groom Ceremony", wedding: "Wedding", reception: "Reception" };
   const evLabel = (e) => EVENT_LABEL[e] || e;
 
+  const MEAL_LABEL = { "vegetarian": "🥗 Vegetarian", "non-veg": "🍗 Non-Vegetarian", "no-pref": "No preference" };
+  const mealLabel = (m) => MEAL_LABEL[m] || m;
+
   const $ = (id) => document.getElementById(id);
   const loginView = $("loginView"), dashView = $("dashView");
 
@@ -210,6 +213,7 @@
         return `<div style="margin-bottom:6px;">◆ ${esc(party)}<div class="chips" style="margin-top:3px;">${evs}</div></div>`;
       }).join("");
       const extras = [
+        r.meal ? `<div><small>Meal:</small> ${esc(mealLabel(r.meal))}</div>` : "",
         r.dietary ? `<div><small>Dietary:</small> ${esc(r.dietary)}</div>` : "",
         r.songRequest ? `<div><small>Song:</small> ${esc(r.songRequest)}</div>` : "",
         r.message ? `<div><small>Message:</small> ${esc(r.message)}</div>` : "",
@@ -228,7 +232,7 @@
 
   function exportCsv() {
     if (!currentData || !currentData.rsvps) return;
-    const rows = [["Primary Name", "Email", "Phone", "Total Guests", "Adults", "Kids", "Party Breakdown", "Mehendi", "Engagement", "Haldi", "Ceremony", "Wedding", "Reception", "Dietary", "Song Request", "Message", "Submitted At"]];
+    const rows = [["Primary Name", "Email", "Phone", "Meal", "Total Guests", "Adults", "Kids", "Party Breakdown", "Mehendi", "Engagement", "Haldi", "Ceremony", "Wedding", "Reception", "Dietary", "Song Request", "Message", "Submitted At"]];
     currentData.rsvps.forEach((r) => {
       const ev = r.events || {};
       const gs = r.guests || [];
@@ -236,7 +240,7 @@
       const kids = gs.reduce((s, g) => s + Number(g.kids || 0), 0);
       const breakdown = gs.map((g) => `${Number(g.adults || 0)}A${Number(g.kids || 0) ? "+" + Number(g.kids) + "K" : ""}`).join("; ");
       rows.push([
-        r.primaryName || "", r.email || "", r.phone || "", r.guestCount || (adults + kids),
+        r.primaryName || "", r.email || "", r.phone || "", mealLabel(r.meal || ""), r.guestCount || (adults + kids),
         adults, kids, breakdown,
         ev.mehendi || 0, ev.engagement || 0, ev.haldi || 0, ev.ceremony || 0, ev.wedding || 0, ev.reception || 0,
         r.dietary || "", r.songRequest || "", (r.message || "").replace(/\n/g, " "), r.submittedAt || "",

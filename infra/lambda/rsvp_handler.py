@@ -162,6 +162,7 @@ def submit_rsvp(event: dict) -> dict:
         "submittedAt": submitted_at,
         "primaryName": primary_name,
         "phone": body.get("phone", ""),
+        "meal": body.get("meal", ""),
         "guests": guests,
         "dietary": body.get("dietary", ""),
         "songRequest": body.get("songRequest", ""),
