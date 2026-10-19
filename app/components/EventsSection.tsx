@@ -56,7 +56,7 @@ const events: EventItem[] = [
     mapQuery: "The+Bliss+at+Aubrey,+4381+US-377,+Aubrey,+TX+76227",
     dress: "Antique Gold",
     // Antique gold
-    bg: "linear-gradient(135deg, #FFF3C4 0%, #F5D876 22%, #D4AF37 48%, #B8860B 72%, #F5D876 100%)",
+    bg: "linear-gradient(135deg, #FEE2A4 0%, #FAC775 22%, #E8AD5B 48%, #B8860B 72%, #FAC775 100%)",
     accent: "#4A3611", text: "#2E2208", textMuted: "#5C4A1E", chipBg: "rgba(46,34,8,0.1)", tilt: -2,
   },
   {
@@ -84,7 +84,7 @@ export default function EventsSection() {
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C17930", textTransform: "uppercase" }}>
             5 Celebrations · Nov 20–22
           </p>
           <h2 className="festive-text mt-3" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(2.2rem, 6vw, 3.6rem)" }}>

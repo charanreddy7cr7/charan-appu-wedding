@@ -66,9 +66,9 @@ export default function EnvelopeIntro() {
           {/* Auspicious Telugu blessings across the top */}
           <div className="absolute top-5 left-0 right-0 z-20 px-8 flex items-center justify-between"
             style={{ maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
-            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#B89043" }}>శ్రీరస్తు</span>
-            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#B89043" }}>శుభమస్తు</span>
-            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#B89043" }}>అవిఘ్నమస్తు</span>
+            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#C17930" }}>శ్రీరస్తు</span>
+            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#C17930" }}>శుభమస్తు</span>
+            <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(0.75rem, 2.5vw, 1.1rem)", color: "#C17930" }}>అవిఘ్నమస్తు</span>
           </div>
 
           {/* Centered rectangle card framing the Ganapathi */}
@@ -87,10 +87,10 @@ export default function EnvelopeIntro() {
             }}
           >
             {/* Corner flourishes */}
-            <span style={{ position: "absolute", top: 12, left: 12, width: 22, height: 22, borderTop: "1.5px solid #C9A24B", borderLeft: "1.5px solid #C9A24B", opacity: 0.8 }} />
-            <span style={{ position: "absolute", top: 12, right: 12, width: 22, height: 22, borderTop: "1.5px solid #C9A24B", borderRight: "1.5px solid #C9A24B", opacity: 0.8 }} />
-            <span style={{ position: "absolute", bottom: 12, left: 12, width: 22, height: 22, borderBottom: "1.5px solid #C9A24B", borderLeft: "1.5px solid #C9A24B", opacity: 0.8 }} />
-            <span style={{ position: "absolute", bottom: 12, right: 12, width: 22, height: 22, borderBottom: "1.5px solid #C9A24B", borderRight: "1.5px solid #C9A24B", opacity: 0.8 }} />
+            <span style={{ position: "absolute", top: 12, left: 12, width: 22, height: 22, borderTop: "1.5px solid #C17930", borderLeft: "1.5px solid #C17930", opacity: 0.8 }} />
+            <span style={{ position: "absolute", top: 12, right: 12, width: 22, height: 22, borderTop: "1.5px solid #C17930", borderRight: "1.5px solid #C17930", opacity: 0.8 }} />
+            <span style={{ position: "absolute", bottom: 12, left: 12, width: 22, height: 22, borderBottom: "1.5px solid #C17930", borderLeft: "1.5px solid #C17930", opacity: 0.8 }} />
+            <span style={{ position: "absolute", bottom: 12, right: 12, width: 22, height: 22, borderBottom: "1.5px solid #C17930", borderRight: "1.5px solid #C17930", opacity: 0.8 }} />
 
             {/* Ganapathi image — centered inside the rectangle */}
             <img
@@ -105,7 +105,7 @@ export default function EnvelopeIntro() {
               }}
             />
 
-            <p className="mt-5" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.3em", color: "#B89043", textTransform: "uppercase" }}>
+            <p className="mt-5" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.3em", color: "#C17930", textTransform: "uppercase" }}>
               Shubh Vivah
             </p>
 
@@ -116,7 +116,7 @@ export default function EnvelopeIntro() {
             <div className="squiggle my-3" />
 
             <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, color: "#2E2A22", fontSize: "1.2rem", letterSpacing: "0.05em" }}>
-              Apoorva <span style={{ color: "#B89043" }}>&amp;</span> Charan
+              Apoorva <span style={{ color: "#C17930" }}>&amp;</span> Charan
             </p>
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: "#57503F", fontSize: "0.92rem", marginTop: "0.3rem" }}>
               November 20–22, 2026

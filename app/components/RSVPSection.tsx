@@ -36,9 +36,9 @@ const defaultGuest = (): GuestEntry => ({
 const weddingEvents = [
   { key: "engagement" as const, label: "Engagement",  emoji: "💍", color: "#E63946" },
   { key: "haldi"      as const, label: "Haldi",       emoji: "☀️", color: "#FF6FB5" },
-  { key: "ceremony"   as const, label: "Ceremony",    emoji: "🪔", color: "#B89043" },
+  { key: "ceremony"   as const, label: "Ceremony",    emoji: "🪔", color: "#C17930" },
   { key: "wedding"    as const, label: "Wedding",     emoji: "🪷", color: "#2A9D8F" },
-  { key: "reception"  as const, label: "Reception",   emoji: "🎉", color: "#B89043" },
+  { key: "reception"  as const, label: "Reception",   emoji: "🎉", color: "#C17930" },
 ];
 
 const mealOptions = [
@@ -51,7 +51,7 @@ const mealOptions = [
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
 const labelStyle: React.CSSProperties = {
-  display: "block", color: "#B89043", fontFamily: "'Cormorant Garamond', serif",
+  display: "block", color: "#C17930", fontFamily: "'Cormorant Garamond', serif",
   fontWeight: 600, fontSize: "0.7rem", letterSpacing: "0.1em",
   textTransform: "uppercase", marginBottom: "0.5rem",
 };
@@ -123,7 +123,7 @@ export default function RSVPSection() {
       <div className="relative z-10 max-w-2xl mx-auto">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.2em", color: "#C9A24B", textTransform: "uppercase" }}>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.2em", color: "#C17930", textTransform: "uppercase" }}>
             Apoorva &amp; Charan
           </p>
           <p className="festive-text" style={{ fontFamily: "'Cinzel', serif", fontWeight: 700, fontSize: "0.95rem", letterSpacing: "0.35em", marginTop: "0.5rem" }}>
@@ -134,10 +134,10 @@ export default function RSVPSection() {
           </h2>
           <div className="squiggle mt-4 mb-5" />
           <p style={{ fontFamily: "'Cormorant Garamond', serif", color: "#57503F", fontSize: "1.05rem", maxWidth: 460, margin: "0 auto" }}>
-            Will you be joining us in celebration? Come and bless us — <span style={{ color: "#B89043", fontWeight: 600 }}>your presence makes us more happy.</span>
+            Will you be joining us in celebration? Come and bless us — <span style={{ color: "#C17930", fontWeight: 600 }}>your presence makes us more happy.</span>
           </p>
           <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.8rem", color: "#8A8172" }}>
-            Please respond by <strong style={{ color: "#C9A24B" }}>October 30, 2026</strong>
+            Please respond by <strong style={{ color: "#C17930" }}>October 30, 2026</strong>
           </p>
         </motion.div>
 
@@ -191,10 +191,10 @@ export default function RSVPSection() {
                                 <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", color: "#57503F", textTransform: "uppercase" }}>{field}</span>
                                 <div className="flex items-center gap-2">
                                   <button type="button" onClick={() => adjustCount(i, field, -1)} aria-label={`less ${field}`}
-                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFFCF5", color: "#B89043", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>−</button>
+                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFFCF5", color: "#C17930", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>−</button>
                                   <span style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", minWidth: "1.4rem", textAlign: "center", color: "#2E2A22" }}>{guest[field]}</span>
                                   <button type="button" onClick={() => adjustCount(i, field, 1)} aria-label={`more ${field}`}
-                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFFCF5", color: "#B89043", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>+</button>
+                                    style={{ width: 30, height: 30, borderRadius: 999, border: "none", background: "#FFFCF5", color: "#C17930", fontSize: "1.1rem", fontWeight: 700, cursor: "pointer" }}>+</button>
                                 </div>
                               </div>
                             ))}

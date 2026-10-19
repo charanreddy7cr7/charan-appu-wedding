@@ -14,12 +14,12 @@
   --marble-dark:  #C9B48A;   /* darkest marble accent */
 
   /* Gold palette */
-  --gold:         #C9A43E;   /* warm antique gold */
-  --gold-bright:  #E8C86A;   /* bright highlight gold */
-  --gold-light:   #F0DCA0;   /* champagne gold */
-  --gold-deep:    #8B6914;   /* deep shadow gold */
-  --gold-plate:   #D4AF37;   /* brushed gold plate */
-  --gold-shine:   #FFF3C4;   /* gold highlight/shine */
+  --gold:         #E7A750;   /* reference amber gold */
+  --gold-bright:  #FAC775;   /* reference bright gold */
+  --gold-light:   #FDD58A;   /* reference pale gold */
+  --gold-deep:    #9C5A13;   /* reference copper-bronze */
+  --gold-plate:   #E8AD5B;   /* reference plaque gold */
+  --gold-shine:   #FEE2A4;   /* reference highlight shine */
 
   /* Text on marble */
   --ink:          #3D2B00;   /* deep warm brown */
@@ -145,8 +145,8 @@ p { line-height: 1.7; }
 /* ─── Brushed gold plate (for name panels) ───────────────────────────────── */
 .gold-plate {
   background: linear-gradient(135deg,
-    #E8C86A 0%, #C9A43E 20%, #D4AF37 40%,
-    #F0DCA0 55%, #C9A43E 70%, #8B6914 85%, #D4AF37 100%);
+    #FAC775 0%, #E7A750 20%, #E8AD5B 40%,
+    #FDD58A 55%, #E7A750 70%, #9C5A13 85%, #E8AD5B 100%);
   background-size: 200% 200%;
   animation: platShimmer 8s ease-in-out infinite;
   box-shadow:
@@ -227,7 +227,7 @@ p { line-height: 1.7; }
   font-size: 0.82rem; letter-spacing: 0.22em; text-transform: uppercase;
   cursor: pointer; border: none; text-decoration: none;
   color: #2E1A00;
-  background: linear-gradient(135deg, #E8C86A 0%, #D4AF37 30%, #C9A43E 60%, #F0DCA0 80%, #C9A43E 100%);
+  background: linear-gradient(135deg, #FAC775 0%, #E8AD5B 30%, #E7A750 60%, #FDD58A 80%, #E7A750 100%);
   background-size: 200% auto;
   box-shadow: 0 6px 20px rgba(139,105,20,0.45), inset 0 1px 1px rgba(255,243,196,0.5);
   transition: all 0.25s ease;
@@ -251,7 +251,7 @@ p { line-height: 1.7; }
   box-shadow: 0 4px 16px rgba(139,105,20,0.2), inset 0 1px 1px rgba(255,243,196,0.3);
   transition: all 0.25s ease;
 }
-.btn-outline:hover { background: linear-gradient(135deg, #F0DCA0, #E8C86A); color: #2E1A00; transform: translateY(-2px); }
+.btn-outline:hover { background: linear-gradient(135deg, #FDD58A, #FAC775); color: #2E1A00; transform: translateY(-2px); }
 
 /* ─── Form elements ──────────────────────────────────────────────────────── */
 input[type="text"], input[type="email"], input[type="tel"],
@@ -267,7 +267,7 @@ input[type="password"], textarea, select {
   transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 input:focus, textarea:focus, select:focus {
-  border-color: var(--gold-deep, #8B6914);
+  border-color: var(--gold-deep, #9C5A13);
   box-shadow: inset 0 2px 5px rgba(100,75,20,0.18), 0 0 0 3px rgba(201,164,62,0.28);
   background: #EEDFC0;
 }
@@ -286,7 +286,7 @@ input::placeholder, textarea::placeholder { color: #8A6B38; opacity: 1; }
   position: fixed; bottom: 22px; right: 22px; z-index: 40;
   display: flex; align-items: center; gap: 8px;
   padding: 11px 18px; border-radius: 999px;
-  background: linear-gradient(120deg, #D4AF37, #C9A43E);
+  background: linear-gradient(120deg, #E8AD5B, #E7A750);
   border: none; color: #2E1A00;
   font-family: 'Cinzel', serif; font-weight: 600;
   font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
@@ -348,7 +348,7 @@ input::placeholder, textarea::placeholder { color: #8A6B38; opacity: 1; }
   border-radius: 5px;
   padding: 10px;
   background:
-    linear-gradient(135deg, #F4E2A0 0%, #C9A43E 22%, #8B6914 48%, #E8C86A 70%, #C9A43E 88%, #A07820 100%);
+    linear-gradient(135deg, #F4E2A0 0%, #E7A750 22%, #9C5A13 48%, #FAC775 70%, #E7A750 88%, #9C5A13 100%);
   box-shadow:
     0 10px 36px rgba(80,55,10,0.38),
     inset 0 1px 1px rgba(255,247,210,0.85),
@@ -360,7 +360,7 @@ input::placeholder, textarea::placeholder { color: #8A6B38; opacity: 1; }
   position: absolute; inset: 6px;
   border-radius: 3px;
   padding: 2px;
-  background: linear-gradient(135deg, #FFF6D2, #B98E24, #FFF0B0, #8B6914);
+  background: linear-gradient(135deg, #FFF6D2, #B98E24, #FFF0B0, #9C5A13);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
@@ -394,15 +394,15 @@ input::placeholder, textarea::placeholder { color: #8A6B38; opacity: 1; }
 .lux-pillar {
   background:
     repeating-linear-gradient(90deg,
-      #8B6914 0 2px, #C9A43E 2px 5px, #F0DCA0 5px 7px,
-      #E8C86A 7px 9px, #C9A43E 9px 12px, #8B6914 12px 14px);
+      #9C5A13 0 2px, #E7A750 2px 5px, #FDD58A 5px 7px,
+      #FAC775 7px 9px, #E7A750 9px 12px, #9C5A13 12px 14px);
   box-shadow:
     inset 2px 0 4px rgba(255,247,210,0.6),
     inset -2px 0 5px rgba(80,55,10,0.5),
     0 0 16px rgba(139,105,20,0.4);
 }
 .lux-pillar-cap {
-  background: linear-gradient(180deg, #F4E2A0, #C9A43E 45%, #8B6914 100%);
+  background: linear-gradient(180deg, #F4E2A0, #E7A750 45%, #9C5A13 100%);
   box-shadow: 0 2px 6px rgba(80,55,10,0.5), inset 0 1px 2px rgba(255,247,210,0.8);
 }
 
@@ -414,8 +414,8 @@ input::placeholder, textarea::placeholder { color: #8A6B38; opacity: 1; }
       rgba(255,247,210,0.0) 0 2px,
       rgba(120,90,30,0.06) 2px 3px),
     linear-gradient(135deg,
-      #EBCF78 0%, #D4AF37 18%, #C9A43E 38%,
-      #F2DFA2 55%, #C9A43E 72%, #A8841F 88%, #E0BE5C 100%);
+      #EBCF78 0%, #E8AD5B 18%, #E7A750 38%,
+      #F2DFA2 55%, #E7A750 72%, #A8841F 88%, #E0BE5C 100%);
   background-size: 100% 100%, 200% 200%;
   animation: platShimmer 9s ease-in-out infinite;
   box-shadow:

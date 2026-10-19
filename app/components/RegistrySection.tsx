@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const gifts = [
-  { icon: "💛", name: "Your Blessings", note: "Honestly, your presence is the greatest gift of all.", href: "#rsvp", color: "#C9A24B" },
+  { icon: "💛", name: "Your Blessings", note: "Honestly, your presence is the greatest gift of all.", href: "#rsvp", color: "#C17930" },
 ];
 
 export default function RegistrySection() {
@@ -11,7 +11,7 @@ export default function RegistrySection() {
     <section id="registry" className="py-20 px-6 relative" style={{ background: "#F2E8D8" }}>
       <div className="max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C17930", textTransform: "uppercase" }}>
             If you wish
           </p>
           <h2 className="festive-text mt-3" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(2.2rem, 6vw, 3.6rem)" }}>

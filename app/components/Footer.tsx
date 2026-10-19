@@ -12,14 +12,14 @@ export default function Footer() {
       <div className="relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-          style={{ fontSize: "2rem", marginBottom: "0.5rem", color: "#C9A24B" }}
+          style={{ fontSize: "2rem", marginBottom: "0.5rem", color: "#C17930" }}
         >
           ✦
         </motion.div>
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, color: "#B89043", fontSize: "clamp(2.2rem, 7vw, 4rem)", lineHeight: 1.1 }}
+          style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, color: "#C17930", fontSize: "clamp(2.2rem, 7vw, 4rem)", lineHeight: 1.1 }}
         >
           Celebrate
           <br />with Us!
@@ -41,7 +41,7 @@ export default function Footer() {
             { label: "Host Login", href: "/admin/" },
           ].map((l) => (
             <a key={l.href} href={l.href}
-              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, fontSize: "0.8rem", letterSpacing: "0.08em", color: "#C9A24B", textDecoration: "none", opacity: 0.9 }}>
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, fontSize: "0.8rem", letterSpacing: "0.08em", color: "#C17930", textDecoration: "none", opacity: 0.9 }}>
               {l.label}
             </a>
           ))}
@@ -53,11 +53,11 @@ export default function Footer() {
             Invited by
           </p>
           <div className="mt-3 flex items-start justify-center gap-6 flex-wrap">
-            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#B89043", letterSpacing: "0.03em" }}>
+            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#C17930", letterSpacing: "0.03em" }}>
               Soumya &amp; Shashindhar Jaidi
             </p>
-            <span style={{ color: "#C9A24B", opacity: 0.6 }}>·</span>
-            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#B89043", letterSpacing: "0.03em" }}>
+            <span style={{ color: "#C17930", opacity: 0.6 }}>·</span>
+            <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#C17930", letterSpacing: "0.03em" }}>
               Anjali &amp; Ajay Maggidi
             </p>
           </div>

@@ -20,7 +20,7 @@ function getTimeLeft(target: Date): TimeLeft {
   };
 }
 
-const unitColors = ["#C9A24B", "#B89043", "#C9A24B", "#C9A24B"];
+const unitColors = ["#C17930", "#C17930", "#C17930", "#C17930"];
 
 function Unit({ value, label, color }: { value: number; label: string; color: string }) {
   return (
@@ -67,7 +67,7 @@ export default function CountdownSection() {
       <div className="max-w-3xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}
+          style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C17930", textTransform: "uppercase" }}
         >
           Let the celebrations begin in
         </motion.p>

@@ -13,7 +13,7 @@ function SpotDots({ delay = 0 }: { delay?: number }) {
           transition={{ repeat: Infinity, duration: 2.6, delay: delay + i * 0.28, ease: "easeInOut" }}
           style={{
             width: 7, height: 7, borderRadius: "50%",
-            background: "radial-gradient(circle at 50% 40%, #FFF7D6, #F5D876 60%, #C9A43E)",
+            background: "radial-gradient(circle at 50% 40%, #FFF7D6, #FAC775 60%, #E7A750)",
             boxShadow: "0 0 10px 4px rgba(245,216,118,0.85)",
           }}
         />
@@ -82,7 +82,7 @@ export default function HeroSection() {
             <div key={pos} className={`absolute ${pos}`}
               style={{
                 width: 11, height: 11, borderRadius: "50%",
-                background: "radial-gradient(circle at 35% 30%, #FFF7D6, #D4AF37 55%, #6E5208)",
+                background: "radial-gradient(circle at 35% 30%, #FFF7D6, #E8AD5B 55%, #6E5208)",
                 boxShadow: "0 1px 3px rgba(70,50,8,0.6), inset 0 -1px 1px rgba(60,42,5,0.6)",
               }} />
           ))}

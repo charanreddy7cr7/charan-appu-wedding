@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // Add photos to /public/gallery then set placeholder:false + src.
 const items = [
-  { id: 1, caption: "The Oasis Ranch", src: "/gallery/oasis-ranch.jpg", placeholder: false, color: "#C9A24B" },
-  { id: 2, caption: "The Meridian Venue", src: "/gallery/meridian-venue.jpg", placeholder: false, color: "#B89043" },
-  { id: 3, caption: "The Bride",       src: "", placeholder: true, color: "#C9A24B" },
-  { id: 4, caption: "The Groom",       src: "", placeholder: true, color: "#C9A24B" },
-  { id: 5, caption: "Celebrations",    src: "", placeholder: true, color: "#C9A24B" },
-  { id: 6, caption: "Forever Begins",  src: "", placeholder: true, color: "#C9A24B" },
+  { id: 1, caption: "The Oasis Ranch", src: "/gallery/oasis-ranch.jpg", placeholder: false, color: "#C17930" },
+  { id: 2, caption: "The Meridian Venue", src: "/gallery/meridian-venue.jpg", placeholder: false, color: "#C17930" },
+  { id: 3, caption: "The Bride",       src: "", placeholder: true, color: "#C17930" },
+  { id: 4, caption: "The Groom",       src: "", placeholder: true, color: "#C17930" },
+  { id: 5, caption: "Celebrations",    src: "", placeholder: true, color: "#C17930" },
+  { id: 6, caption: "Forever Begins",  src: "", placeholder: true, color: "#C17930" },
 ];
 
 export default function GallerySection() {
@@ -20,7 +20,7 @@ export default function GallerySection() {
     <section id="gallery" className="py-20 px-6 relative" style={{ background: "#EAD9C0" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C17930", textTransform: "uppercase" }}>
             Our moments
           </p>
           <h2 className="festive-text mt-3" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(2.2rem, 6vw, 3.6rem)" }}>

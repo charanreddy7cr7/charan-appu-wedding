@@ -191,7 +191,7 @@ export default function InvitationHero() {
           style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: "1.4rem",
-            color: "#8B6914",
+            color: "#9C5A13",
             letterSpacing: "0.15em",
           }}
         >
@@ -321,7 +321,7 @@ export default function InvitationHero() {
           <p style={{
             fontFamily: "'Cinzel', serif",
             fontSize: "0.85rem",
-            color: "#8B6914",
+            color: "#9C5A13",
             letterSpacing: "0.25em",
           }}>
             NOVEMBER 12–15, 2026
@@ -362,7 +362,7 @@ export default function InvitationHero() {
           className="inline-block px-8 py-3 text-xs tracking-[0.25em] transition-all duration-300"
           style={{
             border: "1px solid #B8860B",
-            color: "#8B6914",
+            color: "#9C5A13",
             fontFamily: "'Lato', sans-serif",
             fontWeight: 400,
             textDecoration: "none",

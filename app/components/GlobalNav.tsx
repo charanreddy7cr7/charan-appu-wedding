@@ -45,7 +45,7 @@ export default function GlobalNav() {
               <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); go(l.href); }}
                 className="transition-colors"
                 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, fontSize: "0.85rem", color: "#57503F", textDecoration: "none" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#C9A24B")}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#C17930")}
                 onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#57503F")}>
                 {l.label}
               </a>
@@ -58,9 +58,9 @@ export default function GlobalNav() {
 
           <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center"
             style={{ background: "transparent", border: "none", cursor: "pointer" }} aria-label="Menu">
-            <motion.span animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 7 : 0 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#C9A24B" }} />
-            <motion.span animate={{ opacity: menuOpen ? 0 : 1 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#B89043" }} />
-            <motion.span animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -7 : 0 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#C9A24B" }} />
+            <motion.span animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 7 : 0 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#C17930" }} />
+            <motion.span animate={{ opacity: menuOpen ? 0 : 1 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#C17930" }} />
+            <motion.span animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -7 : 0 }} className="block w-6 h-0.5 rounded-full" style={{ background: "#C17930" }} />
           </button>
         </div>
       </nav>

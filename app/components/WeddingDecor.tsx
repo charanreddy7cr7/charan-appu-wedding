@@ -28,13 +28,13 @@ function GarlandColumn({ flip = false }: { flip?: boolean }) {
       aria-hidden="true"
     >
       {/* short suspension line for the bell */}
-      <line x1="20" y1="0" x2="20" y2="810" stroke="#C9A24B" strokeWidth="1" opacity="0.4" />
+      <line x1="20" y1="0" x2="20" y2="810" stroke="#C17930" strokeWidth="1" opacity="0.4" />
 
       {/* small golden temple bell suspended at the bottom */}
       <g transform="translate(20 828)">
-        <line x1="0" y1="-8" x2="0" y2="0" stroke="#C9A24B" strokeWidth="1.2" />
-        <path d="M-9 18 Q-9 2 0 0 Q9 2 9 18 Z" fill="#B89043" stroke="#A07E2E" strokeWidth="0.8" />
-        <ellipse cx="0" cy="18" rx="9" ry="2.5" fill="#C9A24B" />
+        <line x1="0" y1="-8" x2="0" y2="0" stroke="#C17930" strokeWidth="1.2" />
+        <path d="M-9 18 Q-9 2 0 0 Q9 2 9 18 Z" fill="#C17930" stroke="#A07E2E" strokeWidth="0.8" />
+        <ellipse cx="0" cy="18" rx="9" ry="2.5" fill="#C17930" />
         <circle cx="0" cy="22" r="2.2" fill="#A07E2E" />
       </g>
     </svg>
@@ -65,7 +65,7 @@ export default function WeddingDecor() {
         <div key={side} className="absolute top-0 bottom-0 flex flex-col justify-around items-center"
           style={{ [side ? "right" : "left"]: 0, width: "34px" } as React.CSSProperties}>
           {Array.from({ length: 22 }).map((_, i) => (
-            <span key={i} style={{ color: "#C9A24B", fontSize: "0.7rem", opacity: 0.45 }}>❖</span>
+            <span key={i} style={{ color: "#C17930", fontSize: "0.7rem", opacity: 0.45 }}>❖</span>
           ))}
         </div>
       ))}
