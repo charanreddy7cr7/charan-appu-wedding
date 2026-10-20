@@ -39,7 +39,7 @@ export default function HeroSection() {
         </div>
       ))}
 
-      <div className="relative z-10 w-full max-w-md mx-auto flex flex-col gap-5 px-2">
+      <div className="relative z-10 w-full max-w-md mx-auto flex flex-col gap-0 px-2">
 
         {/* ── TOP NICHE — illuminated marble with Telugu blessings + scene ── */}
         <motion.div
@@ -68,16 +68,10 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* ── MIDDLE — brushed-gold name plaque with rivets ────────────────── */}
+        {/* ── MIDDLE — name card (flush with photo above) ──────────────────── */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, delay: 0.15 }}
           className="relative"
-          style={{
-            borderRadius: 5,
-            overflow: "hidden",
-            border: "2px solid rgba(156,90,19,0.55)",
-            boxShadow: "0 8px 28px rgba(90,65,12,0.45), inset 0 0 0 1px rgba(254,226,164,0.45)",
-          }}
         >
           <img src="/names-card.jpg" alt="Apoorva Gonegari & Charan Reddy Jaidi"
             style={{ width: "100%", height: "auto", display: "block" }} />
@@ -86,7 +80,7 @@ export default function HeroSection() {
         {/* ── BOTTOM — date + buttons (no box) ─────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.3 }}
-          className="text-center pt-2"
+          className="text-center mt-8"
         >
           <p className="text-center mb-5 relative" style={{
             zIndex: 3, fontFamily: "'Cinzel',serif", fontWeight: 500,
