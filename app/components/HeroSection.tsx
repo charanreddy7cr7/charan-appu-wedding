@@ -76,52 +76,16 @@ export default function HeroSection() {
         {/* ── MIDDLE — brushed-gold name plaque with rivets ────────────────── */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, delay: 0.15 }}
-          className="brushed-plate"
-          style={{ borderRadius: 5, padding: "2.1rem 1.8rem 1.7rem", textAlign: "center" }}
+          className="relative"
+          style={{
+            borderRadius: 5,
+            overflow: "hidden",
+            border: "2px solid rgba(156,90,19,0.55)",
+            boxShadow: "0 8px 28px rgba(90,65,12,0.45), inset 0 0 0 1px rgba(254,226,164,0.45)",
+          }}
         >
-          {/* corner screw rivets */}
-          {["top-3 left-3", "top-3 right-3", "bottom-3 left-3", "bottom-3 right-3"].map((pos) => (
-            <div key={pos} className={`absolute ${pos}`}
-              style={{
-                width: 11, height: 11, borderRadius: "50%",
-                background: "radial-gradient(circle at 35% 30%, #FFF7D6, #E8AD5B 55%, #6E5208)",
-                boxShadow: "0 1px 3px rgba(70,50,8,0.6), inset 0 -1px 1px rgba(60,42,5,0.6)",
-              }} />
-          ))}
-
-          <h1 style={{
-            fontFamily: "'Cinzel',serif", fontWeight: 700, fontSize: "clamp(1.6rem,7.2vw,2.5rem)",
-            letterSpacing: "0.05em", color: "#3A2600",
-            textShadow: "0 1px 0 rgba(255,247,210,0.7), 0 2px 4px rgba(90,65,12,0.35)", lineHeight: 1.08,
-          }}>
-            Apoorva Gonegari
-          </h1>
-          <p style={{
-            fontFamily: "'Cormorant Garamond',serif", fontStyle: "italic", fontSize: "0.9rem",
-            color: "#5A3E05", marginTop: "0.35rem",
-          }}>
-            Daughter of Smt. Vajra &amp; Sri Sanjeev Gonegari
-          </p>
-
-          <div style={{ margin: "1.1rem 0", display: "flex", alignItems: "center", gap: "0.9rem", justifyContent: "center" }}>
-            <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, transparent, #6E5208)" }} />
-            <span style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: "italic", fontSize: "2rem", color: "#3A2600", fontWeight: 500 }}>&amp;</span>
-            <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, #6E5208, transparent)" }} />
-          </div>
-
-          <h1 style={{
-            fontFamily: "'Cinzel',serif", fontWeight: 700, fontSize: "clamp(1.6rem,7.2vw,2.5rem)",
-            letterSpacing: "0.05em", color: "#3A2600",
-            textShadow: "0 1px 0 rgba(255,247,210,0.7), 0 2px 4px rgba(90,65,12,0.35)", lineHeight: 1.08,
-          }}>
-            Charan Reddy Jaidi
-          </h1>
-          <p style={{
-            fontFamily: "'Cormorant Garamond',serif", fontStyle: "italic", fontSize: "0.9rem",
-            color: "#5A3E05", marginTop: "0.35rem",
-          }}>
-            Son of Late Sri Jaidi Bhaskar &amp; Smt. Sukanya
-          </p>
+          <img src="/names-card.jpg" alt="Apoorva Gonegari & Charan Reddy Jaidi"
+            style={{ width: "100%", height: "auto", display: "block" }} />
         </motion.div>
 
         {/* ── BOTTOM NICHE — illuminated marble with date + buttons ────────── */}
