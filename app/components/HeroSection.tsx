@@ -61,14 +61,9 @@ export default function HeroSection() {
             </div>
 
             {/* Wedding family scene */}
-            <div className="relative" style={{ zIndex: 2, padding: "0.3rem 0.9rem 1rem" }}>
+            <div className="relative" style={{ zIndex: 2 }}>
               <img src="/wedding-family-color.jpg" alt="Wedding ceremony scene"
-                style={{
-                  width: "100%", height: "auto", display: "block",
-                  borderRadius: 4,
-                  border: "2px solid rgba(156,90,19,0.55)",
-                  boxShadow: "0 4px 14px rgba(90,65,12,0.4), inset 0 0 0 1px rgba(254,226,164,0.4)",
-                }} />
+                style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
           </div>
         </motion.div>
@@ -88,30 +83,26 @@ export default function HeroSection() {
             style={{ width: "100%", height: "auto", display: "block" }} />
         </motion.div>
 
-        {/* ── BOTTOM NICHE — illuminated marble with date + buttons ────────── */}
+        {/* ── BOTTOM — date + buttons (no box) ─────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.3 }}
-          className="lux-niche"
+          className="text-center pt-2"
         >
-          <div className="lux-niche-inner lux-lights marble-surface" style={{ padding: "0 1.2rem 1.6rem" }}>
-            <SpotDots delay={1} />
+          <p className="text-center mb-5 relative" style={{
+            zIndex: 3, fontFamily: "'Cinzel',serif", fontWeight: 500,
+            fontSize: "0.8rem", letterSpacing: "0.2em", color: "#6B4F2A", textTransform: "uppercase",
+            textShadow: "0 1px 2px rgba(255,245,200,0.6)",
+          }}>
+            November 21
+          </p>
 
-            <p className="text-center mb-5 relative" style={{
-              zIndex: 3, fontFamily: "'Cinzel',serif", fontWeight: 500,
-              fontSize: "0.8rem", letterSpacing: "0.2em", color: "#6B4F2A", textTransform: "uppercase",
-              textShadow: "0 1px 2px rgba(255,245,200,0.6)",
-            }}>
-              November 2026
-            </p>
-
-            <div className="flex gap-4 justify-center relative" style={{ zIndex: 3 }}>
-              <a href="#rsvp" className="btn-fest flex-1 text-center" style={{ maxWidth: 180 }}>
-                RSVP
-              </a>
-              <a href="#events" className="btn-outline flex-1 text-center" style={{ maxWidth: 180 }}>
-                View Events
-              </a>
-            </div>
+          <div className="flex gap-4 justify-center relative" style={{ zIndex: 3 }}>
+            <a href="#rsvp" className="btn-fest flex-1 text-center" style={{ maxWidth: 180 }}>
+              RSVP
+            </a>
+            <a href="#events" className="btn-outline flex-1 text-center" style={{ maxWidth: 180 }}>
+              View Events
+            </a>
           </div>
         </motion.div>
 
