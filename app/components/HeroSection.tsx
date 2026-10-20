@@ -60,14 +60,16 @@ export default function HeroSection() {
               ))}
             </div>
 
-            {/* Engraved-gold wedding family scene */}
-            <img src="/wedding-family-gold.png" alt="Wedding ceremony scene"
-              className="relative"
-              style={{
-                width: "100%", height: "auto", display: "block", zIndex: 2,
-                padding: "0.3rem 0.9rem 1rem",
-                filter: "drop-shadow(0 3px 10px rgba(120,90,30,0.4))",
-              }} />
+            {/* Wedding family scene */}
+            <div className="relative" style={{ zIndex: 2, padding: "0.3rem 0.9rem 1rem" }}>
+              <img src="/wedding-family-color.jpg" alt="Wedding ceremony scene"
+                style={{
+                  width: "100%", height: "auto", display: "block",
+                  borderRadius: 4,
+                  border: "2px solid rgba(156,90,19,0.55)",
+                  boxShadow: "0 4px 14px rgba(90,65,12,0.4), inset 0 0 0 1px rgba(254,226,164,0.4)",
+                }} />
+            </div>
           </div>
         </motion.div>
 
