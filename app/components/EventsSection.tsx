@@ -56,7 +56,7 @@ const events: EventItem[] = [
     mapQuery: "The+Bliss+at+Aubrey,+4381+US-377,+Aubrey,+TX+76227",
     dress: "Antique Gold",
     // Antique gold
-    bg: "linear-gradient(135deg, #FEE2A4 0%, #FAC775 22%, #E8AD5B 48%, #B8860B 72%, #FAC775 100%)",
+    bg: "linear-gradient(135deg, #FDF2C9 0%, #FAE4AF 20%, #F6D998 42%, #D5A54F 66%, #A06C1B 82%, #F6D998 100%)",
     accent: "#4A3611", text: "#2E2208", textMuted: "#5C4A1E", chipBg: "rgba(46,34,8,0.1)", tilt: -2,
   },
   {
