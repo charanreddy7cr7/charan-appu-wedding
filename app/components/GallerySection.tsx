@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const items = [
   { id: 1, caption: "The Oasis Ranch", src: "/gallery/oasis-ranch.jpg", placeholder: false, color: "#C17930" },
   { id: 2, caption: "The Meridian Venue", src: "/gallery/meridian-venue.jpg", placeholder: false, color: "#C17930" },
-  { id: 3, caption: "The Bride",       src: "", placeholder: true, color: "#C17930" },
+  { id: 3, caption: "Apoorva & Charan", src: "/gallery/couple-sunset.jpg", placeholder: false, color: "#C17930" },
   { id: 4, caption: "The Groom",       src: "", placeholder: true, color: "#C17930" },
   { id: 5, caption: "Celebrations",    src: "", placeholder: true, color: "#C17930" },
   { id: 6, caption: "Forever Begins",  src: "", placeholder: true, color: "#C17930" },
@@ -61,10 +61,16 @@ export default function GallerySection() {
             onClick={() => setLightbox(null)} className="fixed inset-0 z-50 flex items-center justify-center p-6"
             style={{ background: "rgba(43,27,61,0.85)" }}>
             <motion.div initial={{ scale: 0.85 }} animate={{ scale: 1 }} exit={{ scale: 0.85 }}
-              onClick={(e) => e.stopPropagation()} className="relative max-w-lg w-full fest-card flex flex-col items-center justify-center"
+              onClick={(e) => e.stopPropagation()} className="relative max-w-lg w-full fest-card flex flex-col items-center justify-center overflow-hidden"
               style={{ aspectRatio: "1", background: `linear-gradient(140deg, ${items[lightbox].color}22, #fff)` }}>
-              <span style={{ fontSize: "3rem" }}>📷</span>
-              <p className="mt-2" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, color: items[lightbox].color, fontSize: "1.3rem" }}>{items[lightbox].caption}</p>
+              {!items[lightbox].placeholder && items[lightbox].src ? (
+                <img src={items[lightbox].src} alt={items[lightbox].caption} className="absolute inset-0 w-full h-full object-cover" />
+              ) : (
+                <>
+                  <span style={{ fontSize: "3rem" }}>📷</span>
+                  <p className="mt-2" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, color: items[lightbox].color, fontSize: "1.3rem" }}>{items[lightbox].caption}</p>
+                </>
+              )}
               <button onClick={() => setLightbox(null)} className="absolute top-3 right-3"
                 style={{ width: 34, height: 34, borderRadius: 999, background: "#FFFCF5", border: "none", cursor: "pointer", fontSize: "1rem", color: "#2E2A22" }}>✕</button>
             </motion.div>
