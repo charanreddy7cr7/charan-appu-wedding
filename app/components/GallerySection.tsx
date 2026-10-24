@@ -5,12 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // Add photos to /public/gallery then set placeholder:false + src.
 const items = [
-  { id: 1, caption: "The Oasis Ranch", src: "/gallery/oasis-ranch.jpg", placeholder: false, color: "#C17930" },
-  { id: 2, caption: "The Meridian Venue", src: "/gallery/meridian-venue.jpg", placeholder: false, color: "#C17930" },
-  { id: 3, caption: "Apoorva & Charan", src: "/gallery/couple-sunset.jpg", placeholder: false, color: "#C17930" },
-  { id: 4, caption: "The Groom",       src: "", placeholder: true, color: "#C17930" },
-  { id: 5, caption: "Celebrations",    src: "", placeholder: true, color: "#C17930" },
-  { id: 6, caption: "Forever Begins",  src: "", placeholder: true, color: "#C17930" },
+  { id: 1, caption: "Together ♡",      src: "/gallery/together.jpg",      placeholder: false, color: "#C17930" },
+  { id: 2, caption: "Apoorva & Charan", src: "/gallery/couple-palace.jpg", placeholder: false, color: "#C17930" },
+  { id: 3, caption: "Evening Strolls",  src: "/gallery/couple-bench.jpg",  placeholder: false, color: "#C17930" },
+  { id: 4, caption: "Golden Hour",      src: "/gallery/couple-sunset.jpg", placeholder: false, color: "#C17930" },
 ];
 
 export default function GallerySection() {
