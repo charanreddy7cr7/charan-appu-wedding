@@ -7,6 +7,7 @@ import HeroSection from "./components/HeroSection";
 import CountdownSection from "./components/CountdownSection";
 import EventsSection from "./components/EventsSection";
 import DressCodeSection from "./components/DressCodeSection";
+import HaldiGamesSection from "./components/HaldiGamesSection";
 import RSVPSection from "./components/RSVPSection";
 import GallerySection from "./components/GallerySection";
 import RegistrySection from "./components/RegistrySection";
@@ -23,6 +24,7 @@ export default function Home() {
       <HeroSection />
       <EventsSection />
       <DressCodeSection />
+      <HaldiGamesSection />
       <RSVPSection />
       <GallerySection />
       <RegistrySection />
