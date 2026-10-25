@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion";
 const items = [
   { id: 1, caption: "Together ♡",      src: "/gallery/together.jpg",      placeholder: false, color: "#C17930" },
   { id: 2, caption: "Evening Strolls",  src: "/gallery/couple-palace.jpg", placeholder: false, color: "#C17930" },
-  { id: 3, caption: "Apoorva & Charan", src: "/gallery/couple-bench.jpg",  placeholder: false, color: "#C17930" },
   { id: 4, caption: "Golden Hour",      src: "/gallery/couple-sunset.jpg", placeholder: false, color: "#C17930" },
   { id: 5, caption: "Salt Flats",       src: "/gallery/couple-saltflats.jpg", placeholder: false, color: "#C17930" },
 ];
