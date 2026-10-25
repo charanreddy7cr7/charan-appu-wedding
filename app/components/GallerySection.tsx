@@ -10,6 +10,7 @@ const items = [
   { id: 4, caption: "Golden Hour",      src: "/gallery/couple-sunset.jpg", placeholder: false, color: "#C17930" },
   { id: 5, caption: "Salt Flats",       src: "/gallery/couple-saltflats.jpg", placeholder: false, color: "#C17930" },
   { id: 6, caption: "Golden Gate",      src: "/gallery/couple-bridge.jpg", placeholder: false, color: "#C17930" },
+  { id: 7, caption: "Our Story",        src: "/gallery/couple-6.jpg", placeholder: false, color: "#C17930" },
 ];
 
 export default function GallerySection() {
